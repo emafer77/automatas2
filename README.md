@@ -2,7 +2,7 @@
 
 
 Design Doc: Mobile Gym Trainer App
-Link: [Link to this design doc]
+Link: https://github.com/emafer77/automatas2/blob/main/README.md
 
 Author(s):fernado Emanuel Ramirez Ahumada
 
@@ -65,9 +65,9 @@ Detailed Design
             ¿que deseas entrenar hoy?
             ¿cual es el tiempo con el que dispones?
             
-      De acuerdo con la informacion obtenida buscara los videos de ejercicio y creara una rutina expesifica
+   De acuerdo con la informacion obtenida buscara los videos de ejercicio y creara una rutina expesifica
     
-      para hacer esto posible se pretende usar la libreria de openIA 
+  para hacer esto posible se pretende usar la libreria de openIA 
         https://api.openai.com/v1/chat/completions
    
           
@@ -77,7 +77,6 @@ Detailed Design
   Solution 2
     (En caso de expandir el proyecto con un nutricionista virtual)
     Frontend
-    
     Pantallas para el ingreso de datos nutricionales y seguimiento de la ingesta diaria.
     Módulo para la visualización de recomendaciones nutricionales personalizadas.
 
