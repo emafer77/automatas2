@@ -96,4 +96,4 @@ Métricas
   Evaluación de la satisfacción del usuario mediante encuestas o comentarios.
   Links
 
-diseño base de datos: https://excalidraw.com/#json=yOUnkOERFwZk8WSCXzN-1,W_CUg5cMGI1TBIlThw0Z0Q
+diseño base de datos: https://excalidraw.com/#json=5w67vqoZn7hnYXobncLov,MWDYNuIdxjC9OhWJ_pfJuQ
