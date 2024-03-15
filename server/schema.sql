@@ -13,7 +13,8 @@ CREATE TABLE musculos (
     id_musculo INT 
     AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
-    descripcion TEXT NOT NULL
+    descripcion TEXT NOT NULL,
+    imagen VARCHAR(255)
 );
 
 
@@ -28,70 +29,87 @@ CREATE TABLE ejercicios (
     FOREIGN KEY (id_musculo) REFERENCES musculos(id_musculo)
 );
 
-CREATE TABLE rutinas (
-    id_entrenamiento INT AUTO_INCREMENT PRIMARY KEY,
-    dia VARCHAR(255) NOT NULL,
-    ejercicio INT,
-    detalles JSON,
-    FOREIGN KEY (ejercicio) REFERENCES ejercicios(ejercicio_id)
+CREATE TABLE ejercicios_en_casa (
+    ejercicio_en_casa_id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    descripcion TEXT,
+    video_url VARCHAR(255),
+    imagen VARCHAR(255),
+    datos_cientificos JSON,
+    zona_ejercicio INT -- Identificador de la región de ejercicio
 );
 
 
-INSERT INTO musculos (nombre, descripcion) VALUES --musculos espalda
-('Dorsal ancho', 'Más comúnmente conocidos como "los dorsales", estos dos músculos en forma de triángulo ocupan la mayor parte de la espalda. Se extienden desde la parte superior del brazo (húmero) hasta la pelvis y cruzan las costillas. Su función principal es rotar internamente, extender y llevar el brazo hacia la línea media del cuerpo (movimiento también conocido como aducción), explica Jennifer Novak, maestra en ciencias, especialista en entrenamiento de fuerza y acondicionamiento y dueña de PEAK Symmetry Performance Strategies, en Atlanta, Georgia. Como tal, los dorsales están muy involucrados en ejercicios como las dominadas y los jalones laterales, y en actividades como el remo y la natación.'),
-('Trapecio', 'Los trapecios son otro par de músculos en forma de triángulo que están en la espalda. Comienzan en la base del cuello, se extienden a través de los hombros y bajan hasta la mitad de la espalda. Los trapecios te permiten levantar y rotar la cabeza, llevar los omóplatos hacia adentro y hacia abajo cuando mantienes una postura erguida y torcer el torso, señala la Clínica Cleveland. Trabajarás estos músculos cuando realices ejercicios como el remo, las dominadas, los encogimientos de hombros y los jalones laterales.'),
-('Romboides', 'Los romboides son dos músculos separados en la parte superior de la espalda: el romboide mayor y el romboide menor. Se ubican debajo de los trapecios y van desde la columna vertebral hasta el borde del omóplato. Estos músculos tiran de los omóplatos hacia la línea media, como cuando se hace un remo inclinado, explica Novak. Los romboides también se activan durante ejercicios como la mosca inversa y los jalones hacia la cara (esto implica tirar de la pesa hacia la frente con un equipo de suspensión, una banda de resistencia o una polea de cable manteniendo los codos en alto).');
+CREATE TABLE rutinas (
+    id_entrenamiento INT AUTO_INCREMENT PRIMARY KEY,
+    ejercicio INT,
+    especificaciones VARCHAR(255),
+    FOREIGN KEY (ejercicio) REFERENCES ejercicios(ejercicio_id)
+);
 
-INSERT INTO musculos (nombre, descripcion) VALUES --musculos pecho
-('Pectoral Mayor - Superior', 'La parte superior del pectoral mayor se enfoca en la porción clavicular y está más involucrada en la flexión del brazo hacia adelante. Puedes trabajar esta área específica con ejercicios como el press inclinado.'),
-('Pectoral Mayor - Medio', 'La parte media del pectoral mayor abarca la porción esternal y es clave para la aducción y rotación interna del brazo. Ejercicios como el press de banca trabajan esta área de manera efectiva.'),
-('Pectoral Mayor - Inferior', 'La parte inferior del pectoral mayor se concentra en la porción costal y es fundamental para movimientos como la aducción y rotación interna del brazo. Puedes desarrollar esta área con ejercicios como las aperturas de pecho y las flexiones de brazos.');
+--Musculos de la espalda
+INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
+('Dorsal ancho', 'Más comúnmente conocidos como "los dorsales", estos dos músculos en forma de triángulo ocupan la mayor parte de la espalda. Se extienden desde la parte superior del brazo (húmero) hasta la pelvis y cruzan las costillas. Su función principal es rotar internamente, extender y llevar el brazo hacia la línea media del cuerpo (movimiento también conocido como aducción), explica Jennifer Novak, maestra en ciencias, especialista en entrenamiento de fuerza y acondicionamiento y dueña de PEAK Symmetry Performance Strategies, en Atlanta, Georgia. Como tal, los dorsales están muy involucrados en ejercicios como las dominadas y los jalones laterales, y en actividades como el remo y la natación.', 'dorsal_ancho.jpg'),
+('Trapecio', 'Los trapecios son otro par de músculos en forma de triángulo que están en la espalda. Comienzan en la base del cuello, se extienden a través de los hombros y bajan hasta la mitad de la espalda. Los trapecios te permiten levantar y rotar la cabeza, llevar los omóplatos hacia adentro y hacia abajo cuando mantienes una postura erguida y torcer el torso, señala la Clínica Cleveland. Trabajarás estos músculos cuando realices ejercicios como el remo, las dominadas, los encogimientos de hombros y los jalones laterales.', 'trapecio.jpg'),
+('Romboides', 'Los romboides son dos músculos separados en la parte superior de la espalda: el romboide mayor y el romboide menor. Se ubican debajo de los trapecios y van desde la columna vertebral hasta el borde del omóplato. Estos músculos tiran de los omóplatos hacia la línea media, como cuando se hace un remo inclinado, explica Novak. Los romboides también se activan durante ejercicios como la mosca inversa y los jalones hacia la cara (esto implica tirar de la pesa hacia la frente con un equipo de suspensión, una banda de resistencia o una polea de cable manteniendo los codos en alto).', 'romboides.jpg');
 
-INSERT INTO musculos (nombre, descripcion) VALUES --musculos hombro
-('Deltoides - Parte Anterior', 'La parte anterior del deltoides se encuentra en la parte frontal del hombro y es responsable de la flexión y elevación del brazo hacia adelante. Puedes trabajar esta parte con ejercicios como elevaciones frontales y press de hombros.'),
-('Deltoides - Parte Media', 'La parte media del deltoides abarca la parte lateral del hombro y contribuye a la elevación lateral del brazo. Movimientos como elevaciones laterales y press militar son efectivos para desarrollar esta área.'),
-('Deltoides - Parte Posterior', 'La parte posterior del deltoides se encuentra en la parte trasera del hombro y está involucrada en la extensión y elevación del brazo hacia atrás. Ejercicios como elevaciones posteriores y remo con barra pueden fortalecer esta región.');
+--Musculos del pectoral
+INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
+('Pectoral Mayor - Superior', 'La parte superior del pectoral mayor se enfoca en la porción clavicular y está más involucrada en la flexión del brazo hacia adelante. Puedes trabajar esta área específica con ejercicios como el press inclinado.', 'pectoral_superior.jpg'),
+('Pectoral Mayor - Medio', 'La parte media del pectoral mayor abarca la porción esternal y es clave para la aducción y rotación interna del brazo. Ejercicios como el press de banca trabajan esta área de manera efectiva.', 'pectoral_medio.jpg'),
+('Pectoral Mayor - Inferior', 'La parte inferior del pectoral mayor se concentra en la porción costal y es fundamental para movimientos como la aducción y rotación interna del brazo. Puedes desarrollar esta área con ejercicios como las aperturas de pecho y las flexiones de brazos.', 'pectoral_inferior.jpg');
 
-INSERT INTO musculos (nombre, descripcion) VALUES --musculos biceps
-('Bíceps Braquial - Cabeza Corta', 'La cabeza corta del bíceps braquial es una de las dos cabezas que forman este músculo. Se origina en la parte coracoides de la escápula y contribuye principalmente a la flexión del codo. Movimientos como curls de bíceps ayudan a desarrollar esta parte.'),
-('Bíceps Braquial - Cabeza Larga', 'La cabeza larga del bíceps braquial se origina en la tuberosidad supraglenoidea de la escápula y también participa en la flexión del codo. Ejercicios como curls de bíceps y dominadas trabajan especialmente esta cabeza del bíceps.');
+--Musculos del hombro
+INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
+('Deltoides - Parte Anterior', 'La parte anterior del deltoides se encuentra en la parte frontal del hombro y es responsable de la flexión y elevación del brazo hacia adelante. Puedes trabajar esta parte con ejercicios como elevaciones frontales y press de hombros.', 'deltoides_anterior.jpg'),
+('Deltoides - Parte Media', 'La parte media del deltoides abarca la parte lateral del hombro y contribuye a la elevación lateral del brazo. Movimientos como elevaciones laterales y press militar son efectivos para desarrollar esta área.', 'deltoides_media.jpg'),
+('Deltoides - Parte Posterior', 'La parte posterior del deltoides se encuentra en la parte trasera del hombro y está involucrada en la extensión y elevación del brazo hacia atrás. Ejercicios como elevaciones posteriores y remo con barra pueden fortalecer esta región.', 'deltoides_posterior.jpg');
 
-INSERT INTO musculos (nombre, descripcion) VALUES --musculos triceps
-('Tríceps Braquial - Cabeza Larga', 'La cabeza larga del tríceps braquial es una de las tres cabezas que forman el tríceps. Se origina en la tuberosidad infraglenoidea de la escápula y es responsable de la extensión del codo. Puedes trabajar esta cabeza con ejercicios como fondos en paralelas y press de tríceps.'),
-('Tríceps Braquial - Cabeza Lateral', 'La cabeza lateral del tríceps braquial se origina en la parte posterior del húmero y contribuye a la extensión del codo. Movimientos como extensiones de tríceps con polea y dips son efectivos para trabajar esta cabeza.'),
-('Tríceps Braquial - Cabeza Medial', 'La cabeza medial del tríceps braquial se encuentra en la parte posterior del húmero, al igual que la cabeza lateral, y también participa en la extensión del codo. Ejercicios como fondos en máquina de tríceps y patadas de tríceps son útiles para desarrollar esta cabeza.');
+-- Músculos del brazo
+INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
+('Bíceps Braquial - Cabeza Corta', 'La cabeza corta del bíceps braquial es una de las dos cabezas que forman este músculo. Se origina en la parte coracoides de la escápula y contribuye principalmente a la flexión del codo. Movimientos como curls de bíceps ayudan a desarrollar esta parte.', 'biceps_cabeza_corta.jpg'),
+('Bíceps Braquial - Cabeza Larga', 'La cabeza larga del bíceps braquial se origina en la tuberosidad supraglenoidea de la escápula y también participa en la flexión del codo. Ejercicios como curls de bíceps y dominadas trabajan especialmente esta cabeza del bíceps.', 'biceps_cabeza_larga.jpg');
 
-INSERT INTO musculos (nombre, descripcion) VALUES --musculos antebrazo
-('Flexores del Antebrazo', 'Los flexores del antebrazo incluyen músculos como el flexor carpi radialis, flexor carpi ulnaris y palmar largo. Estos músculos son responsables de la flexión de la muñeca y de los dedos. Puedes trabajarlos con ejercicios como curls de muñeca y curl de antebrazo.'),
-('Extensores del Antebrazo', 'Los extensores del antebrazo incluyen músculos como el extensor carpi radialis longus, extensor carpi radialis brevis y extensor carpi ulnaris. Estos músculos son fundamentales para la extensión de la muñeca y de los dedos. Ejercicios como el reverse curl y las extensiones de muñeca son efectivos para fortalecer estos músculos.'),
-('Pronadores y Supinadores', 'Además de los flexores y extensores, los músculos pronadores y supinadores, como el pronador teres y el supinador, son importantes para la rotación del antebrazo. Puedes trabajar estos músculos realizando ejercicios de rotación de muñeca y rotación de antebrazo.');
+INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
+('Tríceps Braquial - Cabeza Larga', 'La cabeza larga del tríceps braquial es una de las tres cabezas que forman el tríceps. Se origina en la tuberosidad infraglenoidea de la escápula y es responsable de la extensión del codo. Puedes trabajar esta cabeza con ejercicios como fondos en paralelas y press de tríceps.', 'triceps_cabeza_larga.jpg'),
+('Tríceps Braquial - Cabeza Lateral', 'La cabeza lateral del tríceps braquial se origina en la parte posterior del húmero y contribuye a la extensión del codo. Movimientos como extensiones de tríceps con polea y dips son efectivos para trabajar esta cabeza.', 'triceps_cabeza_lateral.jpg'),
+('Tríceps Braquial - Cabeza Medial', 'La cabeza medial del tríceps braquial se encuentra en la parte posterior del húmero, al igual que la cabeza lateral, y también participa en la extensión del codo. Ejercicios como fondos en máquina de tríceps y patadas de tríceps son útiles para desarrollar esta cabeza.', 'triceps_cabeza_medial.jpg');
 
-INSERT INTO musculos (nombre, descripcion) VALUES --musculos abs
-('Recto Abdominal', 'El recto abdominal es el músculo principal de la pared abdominal. Se extiende desde el esternón hasta la sínfisis púbica y es responsable de la flexión del tronco. Puedes trabajar el recto abdominal con ejercicios como crunches y abdominales.'),
-('Oblicuos Externos', 'Los oblicuos externos son músculos ubicados en los lados del abdomen. Ayudan en la rotación y flexión lateral del tronco. Puedes fortalecer los oblicuos externos con ejercicios como las torsiones y los crunches oblicuos.'),
-('Oblicuos Internos', 'Los oblicuos internos están ubicados debajo de los oblicuos externos y también contribuyen a la rotación y flexión lateral del tronco. Ejercicios como las torsiones y los ejercicios de oblicuos ayudan a trabajar estos músculos.'),
-('Transverso Abdominal', 'El transverso abdominal es el músculo más profundo de la pared abdominal y actúa como un corsé natural que ayuda a estabilizar la columna vertebral. Puedes fortalecer el transverso abdominal con ejercicios de contracción y respiración profunda.');
+-- Músculos del antebrazo
+INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
+('Flexores del Antebrazo', 'Los flexores del antebrazo incluyen músculos como el flexor carpi radialis, flexor carpi ulnaris y palmar largo. Estos músculos son responsables de la flexión de la muñeca y de los dedos. Puedes trabajarlos con ejercicios como curls de muñeca y curl de antebrazo.', 'flexores_antebrazo.jpg'),
+('Extensores del Antebrazo', 'Los extensores del antebrazo incluyen músculos como el extensor carpi radialis longus, extensor carpi radialis brevis y extensor carpi ulnaris. Estos músculos son fundamentales para la extensión de la muñeca y de los dedos. Ejercicios como el reverse curl y las extensiones de muñeca son efectivos para fortalecer estos músculos.', 'extensores_antebrazo.jpg'),
+('Pronadores y Supinadores', 'Además de los flexores y extensores, los músculos pronadores y supinadores, como el pronador teres y el supinador, son importantes para la rotación del antebrazo. Puedes trabajar estos músculos realizando ejercicios de rotación de muñeca y rotación de antebrazo.', 'pronadores_supinadores.jpg');
 
-INSERT INTO musculos (nombre, descripcion) VALUES --musculos cuadriceps
-('Cuádriceps - Recto Femoral', 'El recto femoral es parte del cuádriceps y se encuentra en la parte frontal del muslo. Es responsable de la extensión de la rodilla y ayuda en la flexión de la cadera. Puedes trabajar el recto femoral con ejercicios como sentadillas y extensiones de piernas.'),
-('Cuádriceps - Vasto Lateral', 'El vasto lateral es uno de los tres músculos que conforman el cuádriceps. Se encuentra en la parte externa del muslo y contribuye a la extensión de la rodilla. Ejercicios como sentadillas y prensa de piernas fortalecen el vasto lateral.'),
-('Cuádriceps - Vasto Medial', 'El vasto medial es otro componente del cuádriceps y se encuentra en la parte interna del muslo. Participa en la extensión de la rodilla y es esencial para la estabilidad de la rótula. Ejercicios como sentadillas y prensa de piernas trabajan el vasto medial.'),
-('Cuádriceps - Vasto Intermedio', 'El vasto intermedio es el tercer músculo del cuádriceps y se encuentra entre el vasto lateral y el vasto medial. También contribuye a la extensión de la rodilla. Puedes fortalecer el vasto intermedio con ejercicios de extensión de piernas y sentadillas.');
+-- Músculos abdominales
+INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
+('Recto Abdominal', 'El recto abdominal es el músculo principal de la pared abdominal. Se extiende desde el esternón hasta la sínfisis púbica y es responsable de la flexión del tronco. Puedes trabajar el recto abdominal con ejercicios como crunches y abdominales.', 'recto_abdominal.jpg'),
+('Oblicuos Externos', 'Los oblicuos externos son músculos ubicados en los lados del abdomen. Ayudan en la rotación y flexión lateral del tronco. Puedes fortalecer los oblicuos externos con ejercicios como las torsiones y los crunches oblicuos.', 'oblicuos_externos.jpg'),
+('Oblicuos Internos', 'Los oblicuos internos están ubicados debajo de los oblicuos externos y también contribuyen a la rotación y flexión lateral del tronco. Ejercicios como las torsiones y los ejercicios de oblicuos ayudan a trabajar estos músculos.', 'oblicuos_internos.jpg'),
+('Transverso Abdominal', 'El transverso abdominal es el músculo más profundo de la pared abdominal y actúa como un corsé natural que ayuda a estabilizar la columna vertebral. Puedes fortalecer el transverso abdominal con ejercicios de contracción y respiración profunda.', 'transverso_abdominal.jpg');
 
-INSERT INTO musculos (nombre, descripcion) VALUES --musculos  isquiotibial
-('Bíceps Femoral', 'El bíceps femoral es uno de los músculos principales de los isquiotibiales y se encuentra en la parte posterior del muslo. Contribuye a la flexión de la rodilla y la extensión de la cadera. Puedes trabajar el bíceps femoral con ejercicios como curls de piernas y peso muerto.'),
-('Semitendinoso', 'El semitendinoso es otro músculo de los isquiotibiales y se encuentra en la parte interna del muslo. Ayuda en la flexión de la rodilla y la extensión de la cadera. Ejercicios como curls de piernas y peso muerto trabajan el semitendinoso.'),
-('Semimembranoso', 'El semimembranoso es un músculo profundo de los isquiotibiales y también se encuentra en la parte interna del muslo. Contribuye a la flexión de la rodilla y la extensión de la cadera. Puedes fortalecer el semimembranoso con ejercicios como curls de piernas y peso muerto.');
+-- Músculos de las piernas
+INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
+('Cuádriceps - Recto Femoral', 'El recto femoral es parte del cuádriceps y se encuentra en la parte frontal del muslo. Es responsable de la extensión de la rodilla y ayuda en la flexión de la cadera. Puedes trabajar el recto femoral con ejercicios como sentadillas y extensiones de piernas.', 'recto_femoral.jpg'),
+('Cuádriceps - Vasto Lateral', 'El vasto lateral es uno de los tres músculos que conforman el cuádriceps. Se encuentra en la parte externa del muslo y contribuye a la extensión de la rodilla. Ejercicios como sentadillas y prensa de piernas fortalecen el vasto lateral.', 'vasto_lateral.jpg'),
+('Cuádriceps - Vasto Medial', 'El vasto medial es otro componente del cuádriceps y se encuentra en la parte interna del muslo. Participa en la extensión de la rodilla y es esencial para la estabilidad de la rótula. Ejercicios como sentadillas y prensa de piernas trabajan el vasto medial.', 'vasto_medial.jpg'),
+('Cuádriceps - Vasto Intermedio', 'El vasto intermedio es el tercer músculo del cuádriceps y se encuentra entre el vasto lateral y el vasto medial. También contribuye a la extensión de la rodilla. Puedes fortalecer el vasto intermedio con ejercicios de extensión de piernas y sentadillas.', 'vasto_intermedio.jpg');
 
-INSERT INTO musculos (nombre, descripcion) VALUES --musculos glueteo
-('Glúteo Mayor', 'El glúteo mayor es el músculo más grande de los glúteos y se encuentra en la parte posterior de las nalgas. Es responsable de la extensión y abducción de la cadera. Puedes fortalecer el glúteo mayor con ejercicios como sentadillas, peso muerto y elevaciones de cadera.'),
-('Glúteo Medio', 'El glúteo medio se encuentra en la parte lateral de las nalgas y es crucial para la abducción de la cadera. Contribuye a la estabilización de la pelvis durante la marcha y otros movimientos. Ejercicios como las abducciones de cadera y las sentadillas laterales pueden fortalecer este músculo.'),
-('Glúteo Menor', 'El glúteo menor es un músculo más pequeño que se encuentra debajo del glúteo mayor. También participa en la abducción de la cadera y ayuda en la rotación externa. Puedes trabajar el glúteo menor con ejercicios específicos de abducción y rotación de cadera.');
+INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
+('Bíceps Femoral', 'El bíceps femoral es uno de los músculos principales de los isquiotibiales y se encuentra en la parte posterior del muslo. Contribuye a la flexión de la rodilla y la extensión de la cadera. Puedes trabajar el bíceps femoral con ejercicios como curls de piernas y peso muerto.', 'biceps_femoral.jpg'),
+('Semitendinoso', 'El semitendinoso es otro músculo de los isquiotibiales y se encuentra en la parte interna del muslo. Ayuda en la flexión de la rodilla y la extensión de la cadera. Ejercicios como curls de piernas y peso muerto trabajan el semitendinoso.', 'semitendinoso.jpg'),
+('Semimembranoso', 'El semimembranoso es un músculo profundo de los isquiotibiales y también se encuentra en la parte interna del muslo. Contribuye a la flexión de la rodilla y la extensión de la cadera. Puedes fortalecer el semimembranoso con ejercicios como curls de piernas y peso muerto.', 'semimembranoso.jpg');
 
-INSERT INTO musculos (nombre, descripcion) VALUES --musculos gemelos
-('Gastrocnemio', 'El gastrocnemio es el músculo más grande de los gemelos y se encuentra en la parte posterior de la pantorrilla. Es responsable de la flexión plantar del tobillo (levantar el talón). Puedes trabajar el gastrocnemio con ejercicios como elevaciones de talones y saltos.'),
-('Sóleo', 'El sóleo es un músculo más profundo que se encuentra debajo del gastrocnemio. También contribuye a la flexión plantar del tobillo y es esencial para mantener la postura durante la bipedestación. Ejercicios como elevaciones de talones y sentadillas pueden fortalecer el sóleo.');
+-- Músculos de glúteos
+INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
+('Glúteo Mayor', 'El glúteo mayor es el músculo más grande de los glúteos y se encuentra en la parte posterior de las nalgas. Es responsable de la extensión y abducción de la cadera. Puedes fortalecer el glúteo mayor con ejercicios como sentadillas, peso muerto y elevaciones de cadera.', 'gluteo_mayor.jpg'),
+('Glúteo Medio', 'El glúteo medio se encuentra en la parte lateral de las nalgas y es crucial para la abducción de la cadera. Contribuye a la estabilización de la pelvis durante la marcha y otros movimientos. Ejercicios como las abducciones de cadera y las sentadillas laterales pueden fortalecer este músculo.', 'gluteo_medio.jpg'),
+('Glúteo Menor', 'El glúteo menor es un músculo más pequeño que se encuentra debajo del glúteo mayor. También participa en la abducción de la cadera y ayuda en la rotación externa. Puedes trabajar el glúteo menor con ejercicios específicos de abducción y rotación de cadera.', 'gluteo_menor.jpg');
 
+-- Músculos de las pantorrillas
+INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
+('Gastrocnemio', 'El gastrocnemio es el músculo más grande de los gemelos y se encuentra en la parte posterior de la pantorrilla. Es responsable de la flexión plantar del tobillo (levantar el talón). Puedes trabajar el gastrocnemio con ejercicios como elevaciones de talones y saltos.', 'gastrocnemio.jpg'),
+('Sóleo', 'El sóleo es un músculo más profundo que se encuentra debajo del gastrocnemio. También contribuye a la flexión plantar del tobillo y es esencial para mantener la postura durante la bipedestación. Ejercicios como elevaciones de talones y sentadillas pueden fortalecer el sóleo.', 'soleo.jpg');
 
 -- Dorsal mayor
     INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
@@ -255,8 +273,7 @@ INSERT INTO musculos (nombre, descripcion) VALUES --musculos gemelos
     'Siéntate en la máquina pec deck con la espalda recta y los pies apoyados en el suelo. Coloca las manos en las empuñaduras con las palmas mirándose entre sí. Empuja las empuñaduras hacia delante hasta que se junten en el centro del pecho. Regresa lentamente a la posición inicial. Repite el movimiento.', 
     'url_del_video_pec_deck', 
     'url_de_la_imagen_pec_deck', 
-    '{"precauciones": ["Ajusta el asiento y las empuñaduras según tus necesidades.", "Controla el movimiento para evitar lesiones."]}', 
-    5);
+    '{"precauciones": ["Ajusta el asiento y las empuñaduras según tus necesidades.", "Controla el movimiento para evitar lesiones
 
 --pectoral mayor inferior
 
@@ -686,183 +703,761 @@ INSERT INTO musculos (nombre, descripcion) VALUES --musculos gemelos
 
 --transverso abdominal
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Vacío abdominal (hipopresivos)', 
     'Este ejercicio se puede realizar acostado, de rodillas o de pie. Para realizarlo, exhala todo el aire de tus pulmones y luego aprieta tu abdomen como si estuvieras tratando de succionarlo hacia adentro. Mantén la contracción durante unos segundos y luego relájate. Repite este proceso 10-15 veces.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion', 
     '{"precauciones": ["Asegúrate de exhalar completamente antes de contraer el abdomen.", "Evita contener la respiración durante la contracción.", "Adapta la intensidad del ejercicio según tu capacidad."]}', 
     21);
 
 --cuadriceps recto femoral
    
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Sentadillas', 
     'Las sentadillas son un ejercicio compuesto que trabaja varios grupos musculares, incluido el cuádriceps recto femoral. Para realizar una sentadilla con la forma correcta, coloca los pies a la anchura de los hombros, flexiona las rodillas y baja el cuerpo hasta que los muslos estén paralelos al suelo. Asegúrate de mantener la espalda recta y el pecho abierto.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion', 
     '{"precauciones": ["Asegúrate de mantener la forma correcta para evitar lesiones.", "Adapta la intensidad según tu capacidad.", "Consulta a un profesional si eres principiante o tienes alguna preocupación médica."]}', 
     22);
    
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Extensiones de rodilla', 
     'Este ejercicio se puede realizar con una máquina de pesas o con una banda de resistencia. Para realizar una extensión de rodilla, siéntate en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho. Mantén la posición durante unos segundos antes de bajar la pierna de nuevo.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion', 
     '{"precauciones": ["Ajusta la resistencia de acuerdo a tu nivel de condición física.", "Evita movimientos bruscos y controla el rango de movimiento.", "Si sientes dolor o molestias, detén el ejercicio y consulta a un profesional."]}', 
     22);
     
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Prensa de piernas', 
     'La prensa de piernas es otro ejercicio que trabaja el cuádriceps recto femoral. Para realizar una prensa de piernas, siéntate en la máquina y coloca los pies en la plataforma. Luego, empuja la plataforma hacia arriba con las piernas hasta que las rodillas estén extendidas. Mantén la posición durante unos segundos antes de bajar la plataforma de nuevo.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion', 
     '{"precauciones": ["Ajusta la máquina según tu altura y posición cómoda.", "Controla el rango de movimiento y evita bloquear las rodillas en la posición extendida.", "Consulta a un profesional para aprender la técnica adecuada si eres principiante."]}', 
     22);
 
 --cuadriceps  vasto lateral
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Sentadillas con los pies abiertos', 
     'Las sentadillas con los pies abiertos trabajan el vasto lateral de forma más específica que las sentadillas tradicionales. Para realizar una sentadilla con los pies abiertos, coloca los pies a una anchura mayor que la de los hombros, flexiona las rodillas y baja el cuerpo hasta que los muslos estén paralelos al suelo. Asegúrate de mantener la espalda recta y el pecho abierto.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion', 
     '{"precauciones": ["Ajusta la anchura de los pies según tu comodidad.", "Mantén la forma correcta para evitar lesiones.", "Adapta la intensidad según tu nivel de condición física."]}', 
     23);
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Extensiones de rodilla con los pies girados hacia fuera', 
-    'Este ejercicio se puede realizar con una máquina de pesas o con una banda de resistencia. Para realizar una extensión de rodilla con los pies girados hacia fuera, siéntate en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho, con los pies girados hacia fuera. Mantén la posición durante unos segundos antes de bajar la pierna de nuevo.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion', 'Este ejercicio se puede realizar con una máquina de pesas o con una banda de resistencia. Para realizar una extensión de rodilla con los pies girados hacia fuera, siéntate en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho, con los pies girados hacia fuera. Mantén la posición durante unos segundos antes de bajar la pierna de nuevo.', 
     '{"precauciones": ["Ajusta la resistencia según tu nivel de condición física.", "Controla el rango de movimiento y evita movimientos bruscos.", "Si sientes dolor, detén el ejercicio y consulta a un profesional."]}', 
     23);
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Prensa de piernas con los pies girados hacia fuera', 
     'La prensa de piernas con los pies girados hacia fuera es otro ejercicio que trabaja el vasto lateral de forma específica. Para realizar una prensa de piernas con los pies girados hacia fuera, siéntate en la máquina y coloca los pies en la plataforma con los dedos de los pies apuntando hacia fuera. Luego, empuja la plataforma hacia arriba con las piernas hasta que las rodillas estén extendidas. Mantén la posición durante unos segundos antes de bajar la plataforma de nuevo.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion', 
     '{"precauciones": ["Ajusta la máquina según tu altura y posición cómoda.", "Controla el rango de movimiento y evita bloquear las rodillas en la posición extendida.", "Consulta a un profesional para aprender la técnica adecuada si eres principiante."]}', 
     23);
 
 
 --cuadriceps vasto medial
  
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Sentadillas con los pies juntos', 
     'Las sentadillas con los pies juntos trabajan el vasto medial de forma más específica que las sentadillas tradicionales. Para realizar una sentadilla con los pies juntos, coloca los pies juntos, flexiona las rodillas y baja el cuerpo hasta que los muslos estén paralelos al suelo. Asegúrate de mantener la espalda recta y el pecho abierto.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion', 
     '{"precauciones": ["Ajusta la postura según tu comodidad y nivel de habilidad.", "Controla la profundidad de la sentadilla para evitar lesiones.", "Mantén una técnica adecuada para maximizar la efectividad y minimizar el riesgo de lesiones."]}', 
     24);
    
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Extensiones de rodilla con los pies girados hacia dentro', 
     'Este ejercicio se puede realizar con una máquina de pesas o con una banda de resistencia. Para realizar una extensión de rodilla con los pies girados hacia dentro, siéntate en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho, con los pies girados hacia dentro. Mantén la posición durante unos segundos antes de bajar la pierna de nuevo.', 
     '{"precauciones": ["Ajusta la resistencia según tu nivel de condición física.", "Controla el rango de movimiento y evita movimientos bruscos.", "Si sientes dolor, detén el ejercicio y consulta a un profesional."]}', 
     24);
   
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Prensa de piernas con los pies girados hacia dentro', 
     'La prensa de piernas con los pies girados hacia dentro es otro ejercicio que trabaja el vasto medial de forma específica. Para realizar una prensa de piernas con los pies girados hacia dentro, siéntate en la máquina y coloca los pies en la plataforma con los dedos de los pies apuntando hacia dentro. Luego, empuja la plataforma hacia arriba con las piernas hasta que las rodillas estén extendidas. Mantén la posición durante unos segundos antes de bajar la plataforma de nuevo.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion', 
     '{"precauciones": ["Ajusta la máquina según tu altura y posición cómoda.", "Controla el rango de movimiento y evita bloquear las rodillas en la posición extendida.", "Consulta a un profesional para aprender la técnica adecuada si eres principiante."]}', 
     24);
 
 --cuadriceps vasto intermedio
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Extensiones de rodilla', 
     'Este ejercicio se puede realizar con una máquina de pesas o con una banda de resistencia. Para realizar una extensión de rodilla, siéntate en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho. Mantén la posición durante unos segundos antes de bajar la pierna de nuevo.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion', 
     '{"precauciones": ["Ajusta la resistencia según tu nivel de condición física.", "Controla el rango de movimiento y evita movimientos bruscos.", "Si sientes dolor, detén el ejercicio y consulta a un profesional."]}', 
     25);
     
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen,datos_cientificos, id_musculo) VALUES
     ('Prensa de piernas', 
     'La prensa de piernas es otro ejercicio que trabaja el vasto intermedio. Para realizar una prensa de piernas, siéntate en la máquina y coloca los pies en la plataforma. Luego, empuja la plataforma hacia arriba con las piernas hasta que las rodillas estén extendidas. Mantén la posición durante unos segundos antes de bajar la plataforma de nuevo.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Ajusta la máquina según tu altura y posición cómoda.", "Controla el rango de movimiento y evita bloquear las rodillas en la posición extendida.", "Consulta a un profesional para aprender la técnica adecuada si eres principiante."]}', 
     25);
 
 --Biceps femoral
     
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Curl femoral sentado', 
     'El curl femoral sentado es un ejercicio efectivo para aislar y fortalecer el bíceps femoral, el músculo grande en la parte posterior del muslo. Para realizarlo, siéntate en una máquina de pesas designada para este ejercicio. Ajusta el asiento y las almohadillas según tu altura y posición. Coloca las piernas bajo las almohadillas, flexiona las rodillas y baja el peso hacia el suelo. Luego, extiende las piernas levantando el peso. Asegúrate de mantener la espalda recta durante todo el movimiento.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Ajusta la máquina según tu altura y posición.", "Controla el rango de movimiento y evita movimientos bruscos.", "Mantén la espalda recta para evitar tensiones innecesarias."]}' , 
     26);
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Curl femoral tumbado', 
     'El curl femoral tumbado es un ejercicio efectivo para aislar y fortalecer el bíceps femoral, el músculo grande en la parte posterior del muslo. Para realizarlo, acuéstate boca abajo en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho. Mantén la posición durante unos segundos antes de bajar la pierna de nuevo.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Ajusta la máquina o la resistencia según tu nivel de condición física.", "Controla el rango de movimiento y evita movimientos bruscos.", "Si sientes dolor, detén el ejercicio y consulta a un profesional."]}', 
     26);
  
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Peso muerto', 
     'El peso muerto es un ejercicio compuesto que trabaja varios grupos musculares, incluido el bíceps femoral. Para realizar un peso muerto con la forma correcta, coloca los pies a la anchura de las caderas, flexiona las rodillas y baja el torso hasta que los muslos estén paralelos al suelo. Asegúrate de mantener la espalda recta y el pecho abierto.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Utiliza un peso adecuado para tu nivel de condición física.", "Mantén la técnica adecuada para evitar lesiones.", "Consulta a un profesional si eres principiante o tienes alguna preocupación."]}' , 
     26);
 
 --semitendinoso
     
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Peso muerto rumano', 
     'El peso muerto rumano es un ejercicio compuesto que trabaja varios grupos musculares, incluido el semitendinoso. Para realizar un peso muerto rumano con la forma correcta, coloca los pies a la anchura de las caderas, flexiona ligeramente las rodillas y baja el torso manteniendo la espalda recta hasta que sientas estiramiento en los músculos posteriores del muslo. Luego, regresa a la posición inicial levantando el torso y extendiendo las caderas. Asegúrate de mantener la espalda recta y el pecho abierto durante todo el movimiento.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Asegúrate de mantener la espalda recta para evitar tensiones innecesarias.", "Controla el rango de movimiento y evita movimientos bruscos.", "No uses un peso excesivo que comprometa la forma."]}' , 
     27);
 
 --semimembranoso
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Curl femoral tumbado con los pies girados hacia dentro', 
     'Este ejercicio se puede realizar con una máquina de pesas o con una banda de resistencia. Para realizar un curl femoral tumbado con los pies girados hacia dentro, acuéstate boca abajo en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho, con los pies girados hacia dentro. Mantén la posición durante unos segundos, sintiendo la contracción en los músculos isquiotibiales, antes de bajar la pierna de nuevo.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Ajusta la resistencia o el peso de la máquina de acuerdo con tu nivel de fuerza y condición física.", "Controla el movimiento para evitar tensiones innecesarias en las articulaciones.", "Realiza el ejercicio de forma controlada y sin balanceos."]}' , 
     27);
 
 --glueteo mayor
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Hip Thrust', 
     'El hip thrust es un ejercicio que se realiza generalmente con una barra y un banco. Para realizarlo, siéntate en el suelo con la espalda apoyada en el banco y la barra colocada sobre las caderas. Coloca los pies a la anchura de los hombros y flexiona las rodillas. Luego, levanta las caderas hacia arriba hasta que el cuerpo forme una línea recta desde los hombros hasta las rodillas. Asegúrate de contraer los glúteos en la parte superior del movimiento antes de bajar las caderas de nuevo.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Asegúrate de utilizar una barra y un banco adecuados para tu nivel de fuerza y condición física.", "Mantén la espalda apoyada en el banco durante todo el movimiento.", "Controla el movimiento para evitar tensiones innecesarias en la zona lumbar."]}' , 
     28);
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Puente de Glúteos', 
     'El puente de glúteos es un ejercicio específico para trabajar el glúteo mayor. Para realizarlo, acuéstate boca arriba con las rodillas flexionadas y los pies apoyados en el suelo. Luego, levanta la cadera del suelo hasta que tu cuerpo forme una línea recta desde las rodillas hasta los hombros. Mantén la posición durante unos segundos antes de bajar la cadera de nuevo.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Asegúrate de mantener los pies firmemente apoyados en el suelo.", "Evita arquear la espalda baja excesivamente durante el movimiento.", "Concentra la contracción en los glúteos para maximizar el beneficio del ejercicio."]}' , 
     28);
 
 --gluteo medio
    
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Elevación Lateral de Pierna Tumbado (Clamshell)', 
     'Este ejercicio se realiza tumbado de lado con las rodillas flexionadas y los pies apoyados en el suelo. Levanta la pierna superior hacia el techo mientras mantienes la pelvis estable. Baja la pierna con control y repite con la otra pierna.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Mantén la pelvis estable durante el movimiento.", "Evita arquear la espalda baja excesivamente.", "Realiza el ejercicio con control y concentrándote en la activación del glúteo medio."]}' , 
     29);
    
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Caminata Lateral con Banda de Resistencia', 
     'Coloca una banda de resistencia alrededor de los muslos, justo por encima de las rodillas. Mantén la espalda recta y da pasos hacia un lado, sintiendo la activación del glúteo medio. Repite hacia el otro lado.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Mantén una postura adecuada con la espalda recta.", "Ajusta la resistencia de la banda según tu nivel de fuerza.", "Concéntrate en activar el glúteo medio durante todo el movimiento."]}' , 
     29);
 
-
 --glueteo menor
-
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Elevación Lateral de Pierna de Pie (Fire Hydrant)', 
     'Ponte de pie de lado con las rodillas flexionadas a 90 grados. Levanta la pierna superior hacia un lado, manteniendo la rodilla flexionada y el pie flexionado. Baja la pierna con control y repite con la otra pierna.', 
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Mantén las rodillas flexionadas a 90 grados durante el ejercicio.", "Evita inclinar demasiado el torso hacia adelante o hacia atrás.", "Controla el movimiento para evitar balanceos innecesarios."]}' , 
     30);
 
 --gastrocnemio
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Elevaciones de Talones de Pie', 
     'Este es un ejercicio clásico para trabajar el gastrocnemio. Para realizarlo, ponte de pie con los pies a la anchura de las caderas y levanta los talones del suelo hasta que las puntas de los pies estén apoyadas en el suelo. Mantén la posición durante unos segundos antes de bajar los talones de nuevo.',
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Mantén los pies a la anchura de las caderas durante el ejercicio.", "Evita bloquear las rodillas en la posición elevada.", "Controla el movimiento para evitar movimientos bruscos."]}' , 
     30);
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Elevaciones de Talones Sentado', 
     'Este ejercicio es similar al anterior, pero se realiza sentado. Para realizarlo, siéntate en una silla con los pies apoyados en el suelo y levanta los talones del suelo hasta que las puntas de los pies estén apoyadas en el suelo. Mantén la posición durante unos segundos antes de bajar los talones de nuevo.',
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Siéntate con la espalda recta y los pies planos en el suelo.", "Evita bloquear las rodillas en la posición elevada.", "Controla el movimiento para evitar movimientos bruscos."]}' , 
     30);
 
 --soleo
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Elevaciones de Talones con las Rodillas Flexionadas', 
     'Este ejercicio es similar a las elevaciones de talones de pie, pero se realiza con las rodillas flexionadas. Para realizarlo, ponte de pie con las rodillas flexionadas y los pies apoyados en el suelo. Levanta los talones del suelo hasta que las puntas de los pies estén apoyadas en el suelo. Mantén la posición durante unos segundos antes de bajar los talones de nuevo.',
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Mantén las rodillas ligeramente flexionadas durante el ejercicio.", "Evita bloquear las rodillas en la posición elevada.", "Controla el movimiento para evitar movimientos bruscos."]}' , 
     31);
 
-    INSERT INTO ejercicios (nombre, descripcion, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Elevaciones de Talones con una Pierna y la Rodilla Flexionada', 
     'Este ejercicio es más desafiante que los anteriores y trabaja el sóleo de forma más unilateral. Para realizarlo, ponte de pie sobre una pierna con la otra pierna extendida hacia atrás y flexiona la rodilla de la pierna de apoyo. Levanta el talón del suelo hasta que la parte inferior de la pierna esté paralela al suelo. Mantén la posición durante unos segundos antes de bajar el talón de nuevo.',
+    'url_del_video_elevaciones_piernas_rotacion', 
+    'url_de_la_imagen_elevaciones_piernas_rotacion',
     '{"precauciones": ["Mantén la espalda recta durante el ejercicio.", "Controla el movimiento para evitar movimientos bruscos.", "Asegúrate de realizar el ejercicio de forma simétrica con ambas piernas."]}' , 
     31);
+
+--**EJECICIOS EN CASA**
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Dominadas deslizantes',
+    'Las dominadas son el ejercicio estrella para la espalda, pero necesitamos una barra donde poder colgarnos y en muchas ocasiones no disponemos de ella. En el vídeo se muestran seis variaciones según el nivel de entrenamiento, para que empieces desde el nivel que se adecúe a ti, y progreses hasta el último escalón. Si necesitas deslizarte mejor por el suelo, pon una toalla en tu pecho y abdomen y la fricción será menor. Esa misma toalla va a serte útil para otros ejercicios que veremos a continuación.',
+    'https://ejemplo.com/video_dominadas_deslizantes',
+    'https://ejemplo.com/imagen_dominadas_deslizantes',
+    '{"musculos": ["Dorsal ancho", "Trapecio"], "precauciones": ["Evitar balanceo excesivo", "Mantener una técnica adecuada"], "modo_de_hacerlo": "Colócate debajo de una barra de puerta y sujeta la toalla. Realiza el movimiento de dominadas, enfocándote en la contracción de la espalda."}',
+    1), -- Espalda completa
+
+    ('Remo invertido en la mesa',
+    'El remo invertido en la mesa es un ejercicio efectivo para trabajar los músculos de la espalda, especialmente los romboides. Utilizando una mesa como apoyo, puedes realizar este ejercicio en casa para fortalecer tu espalda.',
+    'https://ejemplo.com/video_remo_invertido_mesa',
+    'https://ejemplo.com/imagen_remo_invertido_mesa',
+    '{"musculos": ["Romboides"], "precauciones": ["Mantener una postura adecuada", "Evitar movimientos bruscos"], "modo_de_hacerlo": "Colócate debajo de una mesa resistente y sujeta el borde con las manos. Levanta tu cuerpo hacia la mesa, manteniendo la espalda recta y los codos cerca del cuerpo."}',
+    1), -- Espalda completa
+
+    ('Empujes del codo contra el suelo',
+    'Los empujes del codo contra el suelo son un ejercicio efectivo para fortalecer los músculos de la espalda, especialmente los romboides. Este ejercicio se puede realizar en casa sin necesidad de equipo adicional.',
+    'https://ejemplo.com/video_empujes_codo_suelo',
+    'https://ejemplo.com/imagen_empujes_codo_suelo',
+    '{"musculos": ["Romboides"], "precauciones": ["Realizar el movimiento de manera controlada", "Evitar arquear la espalda"], "modo_de_hacerlo": "Colócate boca abajo en el suelo con los codos doblados y las manos apoyadas. Empuja hacia abajo con los codos, manteniendo la espalda recta."}',
+    1), -- Espalda completa
+
+    ('Remo con toalla',
+    'El remo con toalla es un ejercicio efectivo para trabajar los músculos de la espalda, incluidos el dorsal ancho y el trapecio. Puedes realizar este ejercicio en casa utilizando una toalla como resistencia.',
+    'https://ejemplo.com/video_remo_con_toalla',
+    'https://ejemplo.com/imagen_remo_con_toalla',
+    '{"musculos": ["Dorsal ancho", "Trapecio"], "precauciones": ["Asegurar una buena sujeción de la toalla", "Mantener la espalda recta"], "modo_de_hacerlo": "Colócate de pie, sosteniendo firmemente una toalla con ambas manos. Tira de la toalla hacia ti, manteniendo los codos cerca del cuerpo y contrayendo los músculos de la espalda."}',
+    1), -- Espalda completa
+
+    ('Plancha',
+    'La plancha es un ejercicio de core que también trabaja los músculos de la espalda, incluidos el dorsal ancho, el trapecio y los romboides. Mantén una posición de tabla recta para maximizar el beneficio.',
+    'https://ejemplo.com/video_plancha',
+    'https://ejemplo.com/imagen_plancha',
+    '{"musculos": ["Dorsal ancho", "Trapecio", "Romboides"], "precauciones": ["Mantener el cuerpo alineado", "Evitar hundir la espalda"], "modo_de_hacerlo": "Colócate en posición de plancha con los antebrazos y los dedos de los pies apoyados en el suelo. Mantén el cuerpo recto y contrae los músculos abdominales y de la espalda."}',
+    1), -- Espalda completa
+
+    ('Extensiones de espalda con pelota suiza',
+    'Las extensiones de espalda con pelota suiza son excelentes para fortalecer la espalda baja y los músculos de la espalda. Mantén la pelota suiza bajo tu abdomen mientras levantas el torso del suelo.',
+    'https://ejemplo.com/video_extensiones_espalda_pelota_suiza',
+    'https://ejemplo.com/imagen_extensiones_espalda_pelota_suiza',
+    '{"musculos": ["Dorsal ancho", "Trapecio", "Romboides"], "precauciones": ["Controlar el movimiento", "Evitar hiperextensión"], "modo_de_hacerlo": "Colócate boca abajo sobre una pelota suiza con las manos detrás de la cabeza. Levanta lentamente el torso hacia arriba, contrayendo los músculos de la espalda baja y media."}',
+    1); -- Espalda completa
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Flexiones con palmada',
+    'Las flexiones con palmada son un ejercicio fantástico para tonificar el tren superior y trabajar la potencia. Requieren fuerza y velocidad, lo que ayuda a ejercitar el pecho, brazos, hombros y el núcleo.',
+    'https://ejemplo.com/video_flexiones_palmada',
+    'https://ejemplo.com/imagen_flexiones_palmada',
+    '{"musculos": ["Pectoral superior", "Brazos", "Hombros", "Core"], "precauciones": ["Realizar un calentamiento previo", "Mantener una postura alineada"], "modo_de_hacerlo": "Colócate en el suelo con las manos más abiertas que los hombros. Baja el cuerpo hacia el suelo, y cuando toques el suelo con el pecho, estira rápidamente los brazos para elevarte y dar una palmada en el aire."}',
+    2), -- Pecho
+
+    ('Flexiones inclinadas',
+    'Las flexiones inclinadas son un excelente ejercicio para el pectoral superior que se puede realizar en casa. Se pueden realizar con las manos colocadas en una superficie elevada, como un banco o una silla.',
+    'https://ejemplo.com/video_flexiones_inclinadas',
+    'https://ejemplo.com/imagen_flexiones_inclinadas',
+    '{"musculos": ["Pectoral superior", "Hombros"], "precauciones": ["Encontrar una superficie segura para apoyarse", "Mantener la cadera alineada"], "modo_de_hacerlo": "Colócate con las manos apoyadas en una superficie elevada y el cuerpo en una posición inclinada. Realiza flexiones manteniendo la forma adecuada del cuerpo."}',
+    2), -- Pecho
+
+    ('Flexiones abiertas',
+    'Las flexiones abiertas son ideales para trabajar la parte externa del pecho. Se realizan con las manos colocadas más anchas que la anchura de los hombros.',
+    'https://ejemplo.com/video_flexiones_abiertas',
+    'https://ejemplo.com/imagen_flexiones_abiertas',
+    '{"musculos": ["Pectoral externo", "Hombros"], "precauciones": ["Mantener una postura alineada", "Evitar movimientos bruscos"], "modo_de_hacerlo": "Realiza flexiones con las manos más abiertas que la anchura de los hombros para enfocar el trabajo en los pectorales y los hombros."}',
+    2), -- Pecho
+
+    ('Flexiones declinadas',
+    'Las flexiones declinadas son excelentes para trabajar el pectoral inferior en casa. Se realizan con los pies elevados sobre una superficie y las manos en el suelo.',
+    'https://ejemplo.com/video_flexiones_declinadas',
+    'https://ejemplo.com/imagen_flexiones_declinadas',
+    '{"musculos": ["Pectoral inferior", "Tríceps"], "precauciones": ["Asegurar una postura correcta", "Controlar el movimiento"], "modo_de_hacerlo": "Colócate con los pies elevados en una superficie y las manos en el suelo. Realiza flexiones manteniendo la alineación del cuerpo."}',
+    2); -- Pecho
+
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Flexiones de hombro sin carga',
+    'Trabaja la parte delantera del hombro. Colócate boca abajo con las manos apoyadas en el suelo y las puntas de los pies. Dobla los codos y desciende el cuerpo, concentrando la tensión en los hombros.',
+    'https://ejemplo.com/video_flexiones_hombro_sin_carga',
+    'https://ejemplo.com/imagen_flexiones_hombro_sin_carga',
+    '{"musculos": ["Parte delantera del hombro"], "precauciones": ["Mantener una alineación adecuada del cuerpo"], "modo_de_hacerlo": "Boca abajo con manos en el suelo y pies en punta. Desciende el cuerpo doblando los codos y luego vuelve a la posición inicial."}',
+    3);--hombros
+
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Press de hombro con carga (una mochila)',
+    'Trabaja la parte exterior del hombro. De pie, eleva una mochila por encima de la cabeza manteniendo el movimiento en el plano lateral.',
+    'https://ejemplo.com/video_press_hombro_con_carga',
+    'https://ejemplo.com/imagen_press_hombro_con_carga',
+    '{"musculos": ["Parte exterior del hombro"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "De pie, eleva la mochila por encima de la cabeza en el plano lateral."}',
+    3);--hombros
+
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Elevaciones laterales de hombro con carga (una mochila o bolsas)',
+    'Trabaja la parte lateral del hombro. De pie, eleva las bolsas lateralmente con los codos ligeramente flexionados.',
+    'https://ejemplo.com/video_elevaciones_laterales_hombro_con_carga',
+    'https://ejemplo.com/imagen_elevaciones_laterales_hombro_con_carga',
+    '{"musculos": ["Parte lateral del hombro"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "De pie, eleva las bolsas lateralmente con los codos ligeramente flexionados."}',
+    3);--hombros
+
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Elevaciones frontales de hombro con carga (una mochila o bolsa)',
+    'Trabaja la parte frontal del hombro. De pie, eleva la carga por delante hasta la altura de los hombros.',
+    'https://ejemplo.com/video_elevaciones_frontales_hombro_con_carga',
+    'https://ejemplo.com/imagen_elevaciones_frontales_hombro_con_carga',
+    '{"musculos": ["Parte frontal del hombro"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "De pie, eleva la carga por delante hasta la altura de los hombros."}',
+    3);--hombros
+
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Push up supinos de hombro con nuestro propio peso',
+    'Trabaja la parte trasera del hombro. Túmbate boca arriba con las piernas dobladas y los talones apoyados en el suelo. Eleva el pecho hacia arriba, separando la parte trasera de los hombros del suelo.',
+    'https://ejemplo.com/video_push_up_supinos_hombro_propio_peso',
+    'https://ejemplo.com/imagen_push_up_supinos_hombro_propio_peso',
+    '{"musculos": ["Parte trasera del hombro"], "precauciones": ["Mantener la espalda apoyada en el suelo"], "modo_de_hacerlo": "Túmbate boca arriba con las piernas dobladas y los talones apoyados en el suelo. Eleva el pecho hacia arriba."}',
+    3);--hombros
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Curl de bíceps con barra',
+    'Trabaja ambos haces del bíceps de forma equilibrada. Se realiza desde una posición de pie, con un agarre en la barra a la anchura de los hombros, flexionando los codos para llevar la barra lo más cerca posible del pecho mientras se mantienen los codos pegados a las costillas.',
+    'https://ejemplo.com/video_curl_biceps_barra',
+    'https://ejemplo.com/imagen_curl_biceps_barra',
+    '{"musculos": ["Cabeza larga del bíceps", "Cabeza corta del bíceps"], "precauciones": ["Mantener los codos pegados al cuerpo"], "modo_de_hacerlo": "Desde una posición de pie, con un agarre en la barra a la anchura de los hombros, flexionar los codos para llevar la barra lo más cerca posible del pecho mientras se mantienen los codos pegados a las costillas."}',
+    4);--biceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Curl de bíceps con mancuernas con agarre prono',
+    'Enfatiza la cabeza larga del bíceps. Se realiza un curl de bíceps con mancuernas mientras se mantiene un agarre pronado, con las palmas de las manos mirando hacia fuera.',
+    'https://ejemplo.com/video_curl_biceps_mancuernas_prone',
+    'https://ejemplo.com/imagen_curl_biceps_mancuernas_prone',
+    '{"musculos": ["Cabeza larga del bíceps", "Cabeza corta del bíceps"], "precauciones": ["Mantener una postura correcta"], "modo_de_hacerlo": "Realizar un curl de bíceps con mancuernas mientras se mantiene un agarre pronado, con las palmas de las manos mirando hacia fuera."}',
+    4);--biceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Curl de bíceps tipo martillo',
+    'Enfatiza la cabeza externa del bíceps (braquial anterior). Se realiza un curl de bíceps con mancuernas mientras se mantiene un agarre neutro, con las palmas de las manos mirándose entre sí.',
+    'https://ejemplo.com/video_curl_biceps_martillo',
+    'https://ejemplo.com/imagen_curl_biceps_martillo',
+    '{"musculos": ["Cabeza larga del bíceps", "Braquial anterior"], "precauciones": ["Mantener una postura adecuada"], "modo_de_hacerlo": "Realizar un curl de bíceps con mancuernas mientras se mantiene un agarre neutro, con las palmas de las manos mirándose entre sí."}',
+    4);--biceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Curl concentrado de bíceps',
+    'Aísla y trabaja la cabeza larga del bíceps. Se realiza sentado en un banco con una mancuerna, manteniendo el codo del brazo que se trabaja en la parte interna del muslo y flexionando el codo para llevar la mancuerna hacia el pecho.',
+    'https://ejemplo.com/video_curl_concentrado_biceps',
+    'https://ejemplo.com/imagen_curl_concentrado_biceps',
+    '{"musculos": ["Cabeza larga del bíceps"], "precauciones": ["Mantener una respiración controlada"], "modo_de_hacerlo": "Sentarse en un banco con una mancuerna, manteniendo el codo del brazo que se trabaja en la parte interna del muslo y flexionar el codo para llevar la mancuerna hacia el pecho."}',
+    4);--biceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Curl de bíceps estilo araña',
+    'Trabaja ambos haces del bíceps desde un ángulo diferente. Se realiza colocándose boca abajo en un banco inclinado y realizando un curl de bíceps mientras se mantiene un agarre prono de la barra.',
+    'https://ejemplo.com/video_curl_biceps_estilo_arana',
+    'https://ejemplo.com/imagen_curl_biceps_estilo_arana',
+    '{"musculos": ["Cabeza larga del bíceps", "Cabeza corta del bíceps"], "precauciones": ["Mantener el abdomen contraído"], "modo_de_hacerlo": "Colocarse boca abajo en un banco inclinado y realizar un curl de bíceps mientras se mantiene un agarre prono de la barra."}',
+    4);--biceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'El 21',
+    'Fatiga muscular y resistencia del bíceps. Realizar tres series de siete repeticiones cada una, dividiendo el movimiento del curl de bíceps en tres partes diferentes, con un total de 21 repeticiones por serie.',
+    'https://ejemplo.com/video_el_21',
+    'https://ejemplo.com/imagen_el_21',
+    '{"musculos": ["Cabeza larga del bíceps", "Cabeza corta del bíceps"], "precauciones": ["Mantener una respiración controlada"], "modo_de_hacerlo": "Realizar tres series de siete repeticiones cada una, dividiendo el movimiento del curl de bíceps en tres partes diferentes, con un total de 21 repeticiones por serie."}',
+    4);--biceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Fondos en banco',
+    'Ejercicio para trabajar los tríceps. Realizado con el cuerpo apoyado en un banco, silla u orilla de la cama, con las manos por detrás de la espalda y estirando totalmente las piernas.',
+    'https://ejemplo.com/video_fondos_en_banco',
+    'https://ejemplo.com/imagen_fondos_en_banco',
+    '{"musculos": ["Tríceps"], "precauciones": ["Mantener la espalda cerca del banco o del objeto utilizado"], "modo_de_hacerlo": "Flexionar los brazos y bajar el cuerpo hasta formar un ángulo de 90 grados entre los antebrazos y los tríceps."}',
+    5); --triceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Copa a dos manos',
+    'Ejercicio para trabajar los tríceps. Realizado de pie con las piernas separadas a la altura de los hombros, sujetando una mancuerna o objeto de peso con ambas manos y elevándolo sobre la cabeza.',
+    'https://ejemplo.com/video_copa_dos_manos',
+    'https://ejemplo.com/imagen_copa_dos_manos',
+    '{"musculos": ["Cabeza larga del tríceps"], "precauciones": ["Mantener los codos cerrados y pegados a la cabeza"], "modo_de_hacerlo": "Flexionar los brazos lentamente llevando el peso por detrás de la nuca y luego estirar los brazos hacia arriba."}',
+    5); --triceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Patadas de tríceps con mancuernas',
+    'Ejercicio para trabajar los tríceps. Realizado de pie con las piernas separadas, inclinando el torso hacia adelante y flexionando los brazos hacia atrás con mancuernas.',
+    'https://ejemplo.com/video_patadas_triceps_mancuernas',
+    'https://ejemplo.com/imagen_patadas_triceps_mancuernas',
+    '{"musculos": ["Cabeza larga del tríceps"], "precauciones": ["Mantener los codos pegados al cuerpo"], "modo_de_hacerlo": "Flexionar los brazos hacia adelante y luego estirarlos hacia atrás subiendo el peso en dirección al techo."}',
+    5); --triceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Crunch',
+    'Trabaja principalmente en la zona superior del abdomen. Túmbate boca arriba con las rodillas flexionadas y los pies apoyados en el suelo. Contrae el abdomen y levanta la parte superior de la espalda del suelo hacia las rodillas, manteniendo la parte baja de la espalda apoyada en el suelo.',
+    'https://ejemplo.com/video_crunch',
+    'https://ejemplo.com/imagen_crunch',
+    '{"musculos": ["Zona superior del abdomen"], "precauciones": ["Mantener la parte baja de la espalda apoyada en el suelo"], "modo_de_hacerlo": "Túmbate boca arriba con las rodillas flexionadas y los pies apoyados en el suelo. Contrae el abdomen y levanta la parte superior de la espalda del suelo hacia las rodillas."}',
+    6);--abs
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Heel taps',
+    'Trabaja en los oblicuos. Túmbate boca arriba con los pies apoyados en el suelo y los brazos a los lados del cuerpo. Realiza un ligero encogimiento hacia delante y hacia los lados, tocando el talón izquierdo con la mano izquierda y viceversa.',
+    'https://ejemplo.com/video_heel_taps',
+    'https://ejemplo.com/imagen_heel_taps',
+    '{"musculos": ["Oblicuos"], "precauciones": ["Mantener la parte superior de la espalda ligeramente levantada del suelo"], "modo_de_hacerlo": "Realiza un ligero encogimiento hacia delante y hacia los lados, tocando el talón izquierdo con la mano izquierda y viceversa."}',
+    6);--abs
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Plancha isométrica',
+    'Trabaja en la estabilidad del core. Empieza en posición de flexión apoyando los antebrazos en el suelo. Mantén el cuerpo en línea recta desde los hombros hasta los tobillos, contrayendo los glúteos y el abdomen. Mantén la postura durante el tiempo indicado sin perder la alineación.',
+    'https://ejemplo.com/video_plancha_isometrica',
+    'https://ejemplo.com/imagen_plancha_isometrica',
+    '{"musculos": ["Estabilidad del core"], "precauciones": ["Mantener la alineación del cuerpo"], "modo_de_hacerlo": "Empieza en posición de flexión apoyando los antebrazos en el suelo. Mantén el cuerpo en línea recta desde los hombros hasta los tobillos."}',
+    6);--abs
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Mountain climbers',
+    'Trabaja en la estabilización del core. Ponte en posición de flexión con los brazos estirados. Alterna el movimiento de las piernas, llevando las rodillas hacia el pecho en un movimiento rápido. Mantén la espalda recta y contrae el abdomen durante todo el ejercicio.',
+    'https://ejemplo.com/video_mountain_climbers',
+    'https://ejemplo.com/imagen_mountain_climbers',
+    '{"musculos": ["Estabilización del core"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "Ponte en posición de flexión con los brazos estirados. Alterna el movimiento de las piernas, llevando las rodillas hacia el pecho en un movimiento rápido."}',
+    6);--abs
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Elevaciones de piernas',
+    'Trabaja en la parte baja del abdomen. Levanta las piernas juntas hasta que las plantas de los pies miren hacia el techo. Baja las piernas de forma controlada, evitando tocar el suelo.',
+    'https://ejemplo.com/video_elevaciones_piernas',
+    'https://ejemplo.com/imagen_elevaciones_piernas',
+    '{"musculos": ["Parte baja del abdomen"], "precauciones": ["Evitar tocar el suelo con las piernas"], "modo_de_hacerlo": "Levanta las piernas juntas hasta que las plantas de los pies miren hacia el techo."}',
+    6);--abs
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Bicicletas',
+    'Trabaja en los oblicuos y en el recto abdominal. Tumbado en el suelo, levanta una pierna y flexiona la rodilla hacia el pecho mientras giras la cintura para tocar el codo opuesto. Alterna el movimiento de las piernas y los brazos en un movimiento fluido.',
+    'https://ejemplo.com/video_bicicletas',
+    'https://ejemplo.com/imagen_bicicletas',
+    '{"musculos": ["Oblicuos", "Recto abdominal"], "precauciones": ["Realizar el movimiento de forma fluida"], "modo_de_hacerlo": "Levanta una pierna y flexiona la rodilla hacia el pecho mientras giras la cintura para tocar el codo opuesto."}',
+    6);--abs
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Pike crunch',
+    'Trabaja en el recto abdominal. Túmbate boca arriba con las piernas levantadas en un ángulo de 45 grados y los brazos extendidos hacia arriba. Levanta la parte alta de la espalda del suelo hacia las piernas, manteniendo la zona lumbar apoyada en el suelo.',
+    'https://ejemplo.com/video_pike_crunch',
+    'https://ejemplo.com/imagen_pike_crunch',
+    '{"musculos": ["Recto abdominal"], "precauciones": ["Mantener la zona lumbar apoyada en el suelo"], "modo_de_hacerlo": "Levanta la parte alta de la espalda del suelo hacia las piernas."}',
+    6);--abs
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Encogimientos invertidos',
+    'Trabaja en la parte baja del abdomen. Túmbate boca arriba con las piernas flexionadas y levanta la zona lumbar del suelo. Mantén la contracción en los abdominales inferiores durante todo el ejercicio.',
+    'https://ejemplo.com/video_encogimientos_invertidos',
+    'https://ejemplo.com/imagen_encogimientos_invertidos',
+    '{"musculos": ["Parte baja del abdomen"], "precauciones": ["Mantener la contracción en los abdominales inferiores"], "modo_de_hacerlo": "Levanta la zona lumbar del suelo."}',
+    6);-abs
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Hollow hold',
+    'Trabaja en la estabilización del core y en los abdominales superiores e inferiores. Tumbado boca arriba, levanta los brazos y las piernas en un ángulo de 45 grados con el suelo. Mantén la posición sin despegar la zona lumbar del suelo.',
+    'https://ejemplo.com/video_hollow_hold',
+    'https://ejemplo.com/imagen_hollow_hold',
+    '{"musculos": ["Estabilización del core", "Abdominales superiores e inferiores"], "precauciones": ["Mantener la posición sin despegar la zona lumbar del suelo"], "modo_de_hacerlo": "Levanta los brazos y las piernas en un ángulo de 45 grados con el suelo."}',
+    6);--abs
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Sentadillas',
+    'Ejercicio para trabajar cuádriceps, isquiotibiales, glúteos y pantorrillas. De pie, flexiona las rodillas para bajar el cuerpo, manteniendo la espalda recta, y luego regresa a la posición inicial.',
+    'https://ejemplo.com/video_sentadillas',
+    'https://ejemplo.com/imagen_sentadillas',
+    '{"musculos": ["Cuádriceps", "Isquiotibiales", "Glúteos", "Pantorrillas"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "Flexiona las rodillas para bajar el cuerpo, manteniendo la espalda recta, y luego regresa a la posición inicial."}',
+    7);--piernas y gluteos
+
+-- Sentadillas laterales
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Sentadillas laterales',
+    'Ejercicio para trabajar las mismas áreas que las sentadillas, con un enfoque adicional en los abductores. De pie, da un paso lateral y flexiona la rodilla para bajar el cuerpo, luego regresa a la posición inicial y repite del otro lado.',
+    'https://ejemplo.com/video_sentadillas_laterales',
+    'https://ejemplo.com/imagen_sentadillas_laterales',
+    '{"musculos": ["Cuádriceps", "Isquiotibiales", "Glúteos", "Abductores"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "Da un paso lateral y flexiona la rodilla para bajar el cuerpo, luego regresa a la posición inicial y repite del otro lado."}',
+    7);--piernas y gluteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Sentadillas con salto',
+    'Ejercicio para trabajar cuádriceps, isquiotibiales, glúteos y pantorrillas, con un enfoque en la potencia explosiva. De pie, flexiona las rodillas para bajar el cuerpo y luego realiza un salto, aterrizando suavemente y volviendo a la posición inicial.',
+    'https://ejemplo.com/video_sentadillas_con_salto',
+    'https://ejemplo.com/imagen_sentadillas_con_salto',
+    '{"musculos": ["Cuádriceps", "Isquiotibiales", "Glúteos", "Pantorrillas"], "precauciones": ["Aterrizar suavemente"], "modo_de_hacerlo": "Flexiona las rodillas para bajar el cuerpo y luego realiza un salto, aterrizando suavemente y volviendo a la posición inicial."}',
+    7);--piernas y gluteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Burpees',
+    'Ejercicio de cuerpo completo que involucra cuádriceps, isquiotibiales, glúteos, pantorrillas y músculos del tronco. Desde posición de pie, baja al suelo en flexión, realiza una flexión de brazos, salta con los pies hacia adelante y realiza un salto vertical.',
+    'https://ejemplo.com/video_burpees',
+    'https://ejemplo.com/imagen_burpees',
+    '{"musculos": ["Cuádriceps", "Isquiotibiales", "Glúteos", "Pantorrillas", "Músculos del tronco"], "precauciones": ["Realizar el movimiento de forma controlada"], "modo_de_hacerlo": "Desde posición de pie, baja al suelo en flexión, realiza una flexión de brazos, salta con los pies hacia adelante y realiza un salto vertical."}',
+    7);--piernas y gluteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Zancadas con mancuernas',
+    'Ejercicio para trabajar cuádriceps y glúteos. De pie, da un paso adelante y flexiona ambas rodillas para bajar el cuerpo, manteniendo la espalda recta. Luego, regresa a la posición inicial y repite con la otra pierna.',
+    'https://ejemplo.com/video_zancadas_con_mancuernas',
+    'https://ejemplo.com/imagen_zancadas_con_mancuernas',
+    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "Da un paso adelante y flexiona ambas rodillas para bajar el cuerpo, manteniendo la espalda recta. Luego, regresa a la posición inicial y repite con la otra pierna."}',
+    7);--piernas y gluteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Zancadas con salto',
+    'Ejercicio para trabajar cuádriceps y glúteos con un componente adicional de trabajo cardiovascular y explosividad. De pie, da un paso adelante y flexiona ambas rodillas para bajar el cuerpo, luego realiza un salto y alterna las piernas en cada repetición.',
+    'https://ejemplo.com/video_zancadas_con_salto',
+    'https://ejemplo.com/imagen_zancadas_con_salto',
+    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Realizar el movimiento de forma controlada"], "modo_de_hacerlo": "Da un paso adelante y flexiona ambas rodillas para bajar el cuerpo, luego realiza un salto y alterna las piernas en cada repetición."}',
+    7);--piernas y gluteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Cohete (ejercicio con silla)',
+    'Ejercicio para trabajar cuádriceps y glúteos, con un enfoque en el equilibrio y la estabilidad. Desde posición de pie, baja el cuerpo como si fueras a sentarte en una silla y luego regresa a la posición inicial.',
+    'https://ejemplo.com/video_cohete',
+    'https://ejemplo.com/imagen_cohete',
+    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Mantener el equilibrio"], "modo_de_hacerlo": "Desde posición de pie, baja el cuerpo como si fueras a sentarte en una silla y luego regresa a la posición inicial."}',
+    7);--piernas y gluteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Jumping jacks',
+    'Ejercicio cardiovascular que involucra a los músculos de las piernas y los glúteos. Desde posición de pie, salta extendiendo las piernas hacia los lados mientras llevas los brazos por encima de la cabeza, luego regresa a la posición inicial.',
+    'https://ejemplo.com/video_jumping_jacks',
+    'https://ejemplo.com/imagen_jumping_jacks',
+    '{"musculos": ["Piernas", "Glúteos"], "precauciones": ["Realizar el movimiento de forma controlada"], "modo_de_hacerlo": "Desde posición de pie, salta extendiendo las piernas hacia los lados mientras llevas los brazos por encima de la cabeza, luego regresa a la posición inicial."}',
+    7);--piernas y gluteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Burrolls de Crossfit',
+    'Ejercicio de cuerpo completo, con énfasis en la potencia explosiva de las piernas. Desde posición de pie, baja al suelo en flexión, realiza una flexión de brazos, un salto hacia adelante y una extensión completa del cuerpo.',
+    'https://ejemplo.com/video_burrolls_crossfit',
+    'https://ejemplo.com/imagen_burrolls_crossfit',
+    '{"musculos": ["Piernas", "Glúteos", "Músculos del tronco"], "precauciones": ["Realizar el movimiento de forma controlada"], "modo_de_hacerlo": "Desde posición de pie, baja al suelo en flexión, realiza una flexión de brazos, un salto hacia adelante y una extensión completa del cuerpo."}',
+    7);--piernas y gluteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Medio puente',
+    'Ejercicio para trabajar glúteos y parte baja de la espalda. Acuéstate boca arriba con las rodillas flexionadas, levanta la cadera hacia arriba manteniendo los hombros en el suelo, luego regresa a la posición inicial.',
+    'https://ejemplo.com/video_medio_puente',
+    'https://ejemplo.com/imagen_medio_puente',
+    '{"musculos": ["Glúteos", "Parte baja de la espalda"], "precauciones": ["Mantener los hombros en el suelo"], "modo_de_hacerlo": "Acuéstate boca arriba con las rodillas flexionadas, levanta la cadera hacia arriba manteniendo los hombros en el suelo, luego regresa a la posición inicial."}',
+    7);--pierna y gluteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Puente con elevación de pierna',
+    'Ejercicio para trabajar glúteos, con un enfoque adicional en la estabilidad de una pierna. Acuéstate boca arriba con las rodillas flexionadas, levanta la cadera hacia arriba y luego levanta una pierna hacia el techo, manteniendo la cadera elevada.',
+    'https://ejemplo.com/video_puente_elevacion_pierna',
+    'https://ejemplo.com/imagen_puente_elevacion_pierna',
+    '{"musculos": ["Glúteos"], "precauciones": ["Mantener la cadera elevada"], "modo_de_hacerlo": "Acuéstate boca arriba con las rodillas flexionadas, levanta la cadera hacia arriba y luego levanta una pierna hacia el techo, manteniendo la cadera elevada."}',
+    7);--piernas y gluteo
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Escalador',
+    'Ejercicio cardiovascular que involucra a los músculos de las piernas y los glúteos. Desde posición de flexión, alterna el movimiento de las piernas llevándolas hacia el pecho en un movimiento rápido y controlado.',
+    'https://ejemplo.com/video_escalador',
+    'https://ejemplo.com/imagen_escalador',
+    '{"musculos": ["Piernas", "Glúteos"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "Desde posición de flexión, alterna el movimiento de las piernas llevándolas hacia el pecho en un movimiento rápido y controlado."}',
+    7);--piernas y gluteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Patada de burro',
+    'Ejercicio para trabajar la parte superior del glúteo. Desde posición de cuatro patas, eleva una pierna hacia atrás manteniendo el glúteo contraído y luego baja de forma controlada, repitiendo con la otra pierna.',
+    'https://ejemplo.com/video_patada_burro',
+    'https://ejemplo.com/imagen_patada_burro',
+    '{"musculos": ["Glúteos"], "precauciones": ["Mantener el glúteo contraído"], "modo_de_hacerlo": "Desde posición de cuatro patas, eleva una pierna hacia atrás manteniendo el glúteo contraído y luego baja de forma controlada, repitiendo con la otra pierna."}',
+    7);--piernas y gluteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
+VALUES (
+    'Sentadilla sumo',
+    'Ejercicio similar a las sentadillas estándar, con mayor énfasis en los abductores y aductores de las piernas. De pie, con los pies más anchos que los hombros y los dedos de los pies hacia afuera, flexiona las rodillas para bajar el cuerpo, manteniendo la espalda recta.',
+    'https://ejemplo.com/video_sentadilla_sumo',
+    'https://ejemplo.com/imagen_sentadilla_sumo',
+    '{"musculos": ["Cuádriceps", "Isquiotibiales", "Glúteos", "Abductores", "Aductores"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "De pie, con los pies más anchos que los hombros y los dedos de los pies hacia afuera, flexiona las rodillas para bajar el cuerpo, manteniendo la espalda recta."}',
+    7);--piernas y gluteos
+
+--**RUTINAS*
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (1, '3 sets de 10 repeticiones'), -- Dominadas (Dorsal Mayor)
+    (3, '4 sets de 12 repeticiones'), -- Remo con Mancuerna (Dorsal Mayor)
+    (7, '3 sets de 15 repeticiones'), -- Encogimientos de Hombros con Mancuernas (Trapecio)
+    (12, '4 sets de 12 repeticiones'), -- Face Pulls (Romboides)
+    (14, '3 sets de 10 repeticiones'); -- Dominadas con Agarre Neutro (Romboides)
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (1, '3 sets de 10 repeticiones'), -- Dominadas (Dorsal Mayor)
+    (7, '3 sets de 15 repeticiones'), -- Encogimientos de Hombros con Mancuernas (Trapecio)
+    (12, '4 sets de 12 repeticiones'), -- Face Pulls (Romboides)
+    (2, '4 sets de 10 repeticiones'), -- Remo con Barra (Dorsal Mayor)
+    (11, '3 sets de 12 repeticiones'); -- Remo con Agarre Pronado (Romboides)
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (15, '4 sets de 10 repeticiones'), -- Press de Banca Inclinado (Pectoral Mayor Superior)
+    (19, '3 sets de 12 repeticiones'), -- Press de Banca Plano con Mancuernas (Pectoral Mayor Medio)
+    (21, '3 sets de 8 repeticiones'), -- Press de Banca Declinado (Pectoral Mayor Inferior)
+    (16, '3 sets de 12 repeticiones'), -- Aperturas en Polea Alta (Pectoral Mayor Superior)
+    (22, '4 sets de 10 repeticiones'); -- Fondos en Paralelas con las Piernas Elevadas (Pectoral Mayor Inferior)
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (16, '3 sets de 12 repeticiones'), -- Aperturas en Polea Alta (Pectoral Mayor Superior)
+    (18, '4 sets de 10 repeticiones'), -- Press de Banca Plano con Barra (Pectoral Mayor Medio)
+    (24, '3 sets de 12 repeticiones'), -- Cruces con Polea Baja (Pectoral Mayor Inferior)
+    (17, '3 sets de 12 repeticiones'), -- Elevaciones Frontales con Mancuernas (Pectoral Mayor Superior)
+    (20, '4 sets de 12 repeticiones'); -- Pec Deck (Pectoral Mayor Medio)
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (27, '3 sets de 12 repeticiones'), -- Elevaciones Frontales con Cuerda en Polea Baja
+    (25, '4 sets de 12 repeticiones'), -- Elevaciones Laterales con Mancuernas
+    (31, '3 sets de 10 repeticiones'), -- Remo Alto con Barra
+    (32, '3 sets de 12 repeticiones'), -- Remo Inclinado con Mancuernas
+    (30, '3 sets de 15 repeticiones'); -- Elevaciones Laterales con Polea
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (27, '3 sets de 12 repeticiones'), -- Elevaciones Frontales con Cuerda en Polea Baja
+    (30, '3 sets de 15 repeticiones'), -- Elevaciones Laterales con Polea
+    (31, '3 sets de 10 repeticiones'), -- Remo Alto con Barra
+    (32, '3 sets de 12 repeticiones'), -- Remo Inclinado con Mancuernas
+    (25, '4 sets de 12 repeticiones'); -- Elevaciones Laterales con Mancuernas
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (33, '3 sets de 12 repeticiones'), -- Curl Inclinado en Banco
+    (34, '3 sets de 12 repeticiones'), -- Curl a una Mano en Cable o Polea
+    (38, '4 sets de 10 repeticiones'), -- Curl con Mancuernas
+    (39, '3 sets de 10 repeticiones'); -- Curl Predicador con Barra
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (3, '3 sets de 12 repeticiones'), -- Curl a una Mano en Cable o Polea
+    (36, '3 sets de 12 repeticiones'), -- Curl Martillo
+    (38, '4 sets de 10 repeticiones'), -- Curl con Mancuernas
+    (39, '3 sets de 10 repeticiones'); -- Curl Predicador con Barra
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (46, '3 sets de 12 repeticiones'), -- Press Francés con Barra Z con Agarre en V
+    (45, '3 sets de 10 repeticiones'), -- Fondos en Paralelas con Agarre Estrecho
+    (49, '4 sets de 12 repeticiones'), -- Extensiones de Tríceps con Mancuerna Acostado
+    (41, '3 sets de 12 repeticiones'), -- Extensiones de Tríceps en Polea Alta
+    (44, '3 sets de 12 repeticiones'); -- Extensiones de Tríceps en Polea Alta con Agarre en V
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (50, '3 sets de 12 repeticiones'), -- Flexión de Muñeca con Barra
+    (55, '3 sets de 12 repeticiones'), -- Extensión de Muñeca con Polea
+    (57, '3 sets de 12 repeticiones'), -- Pronación de Muñeca con Mancuerna
+    (61, '3 sets de 12 repeticiones'), -- Supinación de Muñeca con Polea
+    (51, '3 sets de 12 repeticiones'); -- Flexión de Muñeca con Mancuerna
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (72, '4 sets de 12 repeticiones'), -- Sentadillas
+    (73, '3 sets de 15 repeticiones'), -- Extensiones de Rodilla
+    (77, '4 sets de 10 repeticiones'), -- Prensa de Piernas con los Pies Girados hacia Fuera
+    (78, '4 sets de 12 repeticiones'), -- Sentadillas con los Pies Juntos
+    (79, '3 sets de 15 repeticiones'), -- Extensiones de Rodilla con los Pies Girados hacia Dentro
+    (80, '3 sets de 10 repeticiones'); -- Prensa de Piernas con los Pies Girados hacia Dentro
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (62, '3 sets de 15 repeticiones'), -- Abdominales Clásicos
+    (63, '3 sets de 12 repeticiones'), -- Elevaciones de Piernas Colgando
+    (64, '3 sets de 30 segundos'), -- Plancha abdominal
+    (65, '3 sets de 15 repeticiones por lado'), -- Crunches Laterales
+    (68, '3 sets de 15 repeticiones por lado'); -- Giros Rusos con Pelota Suiza
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (86, '4 sets de 10 repeticiones'), -- Peso Muerto Rumano
+    (83, '3 sets de 12 repeticiones'), -- Curl Femoral Sentado
+    (87, '3 sets de 12 repeticiones'); -- Curl Femoral Tumbado con los Pies Girados hacia Dentro
+
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (88, '4 sets de 12 repeticiones'), -- Hip Thrust
+    (90, '3 sets de 15 repeticiones por lado'), -- Elevación Lateral de Pierna Tumbado (Clamshell)
+    (92, '3 sets de 15 repeticiones por lado'); -- Elevación Lateral de Pierna de Pie (Fire Hydrant)
+
+INSERT INTO rutinas (ejercicio, especificaciones)
+VALUES 
+    (93, '4 sets de 15 repeticiones'), -- Elevaciones de Talones de Pie
+    (94, '4 sets de 15 repeticiones'); -- Elevaciones de Talones Sentado
+
