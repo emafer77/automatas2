@@ -23,7 +23,6 @@ CREATE TABLE ejercicios (
     nombre VARCHAR(255) NOT NULL,
     descripcion TEXT,
     video_url VARCHAR(255),
-    imagen VARCHAR(255),
     datos_cientificos JSON,
     id_musculo INT,
     FOREIGN KEY (id_musculo) REFERENCES musculos(id_musculo)
@@ -34,7 +33,6 @@ CREATE TABLE ejercicios_en_casa (
     nombre VARCHAR(255) NOT NULL,
     descripcion TEXT,
     video_url VARCHAR(255),
-    imagen VARCHAR(255),
     datos_cientificos JSON,
     zona_ejercicio INT -- Identificador de la región de ejercicio
 );
@@ -79,11 +77,12 @@ INSERT INTO musculos (nombre, descripcion, imagen) VALUES
 INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
 ('Flexores del Antebrazo', 'Los flexores del antebrazo incluyen músculos como el flexor carpi radialis, flexor carpi ulnaris y palmar largo. Estos músculos son responsables de la flexión de la muñeca y de los dedos. Puedes trabajarlos con ejercicios como curls de muñeca y curl de antebrazo.', 'https://imgs.search.brave.com/wCfrpGAFCZ1dBZ5Vqn9IKrMadA3Af4OpgR7NrVUXbAQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/bGVjdHVyaW8uY29t/L2Fzc2V0cy9SYWRp/YWwtbmVydmUtYXMt/aXQtcGFzc2VzLXRo/cm91Z2gtdGhlLWZv/cmVhcm0tZmVhdHVy/aW5nLXRoZS1tdXNj/bGVzLWl0LWlubmVy/dmF0ZXMtMTIwMHg1/MjkuanBn'),
 ('Extensores del Antebrazo', 'Los extensores del antebrazo incluyen músculos como el extensor carpi radialis longus, extensor carpi radialis brevis y extensor carpi ulnaris. Estos músculos son fundamentales para la extensión de la muñeca y de los dedos. Ejercicios como el reverse curl y las extensiones de muñeca son efectivos para fortalecer estos músculos.', 'https://imgs.search.brave.com/wCfrpGAFCZ1dBZ5Vqn9IKrMadA3Af4OpgR7NrVUXbAQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/bGVjdHVyaW8uY29t/L2Fzc2V0cy9SYWRp/YWwtbmVydmUtYXMt/aXQtcGFzc2VzLXRo/cm91Z2gtdGhlLWZv/cmVhcm0tZmVhdHVy/aW5nLXRoZS1tdXNj/bGVzLWl0LWlubmVy/dmF0ZXMtMTIwMHg1/MjkuanBn'),
-('Pronadores y Supinadores', 'Además de los flexores y extensores, los músculos pronadores y supinadores, como el pronador teres y el supinador, son importantes para la rotación del antebrazo. Puedes trabajar estos músculos realizando ejercicios de rotación de muñeca y rotación de antebrazo.', 'https://imgs.search.brave.com/wCfrpGAFCZ1dBZ5Vqn9IKrMadA3Af4OpgR7NrVUXbAQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/bGVjdHVyaW8uY29t/L2Fzc2V0cy9SYWRp/YWwtbmVydmUtYXMt/aXQtcGFzc2VzLXRo/cm91Z2gtdGhlLWZv/cmVhcm0tZmVhdHVy/aW5nLXRoZS1tdXNj/bGVzLWl0LWlubmVy/dmF0ZXMtMTIwMHg1/MjkuanBn');
+('Braquiorradial', 'El músculo braquiorradial o supinador largo es un músculo largo del brazo en la región externa y superficial del antebrazo. Actúa flexionando el codo y es capaz también de pronación y supinación, dependiendo de su posición en el antebrazo.', 'https://imgs.search.brave.com/wCfrpGAFCZ1dBZ5Vqn9IKrMadA3Af4OpgR7NrVUXbAQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/bGVjdHVyaW8uY29t/L2Fzc2V0cy9SYWRp/YWwtbmVydmUtYXMt/aXQtcGFzc2VzLXRo/cm91Z2gtdGhlLWZv/cmVhcm0tZmVhdHVy/aW5nLXRoZS1tdXNj/bGVzLWl0LWlubmVy/dmF0ZXMtMTIwMHg1/MjkuanBn');
 
 -- Músculos abdominales
 INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
-('Recto Abdominal', 'El recto abdominal es el músculo principal de la pared abdominal. Se extiende desde el esternón hasta la sínfisis púbica y es responsable de la flexión del tronco. Puedes trabajar el recto abdominal con ejercicios como crunches y abdominales.', 'https://imgs.search.brave.com/ZeOMph-43jwMwThdj1NvLKctfVd9fYSFE8r5rR8zO68/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lcmVz/ZGVwb3J0aXN0YS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMDEvYWJkb21p/bmFsZXMtdG9kb3Mt/bG9zLW11c2N1bG9z/LmpwZz9hdXRvPXdl/YnAmcXVhbGl0eT02/MCZ3aWR0aD0xOTIw/JmNyb3A9MTY6OSxz/bWFydCxzYWZl'),
+('Recto Abdominal seccion alta', 'El recto abdominal es el músculo principal de la pared abdominal. Se extiende desde el esternón hasta la sínfisis púbica y es responsable de la flexión del tronco. Puedes trabajar el recto abdominal con ejercicios como crunches y abdominales.', 'https://imgs.search.brave.com/ZeOMph-43jwMwThdj1NvLKctfVd9fYSFE8r5rR8zO68/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lcmVz/ZGVwb3J0aXN0YS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMDEvYWJkb21p/bmFsZXMtdG9kb3Mt/bG9zLW11c2N1bG9z/LmpwZz9hdXRvPXdl/YnAmcXVhbGl0eT02/MCZ3aWR0aD0xOTIw/JmNyb3A9MTY6OSxz/bWFydCxzYWZl'),
+('Recto Abdominal seccion baja', 'El recto abdominal es el músculo principal de la pared abdominal. Se extiende desde el esternón hasta la sínfisis púbica y es responsable de la flexión del tronco. Puedes trabajar el recto abdominal con ejercicios como crunches y abdominales.', 'https://imgs.search.brave.com/ZeOMph-43jwMwThdj1NvLKctfVd9fYSFE8r5rR8zO68/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lcmVz/ZGVwb3J0aXN0YS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMDEvYWJkb21p/bmFsZXMtdG9kb3Mt/bG9zLW11c2N1bG9z/LmpwZz9hdXRvPXdl/YnAmcXVhbGl0eT02/MCZ3aWR0aD0xOTIw/JmNyb3A9MTY6OSxz/bWFydCxzYWZl'),
 ('Oblicuos Externos', 'Los oblicuos externos son músculos ubicados en los lados del abdomen. Ayudan en la rotación y flexión lateral del tronco. Puedes fortalecer los oblicuos externos con ejercicios como las torsiones y los crunches oblicuos.', 'https://imgs.search.brave.com/ZeOMph-43jwMwThdj1NvLKctfVd9fYSFE8r5rR8zO68/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lcmVz/ZGVwb3J0aXN0YS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMDEvYWJkb21p/bmFsZXMtdG9kb3Mt/bG9zLW11c2N1bG9z/LmpwZz9hdXRvPXdl/YnAmcXVhbGl0eT02/MCZ3aWR0aD0xOTIw/JmNyb3A9MTY6OSxz/bWFydCxzYWZl'),
 ('Oblicuos Internos', 'Los oblicuos internos están ubicados debajo de los oblicuos externos y también contribuyen a la rotación y flexión lateral del tronco. Ejercicios como las torsiones y los ejercicios de oblicuos ayudan a trabajar estos músculos.', 'https://imgs.search.brave.com/ZeOMph-43jwMwThdj1NvLKctfVd9fYSFE8r5rR8zO68/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lcmVz/ZGVwb3J0aXN0YS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMDEvYWJkb21p/bmFsZXMtdG9kb3Mt/bG9zLW11c2N1bG9z/LmpwZz9hdXRvPXdl/YnAmcXVhbGl0eT02/MCZ3aWR0aD0xOTIw/JmNyb3A9MTY6OSxz/bWFydCxzYWZl'),
 ('Transverso Abdominal', 'El transverso abdominal es el músculo más profundo de la pared abdominal y actúa como un corsé natural que ayuda a estabilizar la columna vertebral. Puedes fortalecer el transverso abdominal con ejercicios de contracción y respiración profunda.', 'https://imgs.search.brave.com/ZeOMph-43jwMwThdj1NvLKctfVd9fYSFE8r5rR8zO68/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lcmVz/ZGVwb3J0aXN0YS5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMDEvYWJkb21p/bmFsZXMtdG9kb3Mt/bG9zLW11c2N1bG9z/LmpwZz9hdXRvPXdl/YnAmcXVhbGl0eT02/MCZ3aWR0aD0xOTIw/JmNyb3A9MTY6OSxz/bWFydCxzYWZl');
@@ -91,9 +90,9 @@ INSERT INTO musculos (nombre, descripcion, imagen) VALUES
 -- Músculos de las piernas
 INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
 ('Cuádriceps - Recto Femoral', 'El recto femoral es parte del cuádriceps y se encuentra en la parte frontal del muslo. Es responsable de la extensión de la rodilla y ayuda en la flexión de la cadera. Puedes trabajar el recto femoral con ejercicios como sentadillas y extensiones de piernas.', 'https://imgs.search.brave.com/7ltSKTSQW5pO565DmkVDhQAztkXgUoJGOR2nAms9srE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sYWZp/c2lvdGVyYXBpYS5u/ZXQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDkvbXVzY3Vs/by1jdWFkcmljZXBz/LTcyNHgxMDI0LnBu/Zw'),
-('Cuádriceps - Vasto Lateral', 'El vasto lateral es uno de los tres músculos que conforman el cuádriceps. Se encuentra en la parte externa del muslo y contribuye a la extensión de la rodilla. Ejercicios como sentadillas y prensa de piernas fortalecen el vasto lateral.', 'https://imgs.search.brave.com/7ltSKTSQW5pO565DmkVDhQAztkXgUoJGOR2nAms9srE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sYWZp/c2lvdGVyYXBpYS5u/ZXQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDkvbXVzY3Vs/by1jdWFkcmljZXBz/LTcyNHgxMDI0LnBu/Zw'),
-('Cuádriceps - Vasto Medial', 'El vasto medial es otro componente del cuádriceps y se encuentra en la parte interna del muslo. Participa en la extensión de la rodilla y es esencial para la estabilidad de la rótula. Ejercicios como sentadillas y prensa de piernas trabajan el vasto medial.', 'https://imgs.search.brave.com/7ltSKTSQW5pO565DmkVDhQAztkXgUoJGOR2nAms9srE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sYWZp/c2lvdGVyYXBpYS5u/ZXQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDkvbXVzY3Vs/by1jdWFkcmljZXBz/LTcyNHgxMDI0LnBu/Zw'),
-('Cuádriceps - Vasto Intermedio', 'El vasto intermedio es el tercer músculo del cuádriceps y se encuentra entre el vasto lateral y el vasto medial. También contribuye a la extensión de la rodilla. Puedes fortalecer el vasto intermedio con ejercicios de extensión de piernas y sentadillas.', 'https://imgs.search.brave.com/7ltSKTSQW5pO565DmkVDhQAztkXgUoJGOR2nAms9srE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sYWZp/c2lvdGVyYXBpYS5u/ZXQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDkvbXVzY3Vs/by1jdWFkcmljZXBz/LTcyNHgxMDI0LnBu/Zw');
+('Cuádriceps - Vasto externo', 'El vasto lateral es uno de los tres músculos que conforman el cuádriceps. Se encuentra en la parte externa del muslo y contribuye a la extensión de la rodilla. Ejercicios como sentadillas y prensa de piernas fortalecen el vasto lateral.', 'https://imgs.search.brave.com/7ltSKTSQW5pO565DmkVDhQAztkXgUoJGOR2nAms9srE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sYWZp/c2lvdGVyYXBpYS5u/ZXQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDkvbXVzY3Vs/by1jdWFkcmljZXBz/LTcyNHgxMDI0LnBu/Zw'),
+('Cuádriceps - Vasto interno', 'El vasto medial es otro componente del cuádriceps y se encuentra en la parte interna del muslo. Participa en la extensión de la rodilla y es esencial para la estabilidad de la rótula. Ejercicios como sentadillas y prensa de piernas trabajan el vasto medial.', 'https://imgs.search.brave.com/7ltSKTSQW5pO565DmkVDhQAztkXgUoJGOR2nAms9srE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sYWZp/c2lvdGVyYXBpYS5u/ZXQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDkvbXVzY3Vs/by1jdWFkcmljZXBz/LTcyNHgxMDI0LnBu/Zw'),
+('aductores', 'El vasto intermedio es el tercer músculo del cuádriceps y se encuentra entre el vasto lateral y el vasto medial. También contribuye a la extensión de la rodilla. Puedes fortalecer el vasto intermedio con ejercicios de extensión de piernas y sentadillas.', 'https://imgs.search.brave.com/7ltSKTSQW5pO565DmkVDhQAztkXgUoJGOR2nAms9srE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sYWZp/c2lvdGVyYXBpYS5u/ZXQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDkvbXVzY3Vs/by1jdWFkcmljZXBz/LTcyNHgxMDI0LnBu/Zw');
 
 INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
 ('Bíceps Femoral', 'El bíceps femoral es uno de los músculos principales de los isquiotibiales y se encuentra en la parte posterior del muslo. Contribuye a la flexión de la rodilla y la extensión de la cadera. Puedes trabajar el bíceps femoral con ejercicios como curls de piernas y peso muerto.', 'https://imgs.search.brave.com/D_FfXGVaim7T191rwlGZlwZx8sKXfiD8IQDJXSmUjDM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90dWN1/ZXJwb2h1bWFuby5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTgvMDkvSXNxdWlv/dGliaWFsZXMtZmFj/dG9yZXMtZGUtcmll/c2dvLXF1ZS1jYXVz/YW4tbGVzaW9uZXMt/ZW4tZXN0b3MtbXVz/Y3Vsb3MtMS0zMDB4/MjcyLmpwZw'),
@@ -103,909 +102,758 @@ INSERT INTO musculos (nombre, descripcion, imagen) VALUES
 -- Músculos de glúteos
 INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
 ('Glúteo Mayor', 'El glúteo mayor es el músculo más grande de los glúteos y se encuentra en la parte posterior de las nalgas. Es responsable de la extensión y abducción de la cadera. Puedes fortalecer el glúteo mayor con ejercicios como sentadillas, peso muerto y elevaciones de cadera.', 'https://imgs.search.brave.com/ejASDzmEkTmzSWlM7ss_MxY0VfJCHCwHsStxUH6PLf8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/aG91c2VvZnBlYWNo/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMC8wNS9nbHV0/ZS1tdXNjbGVzLTEu/anBn'),
-('Glúteo Medio', 'El glúteo medio se encuentra en la parte lateral de las nalgas y es crucial para la abducción de la cadera. Contribuye a la estabilización de la pelvis durante la marcha y otros movimientos. Ejercicios como las abducciones de cadera y las sentadillas laterales pueden fortalecer este músculo.', 'https://imgs.search.brave.com/ejASDzmEkTmzSWlM7ss_MxY0VfJCHCwHsStxUH6PLf8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/aG91c2VvZnBlYWNo/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMC8wNS9nbHV0/ZS1tdXNjbGVzLTEu/anBn'),
-('Glúteo Menor', 'El glúteo menor es un músculo más pequeño que se encuentra debajo del glúteo mayor. También participa en la abducción de la cadera y ayuda en la rotación externa. Puedes trabajar el glúteo menor con ejercicios específicos de abducción y rotación de cadera.', 'https://imgs.search.brave.com/ejASDzmEkTmzSWlM7ss_MxY0VfJCHCwHsStxUH6PLf8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/aG91c2VvZnBlYWNo/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMC8wNS9nbHV0/ZS1tdXNjbGVzLTEu/anBn');
+('Glúteo medio', 'El glúteo medio es un músculo ubicado en la parte lateral de la cadera y desempeña un papel crucial en la estabilidad de la pelvis, así como en la abducción y rotación externa de la cadera. ', 'https://imgs.search.brave.com/ejASDzmEkTmzSWlM7ss_MxY0VfJCHCwHsStxUH6PLf8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/aG91c2VvZnBlYWNo/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMC8wNS9nbHV0/ZS1tdXNjbGVzLTEu/anBn');
 
 -- Músculos de las pantorrillas
 INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
-('Gastrocnemio', 'El gastrocnemio es el músculo más grande de los gemelos y se encuentra en la parte posterior de la pantorrilla. Es responsable de la flexión plantar del tobillo (levantar el talón). Puedes trabajar el gastrocnemio con ejercicios como elevaciones de talones y saltos.', 'https://imgs.search.brave.com/YhTZ-gOVpEiQBIcWMUmC_meeYiOt2GJayxKAFS1KA8U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2FsaXN0ZW5pYS5u/ZXQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MTUvMDIvMTM4NTEx/NDYzNDIwMi5qcGc'),
-('Sóleo', 'El sóleo es un músculo más profundo que se encuentra debajo del gastrocnemio. También contribuye a la flexión plantar del tobillo y es esencial para mantener la postura durante la bipedestación. Ejercicios como elevaciones de talones y sentadillas pueden fortalecer el sóleo.', 'https://imgs.search.brave.com/YhTZ-gOVpEiQBIcWMUmC_meeYiOt2GJayxKAFS1KA8U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2FsaXN0ZW5pYS5u/ZXQvd3AtY29udGVu/dC91cGxvYWRzLzIw/MTUvMDIvMTM4NTEx/NDYzNDIwMi5qcGc');
+('Gemelo interno', 'Gemelo interno del músculo gastrocnemio es una de las dos cabezas que componen este músculo grande y poderoso de la pantorrilla', 'https://imgs.search.brave.com/o90XC8DxBgz7DYFBIEf691hli6QVx42JmBZ7vLiu_6s/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cXVpbnRhbmFtYXNz/YWdlcy5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDcv/Q29udHJhY3R1cmEt/bXVzY3VsYXItZGUt/cGFudG9ycmlsbGEu/anBn'),
+('Gemelo externo', 'Gemelo externo del gastrocnemio se encuentra en la parte externa o lateral de la pantorrilla. ', 'https://imgs.search.brave.com/o90XC8DxBgz7DYFBIEf691hli6QVx42JmBZ7vLiu_6s/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cXVpbnRhbmFtYXNz/YWdlcy5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDcv/Q29udHJhY3R1cmEt/bXVzY3VsYXItZGUt/cGFudG9ycmlsbGEu/anBn');
 
 -- Dorsal mayor
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Dominadas', 
-    'Las dominadas son un ejercicio compuesto que trabaja varios grupos musculares, incluyendo el dorsal mayor, bíceps, trapecio y romboides. Se pueden realizar con diferentes agarres para trabajar diferentes áreas del dorsal mayor.', 
-    'url_del_video_dominadas', 
-    'url_de_la_imagen_dominadas', 
-    '{"precauciones": ["Asegúrate de tener la fuerza necesaria para realizar dominadas.", "Varía los agarres para trabajar diferentes áreas del dorsal mayor."]}', 
+   INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Dominadas', 
+    'Agarra la barra con un agarre en pronación, los brazos y los hombros completamente extendidos. Levanta tu cuerpo hasta que tu barbilla esté por encima de la barra. Baja tu cuerpo de nuevo a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-pullup-front.mp4#t=0.1',  
+    '{"precauciones": ["Mantén una buena forma durante todo el ejercicio para evitar lesiones.", "Evita balancear el cuerpo para obtener un impulso adicional."]}', 
     1);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Remo con Barra', 
-    'El remo con barra es otro ejercicio compuesto que trabaja el dorsal mayor, trapecio, romboides y bíceps. Se puede realizar con diferentes agarres para trabajar diferentes áreas del dorsal mayor.', 
-    'url_del_video_remo_barra', 
-    'url_de_la_imagen_remo_barra', 
-    '{"precauciones": ["Asegúrate de mantener una buena técnica durante todo el movimiento.", "Varía los agarres para enfocarte en diferentes áreas del dorsal mayor."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Remo con Barra Inclinado', 
+    'Toma una barra con un agarre pronado o supinado al ancho de los hombros. Inclínate hacia adelante desde las caderas manteniendo la espalda recta. Jala el peso hacia tu abdomen superior. Baja el peso de manera controlada y repite.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-barbell-bent-over-row-side.mp4#t=0.1',  
+    '{"precauciones": ["Mantén una postura adecuada para proteger tu espalda baja.", "Evita realizar el movimiento con un peso excesivo que comprometa tu técnica."]}', 
     1);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
     ('Remo con Mancuerna', 
-    'El remo con mancuerna es un ejercicio unilateral que permite trabajar cada lado del dorsal mayor de forma individual. Se puede realizar con diferentes agarres para trabajar diferentes áreas del dorsal mayor.', 
-    'url_del_video_remo_mancuerna', 
-    'url_de_la_imagen_remo_mancuerna', 
+    'Toma ambas mancuernas y haz una inclinación hacia adelante desde las caderas. Asegúrate de mantener la espalda recta.2Cuanto más cerca esté tu torso de estar paralelo al suelo, mayor será el rango de movimiento en tu hombro. Cuanto mejor sean los resultados que obtendrás del ejercicio.3 Deja que tus brazos cuelguen libremente y luego tira de tu codo hacia atrás, directamente hacia el techo.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-dumbbell-row-unilateral-side.mp4#t=0.1',  
     '{"precauciones": ["Asegúrate de mantener una buena postura durante el ejercicio.", "Varía los agarres para enfocarte en diferentes áreas del dorsal mayor."]}', 
     1);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Jalón al Pecho', 
-    'El jalón al pecho es un ejercicio de máquina que trabaja el dorsal mayor, trapecio y romboides. Es una buena opción para principiantes o personas con lesiones.', 
-    'url_del_video_jalon_pecho', 
-    'url_de_la_imagen_jalon_pecho', 
-    '{"precauciones": ["Ajusta la máquina correctamente para evitar lesiones.", "Consulta con un profesional si eres principiante o tienes lesiones."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Pull de Máquina', 
+    'Agarra la barra con las palmas hacia adelante, tus manos deben estar separadas a una distancia mayor que el ancho de tus hombros. Mientras tienes ambos brazos extendidos frente a ti sosteniendo la barra, inclina tu torso hacia atrás unos 30 grados mientras sacas el pecho. Tira de la barra hacia abajo hasta aproximadamente el nivel de la barbilla o un poco más abajo en un movimiento suave mientras aprietas los omóplatos juntos. Después de un segundo de apretar, levante lentamente la barra hasta volver a la posición inicial cuando tus brazos estén completamente extendidos.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-machine-pulldown-side.mp4#t=0.1',  
+    '{"precauciones": ["Ajusta el peso de la máquina de acuerdo a tu capacidad.", "Mantén una postura adecuada para evitar lesiones en la espalda baja.", "Controla el movimiento en todo momento y evita usar impulso para tirar de la barra."]}', 
     1);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Remo Sentado en Polea Baja', 
-    'El remo sentado en polea baja es un ejercicio de máquina que trabaja el dorsal mayor y trapecio. Es una buena opción para principiantes o personas con lesiones.', 
-    'url_del_video_remo_polea_baja', 
-    'url_de_la_imagen_remo_polea_baja', 
-    '{"precauciones": ["Ajusta la máquina correctamente para evitar lesiones.", "Consulta con un profesional si eres principiante o tienes lesiones."]}', 
+I   INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Remo Sentado en Máquina con Cable', 
+    'Siéntate con la espalda recta en la máquina y agarra las manijas. Tira de las manijas hacia atrás utilizando tus brazos. Tus piernas y torso deben formar un ángulo de 90°. Empuja tu pecho hacia afuera. Tira de las manijas hacia tu cuerpo hasta que tus manos estén al lado de tu abdomen.', 
+    'url_del_video_remo_sentado_en_maquina_con_cable',  
+    '{"precauciones": ["Mantén una postura adecuada durante todo el ejercicio para evitar lesiones en la espalda.", "Controla la respiración y evita contener la respiración durante el movimiento.", "Utiliza un peso que te permita mantener la técnica correcta."]}', 
+    1;
+
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Pullover Inclinado con Barra y Cable', 
+    'Puedes usar cualquier accesorio. El cable debe ajustarse hasta la parte más alta de la máquina. Toma tu accesorio y da unos pasos hacia atrás. Empuja tus glúteos hacia atrás hasta que estés inclinado hacia delante un poco. Inicia el movimiento con tus hombros y no con tus codos. Imagina intentar tirar del accesorio a través de tus muslos en la parte inferior.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-pullover-front.mp4#t=0.1',  
+    '{"precauciones": ["Asegúrate de mantener una buena forma durante todo el ejercicio para evitar lesiones.", "Controla la respiración y evita contener la respiración durante el movimiento.", "Utiliza un peso adecuado para tu nivel de fuerza y experiencia."]}', 
     1);
+
 
 --trapecio
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Encogimientos de Hombros con Barra', 
-    'Este ejercicio es ideal para trabajar los trapecios superiores e inferiores de forma simultánea. Se puede realizar con diferentes tipos de agarres, como pronado (con las palmas hacia abajo), supinado (con las palmas hacia arriba) o neutro (con las palmas mirándose entre sí).', 
-    'url_del_video_encogimientos_barra', 
-    'url_de_la_imagen_encogimientos_barra', 
-    '{"precauciones": ["Ajusta el peso de la barra según tu capacidad.", "Varía los agarres para trabajar diferentes áreas de los trapecios."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Encogimiento a 30 Grados con Cable', 
+    'Utiliza un accesorio de asa en ambos lados del crossover. Con el accesorio de cable ajustado hasta el fondo. Agarra ambos mangos y asegúrate de estar centrado en la máquina. Deja que tus brazos cuelguen libremente. Eleva tus omóplatos hacia arriba y hacia tus oídos. Deja que tus omóplatos vuelvan a deprimirse hasta la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-30-degree-shrug-front.mp4#t=0.1',  
+    '{"precauciones": ["Mantén una postura estable y evita balancear el cuerpo durante el ejercicio.", "Controla el movimiento en todo momento para evitar lesiones en los hombros y la espalda.", "Utiliza un peso adecuado que te permita realizar el ejercicio correctamente y sin comprometer la técnica."]}', 
     2);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Encogimientos de Hombros con Mancuernas', 
-    'Similar al ejercicio con barra, pero permite un mayor rango de movimiento y trabajar los trapecios de forma más individualizada.', 
-    'url_del_video_encogimientos_mancuernas', 
-    'url_de_la_imagen_encogimientos_mancuernas', 
-    '{"precauciones": ["Selecciona un peso adecuado para las mancuernas.", "Controla el rango de movimiento para maximizar la activación de los trapecios."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Encogimiento de Hombros Sentado con Mancuernas', 
+    'Siéntate en un banco con mancuernas en ambas manos, las palmas mirando hacia tu cuerpo, la espalda recta. Eleva tus hombros y mantén la posición contraída en el punto máximo del movimiento. Baja lentamente tus hombros hasta volver a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-dumbbell-seated-shrug-front.mp4#t=0.1',  
+    '{"precauciones": ["Mantén una postura estable y evita balancear el cuerpo durante el ejercicio.", "Controla el movimiento en todo momento para evitar lesiones en los hombros y la espalda.", "Utiliza un peso adecuado que te permita realizar el ejercicio correctamente y sin comprometer la técnica."]}', 
     2);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Remo al Cuello con Barra', 
-    'Un ejercicio excelente para trabajar los trapecios superiores y medios, así como los deltoides posteriores.', 
-    'url_del_video_remo_cuello_barra', 
-    'url_de_la_imagen_remo_cuello_barra', 
-    '{"precauciones": ["Asegúrate de mantener una buena técnica durante el ejercicio.", "Varía los agarres para enfocarte en diferentes áreas de los trapecios."]}', 
-    2);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Remo al Cuello con Mancuernas', 
-    'Similar al ejercicio con barra, pero permite un mayor rango de movimiento y trabajar los trapecios de forma más individualizada.', 
-    'url_del_video_remo_cuello_mancuernas', 
-    'url_de_la_imagen_remo_cuello_mancuernas', 
-    '{"precauciones": ["Selecciona un peso adecuado para las mancuernas.", "Controla el rango de movimiento para maximizar la activación de los trapecios."]}', 
-    2);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Encogimientos de Hombros en Máquina', 
-    'Una opción segura y efectiva para aquellos que buscan trabajar los trapecios de forma aislada. La máquina permite controlar el movimiento y la resistencia de forma precisa.', 
-    'url_del_video_encogimientos_maquina', 
-    'url_de_la_imagen_encogimientos_maquina', 
-    '{"precauciones": ["Ajusta la máquina correctamente para evitar lesiones.", "Consulta con un profesional si eres principiante o tienes lesiones."]}', 
-    2);
 
 --romboide
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Remo con Agarre Pronado', 
-    'Este ejercicio es ideal para trabajar los romboides superiores e inferiores de forma simultánea. Se puede realizar con diferentes tipos de agarres, como pronado (con las palmas hacia abajo), supinado (con las palmas hacia arriba) o neutro (con las palmas mirándose entre sí).', 
-    'url_del_video_remo_pronado', 
-    'url_de_la_imagen_remo_pronado', 
-    '{"precauciones": ["Asegúrate de mantener una buena técnica durante todo el movimiento.", "Varía los agarres para trabajar diferentes áreas de los romboides."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Remo  Pronado con Barra', 
+    'Comienza inclinándote hacia adelante con la espalda recta y las placas descansando en el suelo. Asegúrate de que tus codos estén completamente extendidos. Jala la barra hasta tu esternón. Regresa las placas al suelo y deja que la barra llegue a una parada completa. Luego inicia la siguiente repetición.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-barbell-pronated-pendlay-row-front.mp4#t=0.1',  
+    '{"precauciones": ["Mantén la espalda recta y el núcleo comprometido para evitar lesiones en la parte baja de la espalda.", "Utiliza una técnica adecuada para evitar balancear el cuerpo y mantener el enfoque en los músculos trabajados.", "No utilices un peso excesivo que comprometa tu forma o cause lesiones."]}', 
     3);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Face Pulls', 
-    'Un ejercicio excelente para trabajar los romboides superiores y medios, así como los deltoides posteriores.', 
-    'url_del_video_face_pulls_romboides', 
-    'url_de_la_imagen_face_pulls_romboides', 
-    '{"precauciones": ["Ajusta la máquina o la polea correctamente para evitar lesiones.", "Controla el rango de movimiento para maximizar la activación de los romboides."]}', 
-    3);
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Retracciones de Escápulas', 
-    'Un ejercicio isométrico que trabaja los romboides de forma constante y efectiva. Se puede realizar con bandas de resistencia, pesas ligeras o incluso sin ningún tipo de material.', 
-    'url_del_video_retracciones_escapulas', 
-    'url_de_la_imagen_retracciones_escapulas', 
-    '{"precauciones": ["Mantén una postura estable durante el ejercicio.", "Adapta la resistencia según tu nivel de habilidad."]}', 
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Remo en Máquina con Agarre en Pronación', 
+    'Siéntate en la máquina con los pies planos y agarra las manijas con las palmas hacia abajo, manteniendo la espalda recta. Tira de las manijas hacia tu abdomen inferior, apretando los omóplatos y manteniendo los codos cerca del cuerpo. Regresa lentamente a la posición inicial, extendiendo completamente tus brazos sin bloquear los codos. Repite para las repeticiones deseadas.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Machine-machine-overhand-row-front.mp4#t=0.1',  
+    '{"precauciones": ["Mantén una postura estable y controlada durante todo el ejercicio para evitar lesiones.", "No bloquees los codos al extender completamente los brazos al volver a la posición inicial.", "Utiliza un peso adecuado que te permita realizar el ejercicio con la técnica correcta y sin comprometer la seguridad."]}', 
     3);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Dominadas con Agarre Neutro', 
-    'Un ejercicio multiarticular que trabaja los romboides, trapecios, dorsales y bíceps de forma simultánea. Se puede realizar con diferentes tipos de agarres, como pronado (con las palmas hacia abajo), supinado (con las palmas hacia arriba) o neutro (con las palmas mirándose entre sí).', 
-    'url_del_video_dominadas_neutro', 
-    'url_de_la_imagen_dominadas_neutro', 
-    '{"precauciones": ["Asegúrate de tener la fuerza necesaria para realizar dominadas.", "Varía los agarres para trabajar diferentes áreas de los romboides."]}', 
-    3);
+
 
 --perctoral mayor superior
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Press de Banca Inclinado', 
-    'Este ejercicio es ideal para trabajar la parte superior del pecho de forma directa. Se puede realizar con barra, mancuernas o en máquina.', 
-    'url_del_video_press_banca_inclinado', 
-    'url_de_la_imagen_press_banca_inclinado', 
-    '{"precauciones": ["Ajusta la inclinación del banco según tu comodidad.", "Varía los tipos de agarres para trabajar diferentes áreas del pectoral mayor superior."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Press de Banca Inclinado con Barra', 
+    'Posiciona el banco entre 30 y 45 grados. Túmbate completamente en el banco con los pies en el suelo. Con los brazos estirados, desencaja la barra. Baja la barra hasta el medio de tu pecho. Sube la barra (lenta y controladamente) hasta que hayas bloqueado tus codos.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Barbell-barbell-incline-bench-press-side.mp4#t=0.1',  
+    '{"precauciones": ["Ajusta el banco correctamente para evitar lesiones en los hombros o la espalda baja.", "Utiliza un agarre seguro y mantén la barra estable en todo momento.", "Controla el movimiento en todo momento y evita cargar más peso del que puedas manejar adecuadamente."]}', 
     4);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Aperturas en Polea Alta', 
-    'Este ejercicio es ideal para trabajar la parte superior del pecho de forma aislada. Se puede realizar con diferentes tipos de agarres para trabajar diferentes áreas del músculo.', 
-    'url_del_video_aperturas_polea_alta', 
-    'url_de_la_imagen_aperturas_polea_alta', 
-    '{"precauciones": ["Ajusta la polea y el agarre según tus necesidades.", "Controla el rango de movimiento para evitar lesiones."]}', 
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Press de Banca Inclinada con Mancuernas', 
+    'Recuéstate completamente en el banco inclinado con los pies en el suelo. Levanta las mancuernas hasta tener los brazos rectos. Baja las mancuernas hasta la mitad de tu pecho. Levanta las mancuernas hasta que tengas los codos bloqueados.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-dumbbell-incline-bench-press-front_q2q0T12.mp4#t=0.1',  
+    '{"precauciones": ["Mantén una postura estable y controlada en todo momento para evitar lesiones.", "No utilices un peso excesivo que comprometa tu forma o cause lesiones.", "Asegúrate de respirar adecuadamente durante el ejercicio para mantener una buena oxigenación muscular."]}', 
     4);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones Frontales con Mancuernas', 
-    'Este ejercicio es una buena opción para trabajar la parte superior del pecho de forma individualizada.', 
-    'url_del_video_elevaciones_frontales_mancuernas', 
-    'url_de_la_imagen_elevaciones_frontales_mancuernas', 
-    '{"precauciones": ["Selecciona un peso adecuado para las mancuernas.", "Controla el rango de movimiento para maximizar la activación del pectoral mayor superior."]}', 
-    4);
 
 --pectoral mayor medio
    
     INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
     ('Press de Banca Plano con Barra', 
     'Acuéstate boca arriba en un banco plano con los pies apoyados en el suelo. Sostén una barra con las manos a la anchura de los hombros, con las palmas hacia abajo. Baja la barra hasta que toque el pecho, manteniendo los codos cerca del cuerpo. Empuja la barra hacia arriba hasta que los brazos estén extendidos. Repite el movimiento.', 
-    'url_del_video_press_banca_plano_barra', 
-    'url_de_la_imagen_press_banca_plano_barra', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-barbell-bench-press-front.mp4#t=0.1',  
     '{"precauciones": ["Asegúrate de mantener una buena técnica durante todo el movimiento.", "Varía la anchura del agarre para trabajar diferentes áreas del pectoral mayor."]}', 
     5);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
     ('Press de Banca Plano con Mancuernas', 
     'Acuéstate boca arriba en un banco plano con los pies apoyados en el suelo. Sostén una mancuerna en cada mano con las palmas hacia abajo. Baja las mancuernas hasta que toquen el pecho, manteniendo los codos cerca del cuerpo. Empuja las mancuernas hacia arriba hasta que los brazos estén extendidos. Repite el movimiento.', 
-    'url_del_video_press_banca_plano_mancuernas', 
-    'url_de_la_imagen_press_banca_plano_mancuernas', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-dumbbell-bench-press-front_y8zKZJl.mp4#t=0.1', 
     '{"precauciones": ["Selecciona un peso adecuado para las mancuernas.", "Controla el rango de movimiento para maximizar la activación del pectoral mayor."]}', 
     5);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Pec Deck', 
-    'Siéntate en la máquina pec deck con la espalda recta y los pies apoyados en el suelo. Coloca las manos en las empuñaduras con las palmas mirándose entre sí. Empuja las empuñaduras hacia delante hasta que se junten en el centro del pecho. Regresa lentamente a la posición inicial. Repite el movimiento.', 
-    'url_del_video_pec_deck', 
-    'url_de_la_imagen_pec_deck', 
-    '{"precauciones": ["Ajusta el asiento y las empuñaduras según tus necesidades.", "Controla el movimiento para evitar lesiones
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Cruces de Cable en la Máquina', 
+    'Utiliza un accesorio de asa ajustado hasta el fondo de la máquina. Lleva ambas asas a tu pecho y asegúrate de estar en el centro de la máquina de cruces de cables. Camina unos pasos hacia adelante. Luego, empuja el peso hacia adelante. A partir de ahí, tus hombros deben abducir y aducir horizontalmente mientras tus codos permanecen en una posición fija.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-cable-pec-fly-front.mp4#t=0.1', 
+    '{"precauciones": ["Ajusta el peso de la máquina de cruces de cables adecuadamente.", "Mantén una posición estable y controlada durante todo el movimiento."]}', 
+    5);
 
 --pectoral mayor inferior
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Press de Banca Declinado', 
-    'Acuéstate boca abajo en un banco declinado con los pies apoyados en el suelo. Sostén una barra con las manos a la anchura de los hombros, con las palmas hacia abajo. Baja la barra hasta que toque el pecho, manteniendo los codos cerca del cuerpo. Empuja la barra hacia arriba hasta que los brazos estén extendidos. Repite el movimiento.', 
-    'url_del_video_press_banca_declinado', 
-    'url_de_la_imagen_press_banca_declinado', 
-    '{"precauciones": ["Asegúrate de utilizar un banco declinado seguro.", "Mantén una buena técnica durante todo el movimiento."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Press de Banca en Declive con Mancuernas', 
+    'Acuéstate en un banco inclinado con ambos brazos extendidos frente a ti. Flexiona los codos y lleva tus brazos superiores hacia tu costado. Una vez que tus brazos superiores hayan llegado a tu costado, presiona las mancuernas de nuevo hacia el techo.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-dumbbell-decline-bench-press-side.mp4#t=0.1', 
+    '{"precauciones": ["Asegúrate de utilizar un banco inclinado adecuado y seguro.", "Selecciona un peso de mancuerna apropiado para tu nivel de fuerza."]}', 
     6);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Fondos en Paralelas con las Piernas Elevadas', 
-    'Ponte de pie frente a dos barras paralelas con las manos a la anchura de los hombros. Eleva las piernas y apóyalas en un banco o una silla. Baja el cuerpo hasta que los codos formen un ángulo de 90 grados. Empuja el cuerpo hacia arriba hasta que los brazos estén extendidos. Repite el movimiento.', 
-    'url_del_video_fondos_paralelas_piernas_elevadas', 
-    'url_de_la_imagen_fondos_paralelas_piernas_elevadas', 
-    '{"precauciones": ["Ajusta la altura de las barras y el banco para un rango de movimiento seguro.", "Controla la intensidad del ejercicio según tu nivel de condición física."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Press de Banca en Declive con Cable', 
+    'Usa un accesorio con mango. Acerca un banco a los cables. Los cables deben estar configurados por encima de la altura. Lleva ambos mangos a tu pecho y asegúrate de que estás en el centro de la cruzada de cables. Desde allí, deberías flexionar y extender simultáneamente tanto los hombros como los codos.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-decline-bench-press-side.mp4#t=0.1', 
+    '{"precauciones": ["Ajusta la altura de los cables para evitar lesiones.", "Mantén una postura adecuada durante todo el ejercicio."]}', 
     6);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Aperturas en Banco Declinado', 
-    'Acuéstate boca abajo en un banco declinado con los pies apoyados en el suelo. Sostén una mancuerna en cada mano con las palmas hacia arriba. Extiende los brazos hacia arriba con las palmas mirándose entre sí. Baja las mancuernas hacia los lados hasta que formen un ángulo de 45 grados con el suelo. Regresa lentamente a la posición inicial. Repite el movimiento.', 
-    'url_del_video_aperturas_banco_declinado', 
-    'url_de_la_imagen_aperturas_banco_declinado', 
-    '{"precauciones": ["Ajusta el banco para un ángulo declinado adecuado.", "Selecciona un peso que te permita controlar el movimiento."]}', 
-    6);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Cruces con Polea Baja', 
-    'Ponte de pie frente a una máquina de polea baja con los pies a la anchura de los hombros. Sostén un asa en cada mano con las palmas mirándose entre sí. Extiende los brazos hacia abajo con las palmas mirándose entre sí. Levanta las asas hacia arriba hasta que se junten en el centro del pecho. Regresa lentamente a la posición inicial. Repite el movimiento.', 
-    'url_del_video_cruces_polea_baja', 
-    'url_de_la_imagen_cruces_polea_baja', 
-    '{"precauciones": ["Ajusta la altura y el peso de la polea para un rango de movimiento seguro.", "Mantén una postura estable durante el ejercicio."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Fondos en Barras Paralelas', 
+    'Agarra las barras con los brazos estirados, los hombros sobre las manos. Mantén las piernas estiradas o dobladas. Baja lentamente hasta que los codos estén a 90 grados. Empuja hacia arriba hasta volver a la posición inicial, extendiendo completamente los brazos.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-parralel-bar-dips-side.mp4#t=0.1', 
+    '{"precauciones": ["Asegúrate de mantener una buena técnica durante todo el ejercicio.", "Evita el balanceo excesivo del cuerpo para reducir el riesgo de lesiones."]}', 
     6);
 
 --deltoides parte anterior
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones Laterales con Mancuernas', 
-    'De pie, sostén una mancuerna en cada mano con las palmas mirándose entre sí. Eleva las mancuernas hacia los lados hasta que los brazos estén paralelos al suelo. Baja las mancuernas hasta la posición inicial. Repite el movimiento.', 
-    'url_del_video_elevaciones_laterales_mancuernas', 
-    'url_de_la_imagen_elevaciones_laterales_mancuernas', 
-    '{"precauciones": ["Mantén una ligera flexión en los codos durante el ejercicio.", "Controla el movimiento para evitar lesiones en los hombros."]}', 
+    
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Elevación Frontal con Mancuerna', 
+    'Toma dos mancuernas mientras estás de pie con las mancuernas a tu lado. Levanta las dos mancuernas con tus codos completamente extendidos hasta que las mancuernas estén a la altura de tus ojos. Baja las pesas de manera controlada a la posición inicial y repite.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-dumbbell-front-raise-front.mp4#t=0.1', 
+    '{"precauciones": ["Utiliza un peso adecuado para evitar lesiones.", "Mantén los codos ligeramente flexionados para reducir la tensión en los codos y las articulaciones."]}', 
     7);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones Laterales en Máquina', 
-    'Siéntate en la máquina con la espalda contra el respaldo. Sujeta las empuñaduras con las manos y eleva los brazos hacia los lados hasta que estén paralelos al suelo. Baja los brazos hasta la posición inicial. Repite el movimiento.', 
-    'url_del_video_elevaciones_laterales_maquina', 
-    'url_de_la_imagen_elevaciones_laterales_maquina', 
-    '{"precauciones": ["Ajusta la máquina para un rango de movimiento seguro.", "Controla la intensidad del ejercicio según tu nivel de condición física."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Elevación Frontal de Placa', 
+    'Párate con los pies al ancho de los hombros y la placa frente al torso, con las palmas mirando hacia los muslos. Manteniendo los codos ligeramente flexionados, levanta la placa hasta el frente del cuerpo. Levanta la placa hasta que los brazos estén completamente extendidos, manteniendo el control de la placa. Baja la placa a la posición inicial y repite las veces que desees.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-plate-front-raise-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura estable y controlada durante todo el ejercicio.", "Utiliza una placa con un peso adecuado para evitar lesiones."]}', 
     7);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones Frontales con Cuerda en Polea Baja', 
-    'De pie frente a la polea baja, sujeta una cuerda con ambas manos y eleva los brazos hacia adelante hasta que estén paralelos al suelo. Baja los brazos hasta la posición inicial. Repite el movimiento.', 
-    'url_del_video_elevaciones_frontales_cuerda_polea_baja', 
-    'url_de_la_imagen_elevaciones_frontales_cuerda_polea_baja', 
-    '{"precauciones": ["Mantén una postura estable durante todo el movimiento.", "Controla el rango de movimiento para enfocarte en la contracción del deltoides anterior."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Press de Hombros Sentado con Mancuernas', 
+    'Siéntate en un banco con soporte para la espalda. Levanta las mancuernas hasta la altura de los hombros con las palmas hacia adelante. Levanta las mancuernas hacia arriba y haz una pausa en la posición contraída. Vuelve a bajar las pesas a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-dumbbell-seated-overhead-press-front.mp4#t=0.1', 
+    '{"precauciones": ["Selecciona un peso adecuado para evitar lesiones.", "Mantén una postura erguida y controlada durante todo el ejercicio."]}', 
     7);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones Laterales con Polea Baja', 
-    'De pie frente a la polea baja, sujeta una empuñadura con una mano y eleva el brazo hacia el lado hasta que esté paralelo al suelo. Baja el brazo hasta la posición inicial y repite el movimiento con el otro brazo.', 
-    'url_del_video_elevaciones_laterales_polea_baja', 
-    'url_de_la_imagen_elevaciones_laterales_polea_baja', 
-    '{"precauciones": ["Ajusta el peso de la polea para un rango de movimiento seguro.", "Mantén el cuerpo en posición vertical durante el ejercicio."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Press de Hombros con Cable', 
+    'Usa un accesorio de agarre con el cable ajustado en la parte inferior de la máquina. Mantente de pie asegurándote de mantener la espalda recta. Tu posición inicial deberá tener las palmas de las manos mirando hacia adelante. Utiliza tanto tus codos como tus hombros para levantar el peso directamente por encima de tu cabeza.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-cable-overhead-press-front.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura estable y controlada durante todo el ejercicio.", "Selecciona un peso adecuado para evitar lesiones."]}', 
     7);
 
 --deltoides parte media
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones Laterales con Mancuernas', 
-    'De pie, sostén una mancuerna en cada mano con las palmas hacia abajo. Eleva las mancuernas hacia los lados hasta que los brazos estén paralelos al suelo. Baja las mancuernas hasta la posición inicial. Repite el movimiento.', 
-    'url_del_video_elevaciones_laterales_mancuernas', 
-    'url_de_la_imagen_elevaciones_laterales_mancuernas', 
-    '{"precauciones": ["Mantén una ligera flexión en los codos durante el ejercicio.", "Controla el rango de movimiento para evitar lesiones en los hombros."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Elevación Lateral con Mancuernas', 
+    'Párate derecho con las mancuernas a cada lado, las palmas frente a tus caderas. Levanta los brazos a ambos lados con una ligera flexión en el codo hasta que estén paralelos al suelo. Haz una pausa en la parte superior del movimiento. Regresa lentamente tus brazos a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-dumbbell-lateral-raise-front.mp4#t=0.1', 
+    '{"precauciones": ["Utiliza un peso adecuado para evitar lesiones.", "Mantén una buena técnica de levantamiento durante todo el ejercicio."]}', 
+   8);
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Elevación Lateral de Brazo Individual con Polea Baja', 
+    'Utiliza un accesorio de asa con el cable ajustado hasta abajo en la máquina. Deberías realizar una abducción vertical en el hombro levantando tu brazo directamente hacia un lado. Levanta hasta que tu brazo esté paralelo al suelo y luego regresa a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-lateral-raise-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura estable y controlada durante todo el ejercicio.", "Utiliza un peso adecuado para evitar lesiones."]}', 
     8);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones Laterales con Polea', 
-    'Ponte de pie frente a una máquina de polea con los pies a la anchura de los hombros. Sostén un asa en cada mano con las palmas hacia abajo. Eleva las asas hacia los lados hasta que los brazos estén paralelos al suelo. Baja las asas hasta la posición inicial. Repite el movimiento.', 
-    'url_del_video_elevaciones_laterales_polea', 
-    'url_de_la_imagen_elevaciones_laterales_polea', 
-    '{"precauciones": ["Ajusta el peso de la polea para un rango de movimiento seguro.", "Mantén una postura estable durante todo el ejercicio."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Elevación Lateral Sentado', 
+    'Siéntate derecho en el banco o caja. Sostén las mancuernas a los lados. Levanta los brazos hasta la altura de los hombros.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-seated-lateral-raise-front.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura erguida y controlada durante todo el ejercicio.", "Utiliza un peso adecuado para evitar lesiones."]}', 
     8);
+
 
 --deltoides parte posterior
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Remo Alto con Barra', 
-    'De pie, inclina el torso hacia delante desde la cadera, manteniendo la espalda recta. Sostén una barra con las manos a la anchura de los hombros, con las palmas hacia abajo. Tira de la barra hacia arriba hasta que toque la parte superior del pecho, manteniendo los codos cerca del cuerpo. Baja la barra lentamente a la posición inicial. Repite el movimiento.', 
-    'url_del_video_remo_alto_barra', 
-    'url_de_la_imagen_remo_alto_barra', 
-    '{"precauciones": ["Mantén una posición estable del torso durante el ejercicio.", "Evita el balanceo del cuerpo para concentrarte en los deltoides posteriores."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Vuelo Posterior del Deltoides con Mancuernas', 
+    'Con unas mancuernas en cada mano, dobla las rodillas con los pies ligeramente hacia afuera. Arquea tu espalda por encima de tus rodillas, y comienza con las pesas tocándose frente a tu pecho. Con los codos doblados, levanta tus brazos hasta el nivel de los hombros, haciendo una pausa al final del movimiento. Baja lentamente tus brazos hasta volver a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-dumbbell-rear-delt-fly-side.mp4#t=0.1', 
+    '{"precauciones": ["Utiliza un peso adecuado para evitar lesiones.", "Mantén una buena postura y control durante todo el ejercicio."]}', 
     9);
     
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Remo Inclinado con Mancuernas', 
-    'Ponte de pie con los pies a la anchura de los hombros y las rodillas ligeramente flexionadas. Inclina el torso hacia delante desde la cadera, manteniendo la espalda recta. Sostén una mancuerna en cada mano con las palmas hacia abajo. Tira de las mancuernas hacia arriba hasta que toquen la parte superior del pecho, manteniendo los codos cerca del cuerpo. Baja las mancuernas lentamente a la posición inicial. Repite el movimiento.', 
-    'url_del_video_remo_inclinado_mancuernas', 
-    'url_de_la_imagen_remo_inclinado_mancuernas', 
-    '{"precauciones": ["Controla el rango de movimiento para evitar lesiones.", "Mantén una postura adecuada para enfocarte en los deltoides posteriores."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Cable Elevado con Rotación Interna y Vuelo Inverso', 
+    'Usa un accesorio de asa o ningún accesorio en absoluto. El cable debe estar ajustado en la parte superior. Camina unos pasos alejándote con el cable que viene del lado opuesto de los brazos con los que estás trabajando. Rota internamente los hombros. A partir de ahí, tus hombros deben abducir y aducir horizontalmente, mientras tus codos permanecen en una posición fija.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-high-internally-rotated-reverse-fly-front.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura adecuada para evitar lesiones.", "Utiliza un peso apropiado y controla el movimiento para evitar lesiones."]}', 
     9);
 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Elevación Posterior de Deltoides Sentado con Mancuernas', 
+    'Con una mancuerna en cada mano, dobla tus rodillas con los pies ligeramente arqueados hacia afuera. Arquea tu espalda por encima de tus rodillas, y comienza con las pesas tocándose frente a tu pecho. Con los codos doblados, levanta tus brazos hasta el nivel de los hombros, haciendo una pausa al final del movimiento. Baje lentamente los brazos de nuevo a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-dumbbell-seated-rear-delt-fly-side.mp4#t=0.1', 
+    '{"precauciones": ["Utiliza un peso adecuado para evitar lesiones.", "Mantén una buena técnica y control durante todo el ejercicio."]}', 
+    9);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Jalón de Cuerda con Polea de Rodillas hacia el Rostro', 
+    'Comienza con los cables en la parte superior. Usa un accesorio de cuerda. Cae en una posición de medio arrodillamiento. Tira de la pieza de metal en el medio de la cuerda hasta el puente de tu nariz.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-rope-kneeling-face-pull-front.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura adecuada para evitar lesiones.", "Controla el movimiento y evita usar un peso excesivo que pueda comprometer tu forma."]}', 
+    9);
+
+
+
 -- biceps braquial cabeza larga
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Curl Inclinado en Banco', 
-    'Acuéstate boca arriba en un banco inclinado con los pies apoyados en el suelo. Sostén una mancuerna en cada mano con las palmas hacia arriba. Flexiona los codos para levantar las mancuernas hasta que toquen el pecho. Extiende los codos para volver a la posición inicial. Repite el movimiento.', 
-    'url_del_video_curl_inclinado_banco', 
-    'url_de_la_imagen_curl_inclinado_banco', 
-    '{"precauciones": ["Mantén una postura estable en el banco para evitar lesiones en la espalda.", "Controla el movimiento para concentrarte en la cabeza larga del bíceps."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Curl de Martillo en Banco Inclinado con Mancuerna', 
+    'Sostén las mancuernas con un agarre neutro (pulgares apuntando al techo). Sentado en un banco inclinado. Levanta lentamente la mancuerna hasta la altura del pecho. Regresa a la posición inicial y repite.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-dumbbell-incline-hammer-curl-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura adecuada para evitar lesiones.", "Controla el movimiento y evita usar un peso excesivo que pueda comprometer tu forma."]}', 
     10);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Curl a una Mano en Cable o Polea', 
-    'Ponte de pie frente a una máquina de cable o polea con los pies a la anchura de los hombros. Sostén un asa en cada mano con las palmas hacia arriba. Flexiona el codo de un brazo para levantar el asa hasta que toque el pecho. Extiende el codo para volver a la posición inicial. Repite el movimiento con el otro brazo.', 
-    'url_del_video_curl_una_mano_polea', 
-    'url_de_la_imagen_curl_una_mano_polea', 
-    '{"precauciones": ["Mantén una posición adecuada para evitar lesiones en la espalda.", "Controla la resistencia para enfocarte en la cabeza larga del bíceps."]}', 
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Curl Bayesian de Cable', 
+    'Utiliza un accesorio de agarre. El cable debe estar ajustado hasta el fondo de la máquina. Dale la espalda a la máquina de poleas. Separa tus pies para tener una mejor base de apoyo. Enfrente tu palma hacia adelante. Flexiona en el codo y extiende.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-bilateral-bayesian-curl-side.mp4#t=0.1', 
+    '{"precauciones": ["Ajusta el peso adecuado para tu nivel de fuerza.", "Mantén una postura estable durante todo el ejercicio."]}', 
     10);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Curl con Barra Recta u Olímpica', 
-    'De pie, sostén una barra con las manos a la anchura de los hombros, con las palmas hacia arriba. Flexiona los codos para levantar la barra hasta que toque el pecho. Extiende los codos para volver a la posición inicial. Repite el movimiento.', 
-    'url_del_video_curl_barra_recta', 
-    'url_de_la_imagen_curl_barra_recta', 
-    '{"precauciones": ["Mantén una buena postura y control del movimiento.", "Utiliza un agarre adecuado para evitar lesiones en las muñecas."]}', 
-    10);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Curl Martillo', 
-    'De pie, sostén una mancuerna en cada mano con las palmas mirándose entre sí. Flexiona los codos para levantar las mancuernas hasta que toquen el pecho. Extiende los codos para volver a la posición inicial. Repite el movimiento.', 
-    'url_del_video_curl_martillo', 
-    'url_de_la_imagen_curl_martillo', 
-    '{"precauciones": ["Mantén una postura estable durante el ejercicio.", "Controla el movimiento para trabajar eficazmente el braquial anterior y el bíceps braquial."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Curl de Martillo con Cuerda de Cable', 
+    'Utiliza un accesorio de cuerda. El cable debe estar ajustado hasta la parte más baja de la máquina. Dale la espalda a la máquina de poleas. Alterna tu posición para que tengas una base de apoyo más sólida. Usa un agarre neutro (pulgar mirando hacia arriba, meñique hacia abajo). Flexiona en el codo y extiende.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-rope-hammer-curl-front.mp4#t=0.1', 
+    '{"precauciones": ["Ajusta el peso adecuado para tu nivel de fuerza.", "Mantén una postura estable durante todo el ejercicio."]}', 
     10);
 
 -- Biceps braquial cabeza corta
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Curl con Barra Z', 
-    'Este ejercicio coloca la cabeza corta en una posición de contracción máxima, lo que la hace trabajar más duro.', 
-    'url_del_video_curl_barra_z', 
-    'url_de_la_imagen_curl_barra_z', 
-    '{"precauciones": ["Mantén una buena postura durante todo el ejercicio.", "Controla el movimiento para maximizar la contracción de la cabeza corta del bíceps."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Curl de Barra', 
+    'Manteniendo los brazos superiores inmóviles, levanta las pesas hacia adelante mientras contraes los bíceps al exhalar. Continúa el movimiento hasta que tus bíceps estén completamente contraídos y la barra esté al nivel de los hombros. Mantén la posición contraída durante un segundo y aprieta fuertemente los bíceps. Baja lentamente el peso hasta la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Barbell-barbell-curl-side.mp4#t=0.1', 
+    '{"precauciones": ["Utiliza un peso apropiado para tu nivel de fuerza.", "Mantén una forma adecuada y evita balancear el cuerpo durante el ejercicio."]}', 
     11);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Curl con Mancuernas', 
-    'Este ejercicio es un ejercicio compuesto que trabaja botha la cabeza larga y la cabeza corta del bíceps braquial, con énfasis en la cabeza corta.', 
-    'url_del_video_curl_mancuernas', 
-    'url_de_la_imagen_curl_mancuernas', 
-    '{"precauciones": ["Mantén una postura estable durante el ejercicio.", "Asegúrate de utilizar un rango de movimiento completo para activar ambas cabezas del bíceps."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Curl con Mancuerna', 
+    'Manténgase erguido con una mancuerna en cada mano a la longitud del brazo. Levanta una pesa y gira tu antebrazo hasta que esté vertical y la palma de tu mano esté mirando hacia el hombro. Baja a la posición original y repite con el brazo contrario.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-dumbbell-curl-front.mp4#t=0.1', 
+    '{"precauciones": ["Utiliza un peso apropiado para tu nivel de fuerza.", "Mantén una postura adecuada y evita balancear el cuerpo durante el ejercicio."]}', 
     11);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Curl Predicador con Barra', 
-    'Este ejercicio aísla la cabeza corta y la trabaja de forma directa.', 
-    'url_del_video_curl_predicador_barra', 
-    'url_de_la_imagen_curl_predicador_barra', 
-    '{"precauciones": ["Ajusta el banco para garantizar una buena posición y evitar lesiones.", "Controla el movimiento para enfocarte en la cabeza corta del bíceps."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Curl de predicador con barra Z', 
+    'Ubícate en el banco para predicador; agarra la barra Z con un agarre por debajo, codos extendidos. Lentamente dobla la barra hacia los hombros; mantén los brazos superiores inmóviles, enfócate en los bíceps. Baje la barra a la posición inicial; mantenga el control, repita para las repeticiones.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Barbell-ez-bar-preacher-curl-front.mp4#t=0.1', 
+    '{"precauciones": ["Utiliza un peso adecuado para tu nivel de fuerza.", "Mantén una postura adecuada y controla el movimiento durante todo el ejercicio."]}', 
     11);
+
 
 --Triceps braquial - cabeza larga 
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Press francés con barra Z', 
-    'Trabajar la cabeza larga del tríceps braquial de forma directa.', 
-    'url_del_video_press_frances_barra_z', 
-    'url_de_la_imagen_press_frances_barra_z', 
-    '{"precauciones": ["Mantén una postura estable durante el ejercicio.", "Utiliza un peso adecuado para evitar lesiones en las articulaciones."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Extensión de Tríceps con Mancuerna', 
+    'Comienza de pie con los pies separados al ancho de tus hombros y sujetando una mancuerna en una mano. Inclínate por la cintura y coloca tu mano opuesta en tu rodilla para apoyarte. Desde esta posición inicial, extiende tu brazo hacia atrás para que la mancuerna quede detrás de tu cuerpo. Asegúrate de mantener tu codo cerca de tu cuerpo y tu core activado durante todo el movimiento.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-dumbbell-tricep-kickback-side.mp4#t=0.1', 
+    '{"precauciones": ["Utiliza un peso adecuado para tu nivel de fuerza.", "Mantén una postura estable y controla el movimiento para evitar lesiones."]}', 
     12);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Extensiones de tríceps en polea alta', 
-    'Trabajar la cabeza larga del tríceps braquial de forma directa.', 
-    'url_del_video_extensiones_triceps_polea_alta', 
-    'url_de_la_imagen_extensiones_triceps_polea_alta', 
-    '{"precauciones": ["Asegúrate de ajustar la polea a una altura adecuada.", "Controla el movimiento para maximizar la contracción del tríceps."]}', 
-    12);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Fondos en paralelas o dips', 
-    'Trabajar el tríceps braquial en general, con énfasis en la cabeza larga.', 
-    'url_del_video_fondos_paralelas_dips', 
-    'url_de_la_imagen_fondos_paralelas_dips', 
-    '{"precauciones": ["Controla el descenso para evitar lesiones en los hombros.", "Mantén una buena postura durante todo el ejercicio."]}', 
-    12);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Patada de tríceps con mancuerna', 
-    'Trabajar la cabeza larga del tríceps braquial de forma individualizada.', 
-    'url_del_video_patada_triceps_mancuerna', 
-    'url_de_la_imagen_patada_triceps_mancuerna', 
-    '{"precauciones": ["Mantén la espalda recta durante el ejercicio.", "Utiliza un peso que te permita realizar el movimiento de forma controlada."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Extensión de Tríceps por Encima de la Cabeza con Cuerda de Cable', 
+    'Puedes usar cualquier accesorio. El cable debe estar totalmente en la parte inferior de la máquina. Da la espalda a la máquina. Apunta tus codos directamente hacia el techo. Desde allí, extiende tus codos hasta que tus puños estén apuntando directamente hacia el techo.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-overhead-tricep-extension-side.mp4#t=0.1', 
+    '{"precauciones": ["Selecciona un peso adecuado para tus capacidades.", "Mantén una postura estable y controla el movimiento para evitar lesiones."]}', 
     12);
 
 --triceps braquial cabeza lateral
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Extensiones de tríceps en polea alta con agarre en V', 
-    'Trabajar la cabeza lateral del tríceps braquial de forma directa.', 
-    'url_del_video_extensiones_triceps_polea_alta_agarre_v', 
-    'url_de_la_imagen_extensiones_triceps_polea_alta_agarre_v', 
-    '{"precauciones": ["Asegúrate de ajustar la polea a una altura adecuada.", "Controla el movimiento para maximizar la contracción del tríceps.", "Mantén una buena postura durante todo el ejercicio."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Empuje hacia abajo con cuerda de cable', 
+    'El cable debe ajustarse hasta la parte superior de la máquina. Asegúrate de mantener tu brazo superior pegado a tu costado. Extiende tus codos hasta que sientas que tus tríceps se contraen.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-push-down-front.mp4#t=0.1', 
+    '{"precauciones": ["Selecciona un peso adecuado para tu nivel de fuerza.", "Mantén una postura estable durante todo el ejercicio."]}', 
     13);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Fondos en paralelas con agarre estrecho', 
-    'Trabajar el tríceps braquial en general, con énfasis en la cabeza lateral.', 
-    'url_del_video_fondos_paralelas_agarre_estrecho', 
-    'url_de_la_imagen_fondos_paralelas_agarre_estrecho', 
-    '{"precauciones": ["Controla el descenso para evitar lesiones en los codos.", "Mantén una buena postura durante todo el ejercicio."]}', 
-    13);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Press francés con barra Z con agarre en V', 
-    'Trabajar el tríceps braquial en general, con énfasis en la cabeza lateral.', 
-    'url_del_video_press_frances_barra_z_agarre_v', 
-    'url_de_la_imagen_press_frances_barra_z_agarre_v', 
-    '{"precauciones": ["Mantén una postura estable durante el ejercicio.", "Utiliza un peso adecuado para evitar lesiones en las articulaciones.", "Controla el movimiento para maximizar la contracción del tríceps."]}', 
+INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Fondos en Banco', 
+    'Agarra el borde del banco con tus manos, mantén tus pies juntos y las piernas rectas. Baja tu cuerpo recto hacia abajo. Presiona lentamente hacia arriba hasta volver al punto de inicio. CONSEJO: Hazlo más difícil levantando tus pies del suelo y añadiendo peso.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-tricep-dips-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura adecuada durante todo el ejercicio.", "Controla el movimiento para evitar lesiones."]}', 
     13);
 
 --Triceps braquial cabeza medial
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Extensiones de tríceps en polea alta con agarre en V', 
-    'Este ejercicio coloca la cabeza medial en una posición de contracción máxima, lo que la hace trabajar más duro.', 
-    'url_del_video_extensiones_triceps_polea_alta_agarre_v', 
-    'url_de_la_imagen_extensiones_triceps_polea_alta_agarre_v', 
-    '{"precauciones": ["Asegúrate de ajustar la polea a una altura adecuada.", "Controla el movimiento para maximizar la contracción del tríceps.", "Mantén una buena postura durante todo el ejercicio."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Flexiones Diamante', 
+    'Coloca tus dedos índices y pulgares de manera que se toquen, formando una forma de diamante. Utiliza la posición estándar de flexión de brazos. Baja el pecho hacia tus manos, mantén los codos cerca de tu cuerpo. Detente justo antes de que tu pecho toque el suelo, luego empuja hacia arriba para volver a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-diamond-push-ups-front.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una alineación adecuada del cuerpo durante todo el movimiento.", "Controla la respiración y evita arquear la espalda."]}', 
     14);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Fondos en paralelas con agarre estrecho', 
-    'Este ejercicio trabaja la cabeza medial del tríceps braquial de forma directa.', 
-    'url_del_video_fondos_paralelas_agarre_estrecho', 
-    'url_de_la_imagen_fondos_paralelas_agarre_estrecho', 
-    '{"precauciones": ["Controla el descenso para evitar lesiones en los codos.", "Mantén una buena postura durante todo el ejercicio."]}', 
-    14);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Extensiones de tríceps con mancuerna acostado', 
-    'Este ejercicio aísla la cabeza medial y la trabaja de forma directa.', 
-    'url_del_video_extensiones_triceps_mancuerna_acostado', 
-    'url_de_la_imagen_extensiones_triceps_mancuerna_acostado', 
-    '{"precauciones": ["Utiliza un banco estable para evitar lesiones.", "Selecciona un peso adecuado para controlar el movimiento.", "Mantén una contracción controlada del tríceps durante todo el ejercicio."]}', 
-    14);
 
 --flexores del antebrazo
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Flexión de muñeca con barra', 
-    'Este ejercicio trabaja todos los flexores del antebrazo de forma conjunta.', 
-    'url_del_video_flexion_muneca_barra', 
-    'url_de_la_imagen_flexion_muneca_barra', 
-    '{"precauciones": ["Utiliza un peso adecuado para evitar lesiones.", "Mantén una buena postura durante todo el ejercicio.", "Realiza el movimiento de forma controlada para maximizar el trabajo en los flexores del antebrazo."]}', 
-    15);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Flexión de muñeca con mancuerna', 
-    'Este ejercicio permite trabajar cada brazo de forma individualizada.', 
-    'url_del_video_flexion_muneca_mancuerna', 
-    'url_de_la_imagen_flexion_muneca_mancuerna', 
-    '{"precauciones": ["Selecciona un peso adecuado para controlar el movimiento.", "Mantén una buena postura durante todo el ejercicio.", "Asegúrate de realizar el ejercicio de forma simétrica para ambos brazos."]}', 
-    15);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Flexión de muñeca con polea', 
-    'Este ejercicio permite aislar los flexores del antebrazo y trabajarlos de forma más específica.', 
-    'url_del_video_flexion_muneca_polea', 
-    'url_de_la_imagen_flexion_muneca_polea', 
-    '{"precauciones": ["Ajusta la altura de la polea para un rango de movimiento óptimo.", "Controla el movimiento para evitar lesiones en la muñeca.", "Mantén una contracción constante de los flexores del antebrazo durante el ejercicio."]}', 
+   
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Extensión de Muñeca con Mancuerna', 
+    'Agarra dos mancuernas con un agarre por encima de la mano y coloca tus antebrazos sobre tus rodillas. Permite que tus muñecas se flexionen completamente, luego extiende tus muñecas.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-dumbbell-wrist-extension-side.mp4#t=0.1', 
+    '{"precauciones": ["Selecciona un peso adecuado para tu nivel de fuerza.", "Realiza el movimiento de forma controlada y sin balancear los brazos."]}', 
     15);
 
 --Extensores del antebrazo
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Extensión de muñeca con barra', 
-    'Este ejercicio trabaja todos los extensores del antebrazo de forma conjunta.', 
-    'url_del_video_extension_muneca_barra', 
-    'url_de_la_imagen_extension_muneca_barra', 
-    '{"precauciones": ["Selecciona un peso adecuado para controlar el movimiento.", "Mantén una postura neutral de la muñeca para evitar lesiones.", "Realiza el ejercicio de forma controlada para maximizar la activación de los extensores del antebrazo."]}', 
-    16);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Extensión de muñeca con mancuerna', 
-    'Este ejercicio permite trabajar cada brazo de forma individualizada.', 
-    'url_del_video_extension_muneca_mancuerna', 
-    'url_de_la_imagen_extension_muneca_mancuerna', 
-    '{"precauciones": ["Ajusta el peso de forma adecuada para un control total del movimiento.", "Mantén una postura estable durante todo el ejercicio.", "Evita movimientos bruscos para prevenir lesiones."]}', 
-    16);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Extensión de muñeca con polea', 
-    'Este ejercicio permite aislar los extensores del antebrazo y trabajarlos de forma más específica.', 
-    'url_del_video_extension_muneca_polea', 
-    'url_de_la_imagen_extension_muneca_polea', 
-    '{"precauciones": ["Ajusta la altura de la polea para un rango de movimiento óptimo.", "Controla el peso para evitar lesiones en la muñeca.", "Mantén una contracción constante de los extensores del antebrazo durante todo el ejercicio."]}', 
-    16);
-
---pronadores y supinadores del antebrazo
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Pronación de muñeca con barra', 
-    'Este ejercicio trabaja todos los pronadores del antebrazo de forma conjunta.', 
-    'url_del_video_pronacion_muneca_barra', 
-    'url_de_la_imagen_pronacion_muneca_barra', 
-    '{"precauciones": ["Selecciona un peso adecuado para controlar el movimiento.", "Mantén una postura neutral de la muñeca para evitar lesiones.", "Realiza el ejercicio de forma controlada para maximizar la activación de los pronadores del antebrazo."]}', 
-    17);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Pronación de muñeca con mancuerna', 
-    'Este ejercicio permite trabajar cada brazo de forma individualizada.', 
-    'url_del_video_pronacion_muneca_mancuerna', 
-    'url_de_la_imagen_pronacion_muneca_mancuerna', 
-    '{"precauciones": ["Ajusta el peso de forma adecuada para un control total del movimiento.", "Mantén una postura estable durante todo el ejercicio.", "Evita movimientos bruscos para prevenir lesiones."]}', 
-    17);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Pronación de muñeca con polea', 
-    'Este ejercicio permite aislar los pronadores del antebrazo y trabajarlos de forma más específica.', 
-    'url_del_video_pronacion_muneca_polea', 
-    'url_de_la_imagen_pronacion_muneca_polea', 
-    '{"precauciones": ["Ajusta la altura de la polea para un rango de movimiento óptimo.", "Controla el peso para evitar lesiones en la muñeca.", "Mantén una contracción constante de los pronadores del antebrazo durante todo el ejercicio."]}', 
-    17);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Supinación de muñeca con barra', 
-    'Este ejercicio trabaja todos los supinadores del antebrazo de forma conjunta.', 
-    'url_del_video_supinacion_muneca_barra', 
-    'url_de_la_imagen_supinacion_muneca_barra', 
-    '{"precauciones": ["Selecciona un peso adecuado para controlar el movimiento.", "Mantén una postura neutral de la muñeca para evitar lesiones.", "Realiza el ejercicio de forma controlada para maximizar la activación de los supinadores del antebrazo."]}', 
-    17);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Supinación de muñeca con mancuerna', 
-    'Este ejercicio permite trabajar cada brazo de forma individualizada.', 
-    'url_del_video_supinacion_muneca_mancuerna', 
-    'url_de_la_imagen_supinacion_muneca_mancuerna', 
-    '{"precauciones": ["Ajusta el peso de forma adecuada para un control total del movimiento.", "Mantén una postura estable durante todo el ejercicio.", "Evita movimientos bruscos para prevenir lesiones."]}', 
-    17);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Supinación de muñeca con polea', 
-    'Este ejercicio permite aislar los supinadores del antebrazo y trabajarlos de forma más específica.', 
-    'url_del_video_supinacion_muneca_polea', 
-    'url_de_la_imagen_supinacion_muneca_polea', 
-    '{"precauciones": ["Ajusta la altura de la polea para un rango de movimiento óptimo.", "Controla el peso para evitar lesiones en la muñeca.", "Mantén una contracción constante de los supinadores del antebrazo durante todo el ejercicio."]}', 
-    17);
-
---Recto abdominal
     
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Abdominales clásicos', 
-    'Este ejercicio trabaja todo el recto abdominal de forma conjunta.', 
-    'url_del_video_abdominales_clasicos', 
-    'url_de_la_imagen_abdominales_clasicos', 
-    '{"precauciones": ["Realiza el ejercicio de forma controlada para maximizar la activación del recto abdominal.", "Mantén una postura adecuada para evitar la tensión en el cuello.", "No uses impulso excesivo para levantar el torso."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Curl de Muñeca con Barra', 
+    'Agarra una barra recta con un agarre supinado (de revés). Arrodíllate junto a un banco plano y coloca tus antebrazos sobre el banco con las muñecas justo al borde del mismo. Deja que la barra tire hacia abajo de tus muñecas hasta que estén extendidas. Dobla la barra hasta que tus muñecas estén completamente flexionadas. Baja de forma controlada y repite.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Barbell-barbell-wrist-curl-side.mp4#t=0.1', 
+    '{"precauciones": ["Selecciona un peso adecuado para tu nivel de fuerza.", "Mantén una postura estable y controla el movimiento para evitar lesiones."]}', 
+    16);
+
+--braquiorradial
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Curl Inverso con Mancuernas', 
+    'Agarra las mancuernas con un agarre pronado (de arriba hacia abajo). Puedes hacer este ejercicio sin utilizar el pulgar si te resulta más cómodo para tus muñecas. Dobla los codos hasta que tus bíceps toquen tus antebrazos. Intenta no dejar que tus codos se abran hacia afuera.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-dumbbell-reverse-curl-front.mp4#t=0.1', 
+    '{"precauciones": ["Selecciona un peso adecuado para tu nivel de fuerza.", "Mantén una postura estable y controla el movimiento para evitar lesiones."]}', 
+    17);
+
+--Recto abdominal seccion alta
+    
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Crunch de Rodillas con Barra en Polea', 
+    'Usa un accesorio de doble asa y ajusta el cable hasta la parte superior. Da unos pasos adelante y luego cae en una posición de rodillas. Empuja tus caderas hacia atrás y tensa tus abdominales, luego empuja las caderas hacia adelante hasta volver a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-kneeling-crunch-side.mp4#t=0.1', 
+    '{"precauciones": ["Ajusta el peso de la máquina según tu nivel de fuerza.", "Mantén una postura adecuada y controla el movimiento para evitar lesiones."]}', 
     18);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones de piernas colgando', 
-    'Este ejercicio trabaja la parte inferior del recto abdominal.', 
-    'url_del_video_elevaciones_piernas_colgando', 
-    'url_de_la_imagen_elevaciones_piernas_colgando', 
-    '{"precauciones": ["Controla el movimiento para evitar balanceo excesivo.", "Mantén las piernas extendidas durante el ascenso y descenso.", "Evita arquear excesivamente la espalda baja."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Abdominales', 
+    'Recuéstate sobre tu espalda con las rodillas dobladas y los pies apoyados en el suelo, aproximadamente a un pie de distancia de tu zona lumbar. Coloca las yemas de tus dedos en tus sienes con las palmas hacia afuera. Contrae el abdomen hacia la base de tu columna para activar los músculos, luego levanta la cabeza y los hombros del suelo. Regresa a la posición inicial y repite.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-crunch-side.mp4#t=0.1', 
+    '{"precauciones": ["Realiza el movimiento de manera controlada para evitar lesiones.", "Mantén una respiración constante durante todo el ejercicio."]}', 
     18);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Plancha abdominal', 
-    'Este ejercicio trabaja todo el recto abdominal de forma isométrica.', 
-    'url_del_video_plancha_abdominal', 
-    'url_de_la_imagen_plancha_abdominal', 
-    '{"precauciones": ["Mantén el cuerpo en línea recta desde la cabeza hasta los talones.", "Evita que la cadera se hunda o levante durante la posición de plancha.", "Controla la respiración y no retengas el aliento."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Plancha de Manos', 
+    'Comienza en una posición de rodillas con las manos apoyadas en el suelo. Levanta las rodillas del suelo. Mantén esta posición con la espalda recta.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-hand-plank-side_GnZ2NZh.mp4#t=0.1', 
+    '{"precauciones": ["Mantén la posición con la espalda recta para evitar lesiones.", "No dejes que tus caderas caigan hacia abajo."]}', 
     18);
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Sostén Hueco', 
+    'Túmbate boca abajo en el suelo con los brazos extendidos sobre la cabeza. Levanta tu espalda superior y tus piernas del suelo. Tu cuerpo debería tener forma de plátano. Mantén esta posición.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-hollow-hold-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén la posición con la espalda recta para evitar lesiones.", "No dejes que tus caderas caigan hacia abajo."]}', 
+    18);
+    
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Crunch de Rodillas con Cuerda de Cable', 
+    'Utiliza un accesorio de cuerda y ajusta el cable completamente hasta arriba. Da unos pasos hacia adelante y luego cae en una posición de rodillas. Empuja tus caderas hacia atrás y tensa tus abdominales, luego empuja las caderas hacia adelante hasta volver a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-rope-kneeling-crunch-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una alineación adecuada del cuerpo para evitar lesiones.", "Controla el movimiento y evita balancear las caderas para mantener la efectividad del ejercicio."]}', 
+    18);
+
+
+
+--recto abdominal seccion baja
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Elevaciones de Rodilla Colgando', 
+    'Agarra la barra y cuélgate, mantén tu cuerpo quieto y tus piernas rectas. Levanta lentamente tus rodillas hacia tu pecho. Una vez que hayas levantado las rodillas lo más alto posible, baja las piernas y repite. La duración de estos movimientos debe ser lenta para que no utilices el impulso, permitiéndote obtener el máximo beneficio del ejercicio.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-hanging-knee-raises-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura estable y controla el movimiento para evitar lesiones.", "Evita balancear el cuerpo para obtener el máximo beneficio del ejercicio."]}', 
+    19);
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Elevaciones de Pierna Acostado', 
+    'Acuéstate boca arriba con las palmas de tus brazos hacia abajo a ambos lados. Mantén tus piernas juntas y lo más rectas posible. Levanta lentamente tus piernas hasta un ángulo de 90°, haz una pausa en esta posición, o tan alto como puedas llegar con tus piernas, y luego bájalas lentamente de nuevo. La duración de estos movimientos debería ser lenta para que no utilices el impulso, permitiéndote obtener el máximo provecho del ejercicio.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-leg-raises-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura estable y controla el movimiento para evitar lesiones.", "Realiza el movimiento de forma controlada y evita balancear el cuerpo para obtener el máximo beneficio del ejercicio."]}', 
+    19);
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Escalador de Montañas', 
+    'Para realizar un escalador de montaña con peso corporal, comienza en posición de plancha con las manos colocadas directamente debajo de tus hombros. Acerca tu rodilla derecha hacia tu pecho, manteniendo el pie cerca de tu mano. Cambia rápidamente de pierna, llevando tu rodilla izquierda hacia tu pecho. Continúa con este movimiento, alternando las piernas, a un ritmo rápido durante un tiempo determinado o una cantidad establecida de repeticiones.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-mountain-climber-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura estable y controla el movimiento para evitar lesiones.", "Realiza el ejercicio a un ritmo adecuado para ti y evita movimientos bruscos que puedan causar lesiones."]}', 
+    19);
+    
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Despliegues con Máquina', 
+    'Sostén el Rodillo Abdominal con ambas manos y arrodíllate en el suelo con los pies levantados y cruzados. Desplaza lentamente el rodillo abdominal hacia adelante, estirando tu cuerpo hasta conseguir una posición recta. Después de una pausa en la posición estirada, comienza a retornar a la posición inicial. Este debería ser un movimiento lento y controlado.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-machine-roll-outs-side.mp4#t=0.1', 
+    '{"precauciones": ["Asegúrate de mantener una postura adecuada para evitar lesiones en la espalda baja.", "Controla el movimiento y evita realizarlo con impulso para maximizar la efectividad del ejercicio."]}', 
+    19);
 
 --oblicuos externos
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Crunches laterales', 
-    'Este ejercicio trabaja los oblicuos externos de forma directa.', 
-    'url_del_video_crunches_laterales', 
-    'url_de_la_imagen_crunches_laterales', 
-    '{"precauciones": ["Realiza el movimiento de forma controlada para evitar tensiones en la zona lumbar.", "Mantén el cuello en posición neutral durante el ejercicio.", "Exhala al contraer los oblicuos y mantén la respiración constante."]}', 
-    19);
+    
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Plancha Lateral con la Mano', 
+    'Presiona tu mano contra el suelo y levanta la cadera del suelo. Abre el pecho y mantén esta posición durante el tiempo asignado.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-hand-side-plank-front.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una alineación adecuada del cuerpo para evitar lesiones en la espalda.", "Controla la respiración durante el ejercicio para mantener la estabilidad."]}', 
+    20);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Plancha lateral', 
-    'Este ejercicio trabaja los oblicuos externos de forma isométrica.', 
-    'url_del_video_plancha_lateral', 
-    'url_de_la_imagen_plancha_lateral', 
-    '{"precauciones": ["Mantén el cuerpo en línea recta desde la cabeza hasta los pies.", "Evita que la cadera se hunda o levante durante la posición de plancha lateral.", "Controla la respiración y no retengas el aliento."]}', 
-    19);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones de piernas laterales', 
-    'Este ejercicio trabaja la parte inferior de los oblicuos externos.', 
-    'url_del_video_elevaciones_piernas_laterales', 
-    'url_de_la_imagen_elevaciones_piernas_laterales', 
-    '{"precauciones": ["Controla el movimiento para evitar balanceo excesivo.", "Mantén las piernas extendidas durante el ascenso y descenso.", "Evita arquear excesivamente la espalda baja."]}', 
-    19);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Giro Ruso con Mancuerna', 
+    'Siéntate en el suelo y flexiona tus rodillas y caderas a un ángulo de 90 grados. Tus pies deberían estar flotando sobre el suelo. (Si eso es demasiado difícil, comienza con los talones en el piso). Gira tu columna vertebral superior para activar tus oblicuos.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-dumbbell-russian-twist-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura adecuada para evitar lesiones en la espalda baja.", "Realiza el movimiento de forma controlada y evita el impulso excesivo."]}', 
+    20);
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Cortador de Madera con Cable', 
+    'Ajusta el cable a la altura aproximada de los pezones. Usa un accesorio de manija. Ponte de lado, luego gira tu torso con los brazos extendidos contra la resistencia. Después de completar el número asignado de repeticiones, mira en la dirección opuesta y repite.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-cable-woodchopper-front.mp4#t=0.1', 
+    '{"precauciones": ["Ajusta la altura del cable y selecciona el peso adecuado para tu nivel de fuerza.", "Mantén una postura estable y controla el movimiento para evitar lesiones."]}', 
+    20);
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Giro Ruso con Mancuernas y Palanca Larga', 
+    'Comienza sentándote en el suelo con las rodillas dobladas y los pies apoyados completamente en el suelo. Sostén una mancuerna con ambas manos con los brazos extendidos rectos frente a ti. Gira tu torso hacia la derecha, llevando la mancuerna hacia el suelo, luego regresa al centro. Repite en el lado izquierdo, girando hacia la izquierda y llevando la mancuerna hacia el suelo. Continúa con este movimiento de torsión, alternando los lados, hasta completar el número de repeticiones deseado. Mantén tu core activado y evita balancear tus brazos para generar impulso.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-dumbbell-long-lever-russian-twist-front.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura adecuada y controla el movimiento para evitar lesiones.", "No fuerces el movimiento y trabaja dentro de tu rango de movimiento cómodo."]}', 
+    20);
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Plancha Lateral con Mancuerna Arriba Abajo', 
+    'Comienza acostándote de lado con los pies apilados uno encima del otro y una mancuerna sobre la cadera. Coloca tu codo inferior en el suelo debajo de tu hombro y contrae tu abdomen para levantar las caderas del suelo. Tus caderas harán todo el movimiento. Piensa, caderas arriba, caderas abajo.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-dumbbell-side-plank-up-down-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una alineación adecuada del cuerpo para evitar lesiones.", "Controla el movimiento y evita balancear las caderas para mantener la efectividad del ejercicio."]}', 
+    20);
 
 
 -- oblicuos internos
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Giros rusos con pelota suiza', 
-    'Este ejercicio trabaja los oblicuos internos de forma directa.', 
-    'url_del_video_giros_rusos_pelota_suiza', 
-    'url_de_la_imagen_giros_rusos_pelota_suiza', 
-    '{"precauciones": ["Realiza el giro controlado para evitar lesiones en la espalda baja.", "Mantén la pelota suiza estable durante el ejercicio.", "Ajusta la resistencia según tu nivel de condición física."]}', 
-    20);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Inclinación Lateral con Mancuerna', 
+    'Párate con los pies separados a la anchura de las caderas y coloca tu mano derecha en la cadera derecha. Sostén una mancuerna con la mano izquierda. Inclínate desde las caderas hacia un lado. Asegúrate de no empezar a inclinarte hacia adelante para intentar forzar un mayor rango de movimiento.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-dumbbell-side-bend-front.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura adecuada y controla el movimiento para evitar lesiones.", "Evita la inclinación hacia adelante excesiva y trabaja dentro de tu rango de movimiento cómodo."]}', 
+    21);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Plancha con rotación de cadera', 
-    'Este ejercicio trabaja los oblicuos internos de forma isométrica.', 
-    'url_del_video_plancha_rotacion_cadera', 
-    'url_de_la_imagen_plancha_rotacion_cadera', 
-    '{"precauciones": ["Mantén el cuerpo en posición de plancha estable.", "Evita que la cadera se hunda o levante durante la rotación.", "Controla la respiración y no retengas el aliento."]}', 
-    20);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones de piernas con rotación', 
-    'Este ejercicio trabaja la parte inferior de los oblicuos internos.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion', 
-    '{"precauciones": ["Realiza el movimiento con control para evitar la tensión en la espalda baja.", "Mantén las piernas extendidas durante el ascenso y descenso.", "Adapta la resistencia según tu nivel de condición física."]}', 
-    20);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Inclinación Lateral de Agarre con Placas', 
+    'Párate derecho con la placa sostenida a tu lado. Mantén tus caderas y hombros mirando hacia adelante, inclínate lentamente hacia un lado. Regresa a la posición vertical. Cambia de mano y repite.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-plate-pinch-grip-side-bend-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una postura adecuada y controla el movimiento para evitar lesiones.", "No fuerces el movimiento y trabaja dentro de tu rango de movimiento cómodo."]}', 
+    21);
 
 --transverso abdominal
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
     ('Vacío abdominal (hipopresivos)', 
     'Este ejercicio se puede realizar acostado, de rodillas o de pie. Para realizarlo, exhala todo el aire de tus pulmones y luego aprieta tu abdomen como si estuvieras tratando de succionarlo hacia adentro. Mantén la contracción durante unos segundos y luego relájate. Repite este proceso 10-15 veces.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion', 
+    'https://www.youtube.com/watch?v=2_SA8rRxS04',
     '{"precauciones": ["Asegúrate de exhalar completamente antes de contraer el abdomen.", "Evita contener la respiración durante la contracción.", "Adapta la intensidad del ejercicio según tu capacidad."]}', 
-    21);
+    22);
 
 --cuadriceps recto femoral
-   
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Sentadillas', 
-    'Las sentadillas son un ejercicio compuesto que trabaja varios grupos musculares, incluido el cuádriceps recto femoral. Para realizar una sentadilla con la forma correcta, coloca los pies a la anchura de los hombros, flexiona las rodillas y baja el cuerpo hasta que los muslos estén paralelos al suelo. Asegúrate de mantener la espalda recta y el pecho abierto.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion', 
-    '{"precauciones": ["Asegúrate de mantener la forma correcta para evitar lesiones.", "Adapta la intensidad según tu capacidad.", "Consulta a un profesional si eres principiante o tienes alguna preocupación médica."]}', 
-    22);
-   
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Extensiones de rodilla', 
-    'Este ejercicio se puede realizar con una máquina de pesas o con una banda de resistencia. Para realizar una extensión de rodilla, siéntate en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho. Mantén la posición durante unos segundos antes de bajar la pierna de nuevo.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion', 
-    '{"precauciones": ["Ajusta la resistencia de acuerdo a tu nivel de condición física.", "Evita movimientos bruscos y controla el rango de movimiento.", "Si sientes dolor o molestias, detén el ejercicio y consulta a un profesional."]}', 
-    22);
-    
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Prensa de piernas', 
-    'La prensa de piernas es otro ejercicio que trabaja el cuádriceps recto femoral. Para realizar una prensa de piernas, siéntate en la máquina y coloca los pies en la plataforma. Luego, empuja la plataforma hacia arriba con las piernas hasta que las rodillas estén extendidas. Mantén la posición durante unos segundos antes de bajar la plataforma de nuevo.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion', 
-    '{"precauciones": ["Ajusta la máquina según tu altura y posición cómoda.", "Controla el rango de movimiento y evita bloquear las rodillas en la posición extendida.", "Consulta a un profesional para aprender la técnica adecuada si eres principiante."]}', 
-    22);
-
---cuadriceps  vasto lateral
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Sentadillas con los pies abiertos', 
-    'Las sentadillas con los pies abiertos trabajan el vasto lateral de forma más específica que las sentadillas tradicionales. Para realizar una sentadilla con los pies abiertos, coloca los pies a una anchura mayor que la de los hombros, flexiona las rodillas y baja el cuerpo hasta que los muslos estén paralelos al suelo. Asegúrate de mantener la espalda recta y el pecho abierto.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion', 
-    '{"precauciones": ["Ajusta la anchura de los pies según tu comodidad.", "Mantén la forma correcta para evitar lesiones.", "Adapta la intensidad según tu nivel de condición física."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Extensión de Pierna de Pie con Cable', 
+    'Párate derecho enfrentado en dirección opuesta a la máquina de cable crossover con el cable ajustado a la altura de tus caderas. Utiliza un accesorio para tobillo/muñeca. Estira la rodilla contra el cable.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-standing-leg-extension-front.mp4#t=0.1', 
+    '{"precauciones": ["Asegúrate de mantener una postura estable y controlada durante todo el ejercicio.", "Controla la cantidad de peso utilizada para evitar lesiones y asegurar un movimiento adecuado."]}', 
     23);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Extensiones de rodilla con los pies girados hacia fuera', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion', 'Este ejercicio se puede realizar con una máquina de pesas o con una banda de resistencia. Para realizar una extensión de rodilla con los pies girados hacia fuera, siéntate en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho, con los pies girados hacia fuera. Mantén la posición durante unos segundos antes de bajar la pierna de nuevo.', 
-    '{"precauciones": ["Ajusta la resistencia según tu nivel de condición física.", "Controla el rango de movimiento y evita movimientos bruscos.", "Si sientes dolor, detén el ejercicio y consulta a un profesional."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Sentadilla Sissy con Máquina de Copa', 
+    'Coloca la almohadilla de la sentadilla femenina justo detrás de las rodillas y la almohadilla delantera completamente contra tus tobillos. Sostén una mancuerna en posición de cáliz. Siéntate derecho en una posición de sentadilla. Luego empuja tus pantorrillas contra la parte trasera de la almohadilla y extiende tus rodillas hasta volver a la posición original.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Machine-goblet-sissy-squat-side.mp4#t=0.1', 
+    '{"precauciones": ["Ajusta el peso de la máquina de acuerdo a tu capacidad y nivel de entrenamiento.", "Mantén una postura adecuada durante todo el ejercicio para prevenir lesiones en las rodillas o la espalda."]}', 
     23);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Prensa de piernas con los pies girados hacia fuera', 
-    'La prensa de piernas con los pies girados hacia fuera es otro ejercicio que trabaja el vasto lateral de forma específica. Para realizar una prensa de piernas con los pies girados hacia fuera, siéntate en la máquina y coloca los pies en la plataforma con los dedos de los pies apuntando hacia fuera. Luego, empuja la plataforma hacia arriba con las piernas hasta que las rodillas estén extendidas. Mantén la posición durante unos segundos antes de bajar la plataforma de nuevo.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion', 
-    '{"precauciones": ["Ajusta la máquina según tu altura y posición cómoda.", "Controla el rango de movimiento y evita bloquear las rodillas en la posición extendida.", "Consulta a un profesional para aprender la técnica adecuada si eres principiante."]}', 
-    23);
+--cuadriceps  vasto externo
 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Sentadilla con Barra', 
+    'Párate con los pies al ancho de tus hombros. Mantén la curvatura natural de tu espalda, apretando tus omóplatos y levantando tu pecho. Sujeta la barra a lo largo de tus hombros y apóyala en la parte superior de tu espalda. Desencaja la barra estirando las piernas y da un paso hacia atrás. Dobla tus rodillas mientras bajas el peso sin alterar la forma de tu espalda hasta que tus caderas estén por debajo de tus rodillas. Levanta la barra hasta la posición inicial, levanta con tus piernas y exhala en la parte superior.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Barbell-barbell-squat-side.mp4#t=0.1', 
+    '{"precauciones": ["Calienta adecuadamente antes de realizar este ejercicio para prevenir lesiones.", "Mantén una técnica adecuada durante todo el movimiento para evitar lesiones en la espalda o las rodillas."]}', 
+    24);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Sentadilla Búlgara con Mancuernas', 
+    'Busca una caja o un banco que tenga aproximadamente la altura de la rodilla o unos centímetros más bajo. (Cuanto más bajo sea el banco, menor será el requisito de movilidad). Puedes colocar ya sea tus dedos de los pies o la parte superior de tu pie en la caja. Apunta tu pie delantero hacia adelante o ligeramente hacia afuera y dobla simultáneamente las rodillas y las caderas. Apunta a que tu pierna delantera alcance una profundidad paralela (el tendón de la corva paralelo al suelo) o inferior. Cuanto más adelante esté tu pie delantero, mayor será el Rango de Movimiento en tus caderas. Cuanto más atrás esté tu pie delantero, mayor será el ROM en tus rodillas.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-dumbbell-bulgarian-split-squat-side.mp4#t=0.1', 
+    '{"precauciones": ["Realiza el ejercicio con cuidado para evitar lesiones en las rodillas.", "Utiliza una carga adecuada y controla el movimiento en todo momento."]}', 
+    24);
 
---cuadriceps vasto medial
- 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Sentadillas con los pies juntos', 
-    'Las sentadillas con los pies juntos trabajan el vasto medial de forma más específica que las sentadillas tradicionales. Para realizar una sentadilla con los pies juntos, coloca los pies juntos, flexiona las rodillas y baja el cuerpo hasta que los muslos estén paralelos al suelo. Asegúrate de mantener la espalda recta y el pecho abierto.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion', 
-    '{"precauciones": ["Ajusta la postura según tu comodidad y nivel de habilidad.", "Controla la profundidad de la sentadilla para evitar lesiones.", "Mantén una técnica adecuada para maximizar la efectividad y minimizar el riesgo de lesiones."]}', 
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Zancadas hacia adelante', 
+    'Avanza con una pierna. Baja tu cuerpo hasta que tu rodilla trasera casi toque el suelo. Asegúrate de permanecer erguido y que tu rodilla delantera se mantenga por encima del pie delantero. Empuja el suelo con tu pie delantero hasta que vuelvas a la posición inicial. Cambia de pierna.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-forward-lunges-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén una buena postura durante todo el ejercicio para evitar lesiones en la espalda.", "Controla el movimiento descendente para no golpear la rodilla contra el suelo con fuerza.", "Asegúrate de que tu rodilla delantera no se extienda más allá de tu pie para evitar lesiones en la articulación."]}', 
+    24);
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Prensa de Piernas en Máquina', 
+    'Coloca tus piernas en la plataforma con tus pies al ancho de tus hombros. Suelta el peso y extiende completamente tus piernas, sin bloquear tus rodillas. Baja el peso hasta que tus piernas estén en un ángulo de 90° (pero NO permitas que tus glúteos y la parte inferior de la espalda se levanten del cojín. Esto pondrá tu espalda baja en una posición redondeada, lo cual es muy peligroso). Levanta el peso nuevamente a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-machine-leg-press-side.mp4#t=0.1', 
+    '{"precauciones": ["Evita bloquear las rodillas al extender las piernas para evitar lesiones en las articulaciones.", "No permitas que tus glúteos y la parte inferior de la espalda se levanten del cojín para mantener una buena alineación de la columna vertebral.", "Controla el movimiento en todo momento y evita cargar más peso del que puedas manejar adecuadamente."]}', 
+    24);
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES 
+    ('Hack Squat en Máquina',
+    'Ubícate en la máquina de sentadillas hack con tu espalda contra el cojín y los hombros debajo de las almohadillas para los hombros. Coloca los pies a la anchura de los hombros sobre la plataforma. Mantén la espalda recta y baja lentamente hasta una posición de sentadilla. Presiona a través de tus talones para volver a la posición inicial, manteniendo tu core activado. Repite para las repeticiones y series deseadas.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Machine-machine-hack-squat-side.mp4#t=0.1',
+    '{"precauciones": ["Asegúrate de ajustar correctamente la máquina para evitar lesiones.", "Mantén la espalda recta en todo momento para evitar lesiones en la columna vertebral.", "Controla el movimiento en todo momento y no permitas que tus rodillas se extiendan más allá de los dedos de los pies para evitar lesiones en las articulaciones."]}',
     24);
    
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Extensiones de rodilla con los pies girados hacia dentro', 
-    'Este ejercicio se puede realizar con una máquina de pesas o con una banda de resistencia. Para realizar una extensión de rodilla con los pies girados hacia dentro, siéntate en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho, con los pies girados hacia dentro. Mantén la posición durante unos segundos antes de bajar la pierna de nuevo.', 
-    '{"precauciones": ["Ajusta la resistencia según tu nivel de condición física.", "Controla el rango de movimiento y evita movimientos bruscos.", "Si sientes dolor, detén el ejercicio y consulta a un profesional."]}', 
-    24);
-  
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Prensa de piernas con los pies girados hacia dentro', 
-    'La prensa de piernas con los pies girados hacia dentro es otro ejercicio que trabaja el vasto medial de forma específica. Para realizar una prensa de piernas con los pies girados hacia dentro, siéntate en la máquina y coloca los pies en la plataforma con los dedos de los pies apuntando hacia dentro. Luego, empuja la plataforma hacia arriba con las piernas hasta que las rodillas estén extendidas. Mantén la posición durante unos segundos antes de bajar la plataforma de nuevo.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion', 
-    '{"precauciones": ["Ajusta la máquina según tu altura y posición cómoda.", "Controla el rango de movimiento y evita bloquear las rodillas en la posición extendida.", "Consulta a un profesional para aprender la técnica adecuada si eres principiante."]}', 
-    24);
 
---cuadriceps vasto intermedio
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Extensiones de rodilla', 
-    'Este ejercicio se puede realizar con una máquina de pesas o con una banda de resistencia. Para realizar una extensión de rodilla, siéntate en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho. Mantén la posición durante unos segundos antes de bajar la pierna de nuevo.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion', 
-    '{"precauciones": ["Ajusta la resistencia según tu nivel de condición física.", "Controla el rango de movimiento y evita movimientos bruscos.", "Si sientes dolor, detén el ejercicio y consulta a un profesional."]}', 
+--cuadriceps vasto interno
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
+    ('Extensión de Piernas en Máquina con pies girados hacia afuera', 
+    'Siéntate en la máquina con la espalda contra el cojín y ajusta la máquina que estás utilizando de manera que tus rodillas estén en un ángulo de 90 grados en la posición inicial. Levante el peso extendiendo sus rodillas hacia afuera, luego baje su pierna a la posición inicial. Ambos movimientos deben realizarse de manera lenta y controlada.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-machine-leg-extension-side.mp4#t=0.1', 
+    '{"precauciones": ["Ajusta el peso de la máquina de acuerdo a tu capacidad y nivel de entrenamiento.", "Mantén una postura adecuada durante todo el ejercicio para prevenir lesiones en la espalda o las rodillas."]}', 
     25);
-    
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen,datos_cientificos, id_musculo) VALUES
-    ('Prensa de piernas', 
-    'La prensa de piernas es otro ejercicio que trabaja el vasto intermedio. Para realizar una prensa de piernas, siéntate en la máquina y coloca los pies en la plataforma. Luego, empuja la plataforma hacia arriba con las piernas hasta que las rodillas estén extendidas. Mantén la posición durante unos segundos antes de bajar la plataforma de nuevo.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Ajusta la máquina según tu altura y posición cómoda.", "Controla el rango de movimiento y evita bloquear las rodillas en la posición extendida.", "Consulta a un profesional para aprender la técnica adecuada si eres principiante."]}', 
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES 
+    ('Sentadilla en Máquina Smith con pies abiertos',
+    'Párate con los pies a la anchura de tus hombros. Mantén la curvatura natural de tu espalda y coloca la barra en tu espalda. Aprieta tus omoplatos y levanta el pecho. Agarra la barra a lo ancho de tus hombros y apóyala en la parte superior de tu espalda. Descoloca la máquina Smith estirando tus piernas. Dobla tus rodillas mientras bajas el peso sin alterar la forma de tu espalda hasta que tus caderas estén por debajo de tus rodillas. Levanta la barra hasta la posición de inicio, levanta con tus piernas y exhala en la parte superior.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Smithmachine-squat-side.mp4#t=0.1',
+    '{"precauciones": ["Asegúrate de ajustar correctamente la máquina para evitar lesiones.", "Mantén la espalda recta en todo momento para evitar lesiones en la columna vertebral.", "Controla el movimiento en todo momento y no permitas que tus rodillas se extiendan más allá de los dedos de los pies para evitar lesiones en las articulaciones."]}',
     25);
+
+
+--aductores
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES 
+    ('Aducción de Cadera en Máquina',
+    'Siéntate en la máquina con las piernas separadas, las almohadillas contra tus muslos externos. Ajusta la posición del asiento y de la almohadilla de manera cómoda. Aprieta lentamente tus piernas, enfocándote en usar los músculos de tu muslo interno. Haz una pausa cuando las almohadillas estén cerca una de la otra. Regresa lentamente a la posición inicial, manteniendo el control. Evita dejar caer las pesas bruscamente. Repite según las repeticiones y series deseadas.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Machine-machine-hip-adduction-front.mp4#t=0.1',
+    '{"precauciones": ["Ajusta la máquina correctamente para evitar lesiones.", "Mantén una postura erguida y controlada durante todo el ejercicio.", "No permitas que las pesas caigan bruscamente para evitar lesiones."]}',
+    26);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES 
+    ('Máquina de Aducción de Cadera y Glúteo', 
+    'Párate en la plataforma y coloca la almohadilla justo sobre la cadera de la pierna que estás trabajando. Coloca la pierna de trabajo sobre la almohadilla. Presiona tu pierna hacia adentro. Intenta obtener el mayor rango de movimiento posible.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Machine-machine-hip-and-glute-adduction-front.mp4#t=0.1', 
+    '{"nivel": "novice"}', 
+    26);
 
 --Biceps femoral
-    
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Curl femoral sentado', 
-    'El curl femoral sentado es un ejercicio efectivo para aislar y fortalecer el bíceps femoral, el músculo grande en la parte posterior del muslo. Para realizarlo, siéntate en una máquina de pesas designada para este ejercicio. Ajusta el asiento y las almohadillas según tu altura y posición. Coloca las piernas bajo las almohadillas, flexiona las rodillas y baja el peso hacia el suelo. Luego, extiende las piernas levantando el peso. Asegúrate de mantener la espalda recta durante todo el movimiento.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Ajusta la máquina según tu altura y posición.", "Controla el rango de movimiento y evita movimientos bruscos.", "Mantén la espalda recta para evitar tensiones innecesarias."]}' , 
-    26);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES 
+    ('Prensa de Piernas en Máquina', 
+    'Coloca tus piernas en la plataforma con tus pies al ancho de tus hombros. Suelta el peso y extiende completamente tus piernas, sin bloquear tus rodillas. Baja el peso hasta que tus piernas estén en un ángulo de 90° (pero NO permitas que tus glúteos y la parte inferior de la espalda se levanten del cojín. Esto pondrá tu espalda baja en una posición redondeada, lo cual es muy peligroso). Levanta el peso nuevamente a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-machine-hamstring-curl-front.mp4#t=0.1', 
+    '{"precauciones": ["Evita bloquear las rodillas al extender las piernas para evitar lesiones en las articulaciones.", "No permitas que tus glúteos y la parte inferior de la espalda se levanten del cojín para mantener una buena alineación de la columna vertebral.", "Controla el movimiento en todo momento y evita cargar más peso del que puedas manejar adecuadamente."]}', 
+    27);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos,  id_musculo) VALUES 
+    ('Curl de Isquiotibiales con Cable', 
+    'Utiliza un accesorio para el tobillo con el cable ajustado completamente hasta la parte inferior de la máquina. Manténgase erguido o intente inclinarse ligeramente hacia adelante. Dobla la rodilla y tira de tu tobillo hacia atrás recto.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-cable-hamstring-curl-front.mp4#t=0.1', 
+    '{"precauciones": ["Controla el movimiento en todo momento para evitar lesiones.", "Ajusta adecuadamente el peso para evitar excesos que puedan causar lesiones."]}', 
+    27);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Curl femoral tumbado', 
-    'El curl femoral tumbado es un ejercicio efectivo para aislar y fortalecer el bíceps femoral, el músculo grande en la parte posterior del muslo. Para realizarlo, acuéstate boca abajo en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho. Mantén la posición durante unos segundos antes de bajar la pierna de nuevo.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Ajusta la máquina o la resistencia según tu nivel de condición física.", "Controla el rango de movimiento y evita movimientos bruscos.", "Si sientes dolor, detén el ejercicio y consulta a un profesional."]}', 
-    26);
- 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Peso muerto', 
-    'El peso muerto es un ejercicio compuesto que trabaja varios grupos musculares, incluido el bíceps femoral. Para realizar un peso muerto con la forma correcta, coloca los pies a la anchura de las caderas, flexiona las rodillas y baja el torso hasta que los muslos estén paralelos al suelo. Asegúrate de mantener la espalda recta y el pecho abierto.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Utiliza un peso adecuado para tu nivel de condición física.", "Mantén la técnica adecuada para evitar lesiones.", "Consulta a un profesional si eres principiante o tienes alguna preocupación."]}' , 
-    26);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos,  id_musculo) VALUES (
+    'Curl de Piernas Sentado', 
+    'Siéntate en la máquina. Ajusta el respaldo de manera que la almohadilla para las piernas quede justo por encima de tus rodillas. Ajusta la almohadilla de la pierna que va en tu pantorrilla hasta que esté sobre tu tendón de Aquiles. Usa las dos asas para empujarte hacia atrás en la silla. Enrolla tus piernas lo más lejos posible y luego extiende tus rodillas. (No hiperextiendas)', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Machine-seated-leg-curl-side.mp4#t=0.1', 
+    '{"precauciones": ["Evita hiperextender las rodillas al realizar el ejercicio para prevenir lesiones.", "Asegúrate de ajustar correctamente la máquina para evitar tensiones innecesarias en las articulaciones."]}', 
+    27);
 
 --semitendinoso
     
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Peso muerto rumano', 
-    'El peso muerto rumano es un ejercicio compuesto que trabaja varios grupos musculares, incluido el semitendinoso. Para realizar un peso muerto rumano con la forma correcta, coloca los pies a la anchura de las caderas, flexiona ligeramente las rodillas y baja el torso manteniendo la espalda recta hasta que sientas estiramiento en los músculos posteriores del muslo. Luego, regresa a la posición inicial levantando el torso y extendiendo las caderas. Asegúrate de mantener la espalda recta y el pecho abierto durante todo el movimiento.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Asegúrate de mantener la espalda recta para evitar tensiones innecesarias.", "Controla el rango de movimiento y evita movimientos bruscos.", "No uses un peso excesivo que comprometa la forma."]}' , 
-    27);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Levantamiento Rumano con Mancuernas', 
+    'Párate con los pies a la anchura de los hombros. Empuja tu trasero hacia atrás mientras dejas tus rodillas PRINCIPALMENTE extendidas. Deberías sentir un estiramiento en los tendones de la corva. Cuando sientas el estiramiento, empuja tus caderas hacia adelante para completar la repetición. No empujes tus caderas completamente hacia adelante. Esto hiperextenderá tu columna vertebral. Solo ve a una posición de pie normal.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Dumbbells-dumbbell-romanian-deadlift-side.mp4#t=0.1', 
+    '{"precauciones": ["Evita hiperextender la columna vertebral al final del movimiento para prevenir lesiones.", "Mantén la espalda recta y el núcleo comprometido durante todo el ejercicio para una técnica adecuada."]}', 
+    28);
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Levantamientos de Peso Muerto con Piernas Rígidas y Barra', 
+    'Párate con una barra a la altura de tus espinillas, con los pies separados al ancho de tus hombros. Inclínate hacia adelante desde las caderas y mantén las rodillas lo más extendidas posible. Agarra la barra y luego extiende tus caderas manteniendo la espalda recta. Desde la posición de pie, baja el peso de manera controlada. Puedes bajar el peso hasta el suelo o antes de tocar el suelo, dependiendo de tu movilidad.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-barbell-stiff-leg-deadlift-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén la espalda recta durante todo el movimiento para evitar lesiones en la columna vertebral.", "No realices el levantamiento con demasiado peso que comprometa tu técnica y aumente el riesgo de lesiones.", "Controla la velocidad del movimiento y evita hacerlo demasiado rápido para mantener el control y la técnica adecuada."]}', 
+    28);
+
 
 --semimembranoso
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Curl femoral tumbado con los pies girados hacia dentro', 
-    'Este ejercicio se puede realizar con una máquina de pesas o con una banda de resistencia. Para realizar un curl femoral tumbado con los pies girados hacia dentro, acuéstate boca abajo en una máquina o en el suelo con las piernas extendidas. Luego, flexiona la rodilla y levanta la parte inferior de la pierna hacia el pecho, con los pies girados hacia dentro. Mantén la posición durante unos segundos, sintiendo la contracción en los músculos isquiotibiales, antes de bajar la pierna de nuevo.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Ajusta la resistencia o el peso de la máquina de acuerdo con tu nivel de fuerza y condición física.", "Controla el movimiento para evitar tensiones innecesarias en las articulaciones.", "Realiza el ejercicio de forma controlada y sin balanceos."]}' , 
-    27);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos,id_musculo) VALUES (
+    'Peso Muerto Elevado con Cable', 
+    'Comienza con las asas ajustadas a la parte inferior de la máquina. Toma una caja, párate encima de ella, levanta el peso en una sentadilla hasta llegar a una posición de pie. Empuja tu trasero hacia atrás para iniciar el movimiento y luego empuja tu trasero hacia adelante hasta que vuelvas a la posición de pie.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-elevated-deadlift-side.mp4#t=0.1', 
+    '{"precauciones": ["Mantén la espalda recta durante todo el movimiento para evitar lesiones en la columna vertebral.", "Asegúrate de usar una caja resistente y estable para elevarte y bajar el peso de manera segura.", "No utilices un peso excesivo que comprometa tu técnica y aumente el riesgo de lesiones."]}', 
+    29);
+
 
 --glueteo mayor
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Hip Thrust', 
-    'El hip thrust es un ejercicio que se realiza generalmente con una barra y un banco. Para realizarlo, siéntate en el suelo con la espalda apoyada en el banco y la barra colocada sobre las caderas. Coloca los pies a la anchura de los hombros y flexiona las rodillas. Luego, levanta las caderas hacia arriba hasta que el cuerpo forme una línea recta desde los hombros hasta las rodillas. Asegúrate de contraer los glúteos en la parte superior del movimiento antes de bajar las caderas de nuevo.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Asegúrate de utilizar una barra y un banco adecuados para tu nivel de fuerza y condición física.", "Mantén la espalda apoyada en el banco durante todo el movimiento.", "Controla el movimiento para evitar tensiones innecesarias en la zona lumbar."]}' , 
-    28);
+   INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Empuje de Cadera con Barra', 
+    'Siéntate en el suelo con un banco detrás de ti. Coloca la barra sobre tus piernas, justo por encima de tus caderas. Recuéstate contra el banco de manera que tus hombros estén apoyados en él, estira los brazos a ambos lados utilizando el banco como soporte. Levanta el peso impulsándote a través de tus pies y extendiendo tus caderas hacia arriba. Soporta el peso con tus hombros y pies. Extiende lentamente hasta donde puedas, y luego regresa lentamente a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Barbell-barbell-hip-thrust-side.mp4#t=0.1', 
+    '{"precauciones": ["Asegúrate de mantener una buena alineación de la columna vertebral durante todo el movimiento.", "No utilices un peso excesivo que comprometa tu técnica y aumente el riesgo de lesiones en la espalda.", "Controla el movimiento en todo momento para evitar lesiones y maximizar la efectividad del ejercicio."]}', 
+    30);
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Puente de Glúteos', 
-    'El puente de glúteos es un ejercicio específico para trabajar el glúteo mayor. Para realizarlo, acuéstate boca arriba con las rodillas flexionadas y los pies apoyados en el suelo. Luego, levanta la cadera del suelo hasta que tu cuerpo forme una línea recta desde las rodillas hasta los hombros. Mantén la posición durante unos segundos antes de bajar la cadera de nuevo.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Asegúrate de mantener los pies firmemente apoyados en el suelo.", "Evita arquear la espalda baja excesivamente durante el movimiento.", "Concentra la contracción en los glúteos para maximizar el beneficio del ejercicio."]}' , 
-    28);
+INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Puente de Glúteos con Barra', 
+    'Recuéstate boca arriba en el suelo con las rodillas dobladas y los pies apoyados en el suelo. Coloca una barra de pesas sobre tus caderas y agárrala con ambas manos. Manteniendo los brazos rectos, empuja a través de tus talones para levantar las caderas del suelo y levanta la barra. Mantén la posición de puente por un momento, luego baja lentamente las caderas hasta volver a la posición inicial.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-barbell-glute-bridge-side.mp4#t=0.1', 
+    '{"precauciones": ["Asegúrate de mantener una buena alineación de la columna vertebral durante todo el ejercicio.", "Evita arquear la espalda demasiado hacia atrás para prevenir lesiones en la parte baja de la espalda.", "Controla el movimiento en todo momento para maximizar la efectividad del ejercicio y prevenir lesiones."]}', 
+    30);
+
 
 --gluteo medio
    
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevación Lateral de Pierna Tumbado (Clamshell)', 
-    'Este ejercicio se realiza tumbado de lado con las rodillas flexionadas y los pies apoyados en el suelo. Levanta la pierna superior hacia el techo mientras mantienes la pelvis estable. Baja la pierna con control y repite con la otra pierna.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Mantén la pelvis estable durante el movimiento.", "Evita arquear la espalda baja excesivamente.", "Realiza el ejercicio con control y concentrándote en la activación del glúteo medio."]}' , 
-    29);
+  INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+    'Abducción de Cadera de Pie con Cable', 
+    'Utiliza un accesorio para el tobillo. El cable debe estar ajustado hasta el fondo. Ponte de lado con el accesorio de tobillo en tu pierna exterior. Camina unos pasos hacia atrás. Abduce en las caderas y levanta la pierna hacia un lado. Regresa a la posición inicial y detente justo antes de que tu pie toque de nuevo el suelo (para mantener la tensión en el músculo).', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Cables-cable-hip-abduction-side.mp4#t=0.1', 
+    '{"precauciones": ["Asegúrate de mantener una buena alineación corporal durante todo el ejercicio, evitando inclinaciones excesivas hacia adelante o hacia atrás.", "No realices movimientos bruscos al levantar la pierna para evitar lesiones.", "Controla la respiración y mantén el abdomen contraído para estabilizar el cuerpo durante el movimiento."]}', 
+    31);
+
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos,id_musculo) VALUES (
+    'Abducción de Cadera en Máquina', 
+    'Ajusta la configuración de la máquina para que se adecue a tu altura. Siéntate con la espalda plana contra la almohadilla, manteniendo las piernas juntas. Presiona lentamente las piernas hacia afuera contra la resistencia. Haz una pausa en el punto máximo. Vuelve lentamente las piernas a la posición inicial. Repite las veces que desees.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Machine-machine-hip-abduction-front.mp4#t=0.1', 
+    '{"precauciones": ["Asegúrate de ajustar correctamente la configuración de la máquina para evitar lesiones.", "Mantén la espalda plana contra la almohadilla durante todo el ejercicio para evitar tensiones indebidas en la columna vertebral.", "Controla el movimiento y no uses un peso excesivo que pueda comprometer la técnica."]}',
+    31);
+
+
+--gemelo externo
+
+  INSERT INTO ejercicios (nombre, descripcion, video_url,datos_cientificos,id_musculo) VALUES (
+    'Elevaciones de Pantorrilla Sentado en Máquina', 
+    'Ponte cómodo en la máquina, luego coloca tus muslos inferiores debajo de la palanca acolchada. Pon tus dedos de los pies y la parte delantera de tus pies sobre los soportes para los pies. Evita que el peso se deslice hacia adelante sujetando las asas y suelta la barra de seguridad. Baja el peso hasta que tus pantorrillas estén extendidas. Empuja tus talones hacia arriba para levantar la palanca acolchada y mantén la posición contraída, luego baja lentamente hasta la posición inicial. Repite.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-machine-seated-calf-raise-side.mp4#t=0.1', 
+    '{"precauciones": ["Ajusta correctamente el equipo para tu tamaño y posición para evitar lesiones.", "Mantén la espalda recta y los pies firmes en los soportes para evitar lesiones en los tobillos.", "Controla el movimiento en todo momento y evita usar un peso excesivo que pueda comprometer la técnica."]}',
+    32);
+
+
+--gemelo interno
    
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Caminata Lateral con Banda de Resistencia', 
-    'Coloca una banda de resistencia alrededor de los muslos, justo por encima de las rodillas. Mantén la espalda recta y da pasos hacia un lado, sintiendo la activación del glúteo medio. Repite hacia el otro lado.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Mantén una postura adecuada con la espalda recta.", "Ajusta la resistencia de la banda según tu nivel de fuerza.", "Concéntrate en activar el glúteo medio durante todo el movimiento."]}' , 
-    29);
+   INSERT INTO ejercicios (nombre, descripcion, video_url,datos_cientificos,id_musculo) VALUES (
+    'Elevaciones de Pantorrilla en Máquina de Pie', 
+    'Ajusta la máquina de acuerdo a tu altura y coloca tus hombros debajo de la palanca acolchada. Las puntas de tus pies deben estar sosteniendo tu peso en el bloque para pantorrillas, con los talones extendiéndose fuera de él. Extiende tus talones hacia arriba manteniendo tus rodillas inmóviles, y haz una pausa en la posición contraída. Regrese lentamente a la posición inicial. Repite.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-machine-standing-calf-raises-side.mp4#t=0.1', 
+    '{"precauciones": ["Ajusta adecuadamente la máquina para tu altura y tamaño para evitar lesiones.", "Mantén las rodillas estables y no dejes que se balanceen durante el ejercicio para evitar lesiones en las articulaciones.", "Controla el movimiento en todo momento y evita usar un peso excesivo que pueda causar lesiones o comprometer la técnica."]}',
+    33);
 
---glueteo menor
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevación Lateral de Pierna de Pie (Fire Hydrant)', 
-    'Ponte de pie de lado con las rodillas flexionadas a 90 grados. Levanta la pierna superior hacia un lado, manteniendo la rodilla flexionada y el pie flexionado. Baja la pierna con control y repite con la otra pierna.', 
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Mantén las rodillas flexionadas a 90 grados durante el ejercicio.", "Evita inclinar demasiado el torso hacia adelante o hacia atrás.", "Controla el movimiento para evitar balanceos innecesarios."]}' , 
-    30);
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos,id_musculo) VALUES (
+    'Elevaciones de Pantorrilla con Barra', 
+    'Coloca la barra en tu espalda. Comienza con los pies apoyados completamente en el suelo. Extiende tus talones hacia arriba mientras mantienes tus rodillas inmóviles, y haz una pausa en la posición contraída. Regresa lentamente a la posición inicial. Repite.', 
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Barbell-barbell-calf-raises-side.mp4#t=0.1', 
+    '{"precauciones": ["Asegúrate de colocar la barra de manera segura y equilibrada en tu espalda para evitar lesiones.", "Mantén las rodillas estables y no dejes que se balanceen durante el ejercicio para evitar lesiones en las articulaciones.", "Controla el movimiento en todo momento y evita usar un peso excesivo que pueda causar lesiones o comprometer la técnica."]}',
+    33);
 
---gastrocnemio
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones de Talones de Pie', 
-    'Este es un ejercicio clásico para trabajar el gastrocnemio. Para realizarlo, ponte de pie con los pies a la anchura de las caderas y levanta los talones del suelo hasta que las puntas de los pies estén apoyadas en el suelo. Mantén la posición durante unos segundos antes de bajar los talones de nuevo.',
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Mantén los pies a la anchura de las caderas durante el ejercicio.", "Evita bloquear las rodillas en la posición elevada.", "Controla el movimiento para evitar movimientos bruscos."]}' , 
-    30);
+--**EJERCICIOS EN CASA**
 
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones de Talones Sentado', 
-    'Este ejercicio es similar al anterior, pero se realiza sentado. Para realizarlo, siéntate en una silla con los pies apoyados en el suelo y levanta los talones del suelo hasta que las puntas de los pies estén apoyadas en el suelo. Mantén la posición durante unos segundos antes de bajar los talones de nuevo.',
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Siéntate con la espalda recta y los pies planos en el suelo.", "Evita bloquear las rodillas en la posición elevada.", "Controla el movimiento para evitar movimientos bruscos."]}' , 
-    30);
-
---soleo
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones de Talones con las Rodillas Flexionadas', 
-    'Este ejercicio es similar a las elevaciones de talones de pie, pero se realiza con las rodillas flexionadas. Para realizarlo, ponte de pie con las rodillas flexionadas y los pies apoyados en el suelo. Levanta los talones del suelo hasta que las puntas de los pies estén apoyadas en el suelo. Mantén la posición durante unos segundos antes de bajar los talones de nuevo.',
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Mantén las rodillas ligeramente flexionadas durante el ejercicio.", "Evita bloquear las rodillas en la posición elevada.", "Controla el movimiento para evitar movimientos bruscos."]}' , 
-    31);
-
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
-    ('Elevaciones de Talones con una Pierna y la Rodilla Flexionada', 
-    'Este ejercicio es más desafiante que los anteriores y trabaja el sóleo de forma más unilateral. Para realizarlo, ponte de pie sobre una pierna con la otra pierna extendida hacia atrás y flexiona la rodilla de la pierna de apoyo. Levanta el talón del suelo hasta que la parte inferior de la pierna esté paralela al suelo. Mantén la posición durante unos segundos antes de bajar el talón de nuevo.',
-    'url_del_video_elevaciones_piernas_rotacion', 
-    'url_de_la_imagen_elevaciones_piernas_rotacion',
-    '{"precauciones": ["Mantén la espalda recta durante el ejercicio.", "Controla el movimiento para evitar movimientos bruscos.", "Asegúrate de realizar el ejercicio de forma simétrica con ambas piernas."]}' , 
-    31);
-
---**EJECICIOS EN CASA**
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen, datos_cientificos, zona_ejercicio)
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
 VALUES
-    ('Dominadas deslizantes',
-    'Las dominadas son el ejercicio estrella para la espalda, pero necesitamos una barra donde poder colgarnos y en muchas ocasiones no disponemos de ella. En el vídeo se muestran seis variaciones según el nivel de entrenamiento, para que empieces desde el nivel que se adecúe a ti, y progreses hasta el último escalón. Si necesitas deslizarte mejor por el suelo, pon una toalla en tu pecho y abdomen y la fricción será menor. Esa misma toalla va a serte útil para otros ejercicios que veremos a continuación.',
-    'https://ejemplo.com/video_dominadas_deslizantes',
-    'https://ejemplo.com/imagen_dominadas_deslizantes',
-    '{"musculos": ["Dorsal ancho", "Trapecio"], "precauciones": ["Evitar balanceo excesivo", "Mantener una técnica adecuada"], "modo_de_hacerlo": "Colócate debajo de una barra de puerta y sujeta la toalla. Realiza el movimiento de dominadas, enfocándote en la contracción de la espalda."}',
-    1), -- Espalda completa
-
-    ('Remo invertido en la mesa',
-    'El remo invertido en la mesa es un ejercicio efectivo para trabajar los músculos de la espalda, especialmente los romboides. Utilizando una mesa como apoyo, puedes realizar este ejercicio en casa para fortalecer tu espalda.',
-    'https://ejemplo.com/video_remo_invertido_mesa',
-    'https://ejemplo.com/imagen_remo_invertido_mesa',
-    '{"musculos": ["Romboides"], "precauciones": ["Mantener una postura adecuada", "Evitar movimientos bruscos"], "modo_de_hacerlo": "Colócate debajo de una mesa resistente y sujeta el borde con las manos. Levanta tu cuerpo hacia la mesa, manteniendo la espalda recta y los codos cerca del cuerpo."}',
-    1), -- Espalda completa
-
-    ('Empujes del codo contra el suelo',
-    'Los empujes del codo contra el suelo son un ejercicio efectivo para fortalecer los músculos de la espalda, especialmente los romboides. Este ejercicio se puede realizar en casa sin necesidad de equipo adicional.',
-    'https://ejemplo.com/video_empujes_codo_suelo',
-    'https://ejemplo.com/imagen_empujes_codo_suelo',
-    '{"musculos": ["Romboides"], "precauciones": ["Realizar el movimiento de manera controlada", "Evitar arquear la espalda"], "modo_de_hacerlo": "Colócate boca abajo en el suelo con los codos doblados y las manos apoyadas. Empuja hacia abajo con los codos, manteniendo la espalda recta."}',
-    1), -- Espalda completa
-
-    ('Remo con toalla',
-    'El remo con toalla es un ejercicio efectivo para trabajar los músculos de la espalda, incluidos el dorsal ancho y el trapecio. Puedes realizar este ejercicio en casa utilizando una toalla como resistencia.',
-    'https://ejemplo.com/video_remo_con_toalla',
-    'https://ejemplo.com/imagen_remo_con_toalla',
-    '{"musculos": ["Dorsal ancho", "Trapecio"], "precauciones": ["Asegurar una buena sujeción de la toalla", "Mantener la espalda recta"], "modo_de_hacerlo": "Colócate de pie, sosteniendo firmemente una toalla con ambas manos. Tira de la toalla hacia ti, manteniendo los codos cerca del cuerpo y contrayendo los músculos de la espalda."}',
-    1), -- Espalda completa
-
-    ('Plancha',
-    'La plancha es un ejercicio de core que también trabaja los músculos de la espalda, incluidos el dorsal ancho, el trapecio y los romboides. Mantén una posición de tabla recta para maximizar el beneficio.',
-    'https://ejemplo.com/video_plancha',
-    'https://ejemplo.com/imagen_plancha',
-    '{"musculos": ["Dorsal ancho", "Trapecio", "Romboides"], "precauciones": ["Mantener el cuerpo alineado", "Evitar hundir la espalda"], "modo_de_hacerlo": "Colócate en posición de plancha con los antebrazos y los dedos de los pies apoyados en el suelo. Mantén el cuerpo recto y contrae los músculos abdominales y de la espalda."}',
-    1), -- Espalda completa
-
-    ('Extensiones de espalda con pelota suiza',
-    'Las extensiones de espalda con pelota suiza son excelentes para fortalecer la espalda baja y los músculos de la espalda. Mantén la pelota suiza bajo tu abdomen mientras levantas el torso del suelo.',
-    'https://ejemplo.com/video_extensiones_espalda_pelota_suiza',
-    'https://ejemplo.com/imagen_extensiones_espalda_pelota_suiza',
-    '{"musculos": ["Dorsal ancho", "Trapecio", "Romboides"], "precauciones": ["Controlar el movimiento", "Evitar hiperextensión"], "modo_de_hacerlo": "Colócate boca abajo sobre una pelota suiza con las manos detrás de la cabeza. Levanta lentamente el torso hacia arriba, contrayendo los músculos de la espalda baja y media."}',
+    ('Dominadas',
+    'Las dominadas son un ejercicio fundamental para fortalecer la espalda y los brazos. En este video, se muestra una variante intermedia de dominadas con agarre en pronación. Sigue los pasos cuidadosamente para garantizar una ejecución correcta y segura del ejercicio.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-pullup-front.mp4#t=0.1',
+    '{"musculos": ["Dorsal ancho", "Trapecio"], "precauciones": ["Evitar balanceo excesivo", "Mantener una técnica adecuada"], "modo_de_hacerlo": "1. Agarra la barra con un agarre en pronación, con los brazos y los hombros completamente extendidos. 2. Levanta tu cuerpo hasta que tu barbilla esté por encima de la barra. 3. Baja tu cuerpo de nuevo a la posición inicial."}',
     1); -- Espalda completa
 
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Flexiones de Barbilla',
+    'Las flexiones de barbilla son un excelente ejercicio para fortalecer la espalda y los brazos. Este video te muestra una variante intermedia de flexiones de barbilla con un agarre supinado. Sigue los pasos detallados para realizar el ejercicio de manera segura y efectiva.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-chinup-front.mp4#t=0.1',
+    '{"musculos": ["Dorsal ancho", "Bíceps"], "precauciones": ["Evitar balanceo excesivo", "Mantener una técnica adecuada"], "modo_de_hacerlo": "1. Sujeta la barra a la anchura de los hombros con un agarre supinado (las palmas mirando hacia ti). 2. Con tu cuerpo colgando y los brazos completamente extendidos, levántate hasta que tu barbilla sobrepase la barra. 3. Regresa lentamente a la posición inicial. Repite."}',
+    1); -- Espalda completa
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Remo con Banda',
+    'Párate sobre tu banda con ambos pies. Inclínate hacia adelante desde las caderas mientras mantienes la espalda recta. Deja que tus brazos cuelguen libremente, luego tira de tus codos hacia atrás en dirección al techo.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-row-side.mp4#t=0.1',
+    '{"musculos": ["Dorsal ancho", "Bíceps"], "precauciones": ["Mantener la espalda recta para evitar lesiones", "Controlar el movimiento para evitar tirar excesivamente de los codos"], "modo_de_hacerlo": "1. Párate sobre tu banda con ambos pies. 2. Inclínate hacia adelante desde las caderas mientras mantienes la espalda recta. 3. Deja que tus brazos cuelguen libremente, luego tira de tus codos hacia atrás en dirección al techo. Este ejercicio se centra en el trabajo del dorsal ancho y los bíceps, con precauciones importantes para evitar lesiones y garantizar una técnica adecuada."}',
+    1); -- Espalda completa
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Estiramiento de Banda',
+    'Coloca la banda justo por encima de nuestro nivel. Retrocede unos pasos hasta que la banda esté tensa. Retrocede ligeramente las caderas. Extiende y flexiona en la articulación del hombro.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-pull-over-side.mp4#t=0.1',
+    '{"musculos": ["Dorsal ancho"], "precauciones": ["Evitar forzar en exceso la articulación del hombro"], "modo_de_hacerlo": "1. Coloca la banda justo por encima de nuestro nivel. Retrocede unos pasos hasta que la banda esté tensa. 2. Retrocede ligeramente las caderas. Extiende y flexiona en la articulación del hombro. Este ejercicio ayuda a mejorar la flexibilidad y movilidad de los hombros."}',
+    1); -- Espalda completa
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Estiramiento de un Solo Brazo con Banda en Posición de Rodillas',
+    'Para realizar el estiramiento de un solo brazo con banda en posición de rodillas en nivel principiante, sigue estos pasos: 1. Coloca la banda a la altura de los ojos y ponte en una posición de rodillas. 2. Asegúrate de que la rodilla que está en el suelo esté del mismo lado que el brazo que está trabajando. Mantén el pecho hacia afuera. 3. Luego, estira tu codo hacia atrás. Flexiona tus dorsales y luego vuelve a la posición inicial.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-kneeling-single-arm-pulldown-front.mp4#t=0.1',
+    '{"musculos": ["Dorsal Ancho"], "precauciones": ["Realizar el estiramiento de forma suave y controlada para evitar lesiones"], "modo_de_hacerlo": "1. Coloca la banda a la altura de los ojos y ponte en una posición de rodillas. 2. Asegúrate de que la rodilla que está en el suelo esté del mismo lado que el brazo que está trabajando. Mantén el pecho hacia afuera. 3. Luego, estira tu codo hacia atrás. Flexiona tus dorsales y luego vuelve a la posición inicial."}',
+    1); -- Espalda completa
+
+
 INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen, datos_cientificos, zona_ejercicio)
 VALUES
-    ('Flexiones con palmada',
-    'Las flexiones con palmada son un ejercicio fantástico para tonificar el tren superior y trabajar la potencia. Requieren fuerza y velocidad, lo que ayuda a ejercitar el pecho, brazos, hombros y el núcleo.',
-    'https://ejemplo.com/video_flexiones_palmada',
-    'https://ejemplo.com/imagen_flexiones_palmada',
-    '{"musculos": ["Pectoral superior", "Brazos", "Hombros", "Core"], "precauciones": ["Realizar un calentamiento previo", "Mantener una postura alineada"], "modo_de_hacerlo": "Colócate en el suelo con las manos más abiertas que los hombros. Baja el cuerpo hacia el suelo, y cuando toques el suelo con el pecho, estira rápidamente los brazos para elevarte y dar una palmada en el aire."}',
-    2), -- Pecho
+   INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Lagartija',
+    'La lagartija es un ejercicio fundamental para fortalecer el torso, brazos y hombros. Sigue estos pasos para realizarla correctamente en nivel principiante: 1. Coloca tus manos firmemente en el suelo, directamente debajo de los hombros. 2. Aplana tu espalda de manera que todo tu cuerpo esté recto y baja lentamente tu cuerpo. 3. Recoja las escápulas hacia atrás y hacia abajo, manteniendo los codos pegados a su cuerpo. 4. Exhala mientras vuelves a la posición inicial.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-push-up-front.mp4#t=0.1',
+    '{"musculos": ["Pectorales", "Deltoides", "Tríceps"], "precauciones": ["Evitar arquear excesivamente la espalda baja", "Controlar el movimiento para evitar lesiones en los hombros"], "modo_de_hacerlo": "1. Coloca tus manos firmemente en el suelo, directamente debajo de los hombros. 2. Aplana tu espalda de manera que todo tu cuerpo esté recto y baja lentamente tu cuerpo. 3. Recoja las escápulas hacia atrás y hacia abajo, manteniendo los codos pegados a tu cuerpo. 4. Exhala mientras vuelves a la posición inicial."}',
+    2); -- Pecho 
 
-    ('Flexiones inclinadas',
-    'Las flexiones inclinadas son un excelente ejercicio para el pectoral superior que se puede realizar en casa. Se pueden realizar con las manos colocadas en una superficie elevada, como un banco o una silla.',
-    'https://ejemplo.com/video_flexiones_inclinadas',
-    'https://ejemplo.com/imagen_flexiones_inclinadas',
-    '{"musculos": ["Pectoral superior", "Hombros"], "precauciones": ["Encontrar una superficie segura para apoyarse", "Mantener la cadera alineada"], "modo_de_hacerlo": "Colócate con las manos apoyadas en una superficie elevada y el cuerpo en una posición inclinada. Realiza flexiones manteniendo la forma adecuada del cuerpo."}',
-    2), -- Pecho
-
-    ('Flexiones abiertas',
-    'Las flexiones abiertas son ideales para trabajar la parte externa del pecho. Se realizan con las manos colocadas más anchas que la anchura de los hombros.',
-    'https://ejemplo.com/video_flexiones_abiertas',
-    'https://ejemplo.com/imagen_flexiones_abiertas',
-    '{"musculos": ["Pectoral externo", "Hombros"], "precauciones": ["Mantener una postura alineada", "Evitar movimientos bruscos"], "modo_de_hacerlo": "Realiza flexiones con las manos más abiertas que la anchura de los hombros para enfocar el trabajo en los pectorales y los hombros."}',
-    2), -- Pecho
-
-    ('Flexiones declinadas',
-    'Las flexiones declinadas son excelentes para trabajar el pectoral inferior en casa. Se realizan con los pies elevados sobre una superficie y las manos en el suelo.',
-    'https://ejemplo.com/video_flexiones_declinadas',
-    'https://ejemplo.com/imagen_flexiones_declinadas',
-    '{"musculos": ["Pectoral inferior", "Tríceps"], "precauciones": ["Asegurar una postura correcta", "Controlar el movimiento"], "modo_de_hacerlo": "Colócate con los pies elevados en una superficie y las manos en el suelo. Realiza flexiones manteniendo la alineación del cuerpo."}',
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Fondos en Caja',
+    'Los fondos en caja son un ejercicio excelente para trabajar los músculos del pecho, los tríceps y los hombros. Sigue estos pasos para realizarlos correctamente en nivel intermedio: 1. Mantén tu cuerpo con los brazos bloqueados por encima del equipo. 2. Baja tu cuerpo lentamente mientras te inclinas hacia adelante, saca tus codos hacia afuera. 3. Eleva tu cuerpo por encima de las barras hasta que tus brazos estén completamente extendidos.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-dips-front.mp4#t=0.1',
+    '{"musculos": ["Pectorales", "Tríceps", "Deltoides"], "precauciones": ["Evitar arquear excesivamente la espalda", "Controlar el movimiento para evitar lesiones en los hombros"], "modo_de_hacerlo": "1. Mantén tu cuerpo con los brazos bloqueados por encima del equipo. 2. Baja tu cuerpo lentamente mientras te inclinas hacia adelante, saca tus codos hacia afuera. 3. Eleva tu cuerpo por encima de las barras hasta que tus brazos estén completamente extendidos."}',
     2); -- Pecho
+
+ INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Flexión Inclinada',
+    'Las flexiones inclinadas son una excelente variante para principiantes que desean fortalecer el pecho inferior, los hombros y los brazos. Sigue estos pasos para realizarlas correctamente: 1. Párate frente al banco o a una plataforma elevada resistente. 2. Coloca las manos en el borde del banco o plataforma, un poco más anchas que el ancho de los hombros. 3. Baja lentamente tu cuerpo hasta que tu pecho casi toque el banco. 4. Empuja el cuerpo hacia arriba hasta que los brazos estén extendidos.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-incline-push-up-front.mp4#t=0.1',
+    '{"musculos": ["Pectorales", "Deltoides", "Tríceps"], "precauciones": ["Mantener una alineación adecuada del cuerpo", "Evitar arquear excesivamente la espalda"], "modo_de_hacerlo": "1. Párate frente al banco o a una plataforma elevada resistente. 2. Coloca las manos en el borde del banco o plataforma, un poco más anchas que el ancho de los hombros. 3. Baja lentamente tu cuerpo hasta que tu pecho casi toque el banco. 4. Empuja el cuerpo hacia arriba hasta que los brazos estén extendidos."}',
+    2); -- Pecho 
+  
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Flexión Inclinada hacia Abajo',
+    'Las flexiones inclinadas hacia abajo son una variante excelente para principiantes que desean fortalecer el pecho superior, los hombros y los brazos. Sigue estos pasos para realizarlas correctamente: 1. Usa un banco para elevar tus pies. 2. Coloca tus manos un poco más anchas que el ancho de tus hombros. 3. Baja lentamente tu cuerpo hasta que tu pecho casi toque el suelo. 4. Levanta tu cuerpo hasta que casi bloquees tus codos.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-decline-push-up-front.mp4#t=0.1',
+    '{"musculos": ["Pectorales", "Deltoides", "Tríceps"], "precauciones": ["Mantener una alineación adecuada del cuerpo", "Controlar el movimiento para evitar lesiones"], "modo_de_hacerlo": "1. Usa un banco para elevar tus pies. 2. Coloca tus manos un poco más anchas que el ancho de tus hombros. 3. Baja lentamente tu cuerpo hasta que tu pecho casi toque el suelo. 4. Levanta tu cuerpo hasta que casi bloquees tus codos."}',
+    2); -- Pecho 
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Apertura de Pecho con Banda Elástica',
+    'La apertura de pecho con banda elástica es un excelente ejercicio para fortalecer los músculos del pecho y los hombros. Sigue estos pasos para realizarlo correctamente: 1. Asegura dos bandas de resistencia a un punto de anclaje sólido a la altura del pecho. 2. Párate de espaldas al punto de anclaje con los pies separados a la anchura de los hombros y sostén cada extremo de la banda con cada mano. 3. Comienza con los brazos completamente extendidos y paralelos al suelo. 4. Manteniendo los brazos rectos, lleva lentamente tus brazos juntos frente a tu pecho.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-chest-fly-front_EjlOhyB.mp4#t=0.1',
+    '{"musculos": ["Pectorales", "Deltoides"], "precauciones": ["Controlar la tensión de la banda para evitar lesiones", "Mantener una postura estable"], "modo_de_hacerlo": "1. Asegura dos bandas de resistencia a un punto de anclaje sólido a la altura del pecho. 2. Párate de espaldas al punto de anclaje con los pies separados a la anchura de los hombros y sostén cada extremo de la banda con cada mano. 3. Comienza con los brazos completamente extendidos y paralelos al suelo. 4. Manteniendo los brazos rectos, lleva lentamente tus brazos juntos frente a tu pecho."}',
+    2); -- Pecho 
+
 
 
 INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
@@ -1208,7 +1056,7 @@ VALUES (
     'https://ejemplo.com/video_encogimientos_invertidos',
     'https://ejemplo.com/imagen_encogimientos_invertidos',
     '{"musculos": ["Parte baja del abdomen"], "precauciones": ["Mantener la contracción en los abdominales inferiores"], "modo_de_hacerlo": "Levanta la zona lumbar del suelo."}',
-    6);-abs
+    6);--abs
 
 INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
 VALUES (
