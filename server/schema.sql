@@ -854,345 +854,327 @@ VALUES
     '{"musculos": ["Pectorales", "Deltoides"], "precauciones": ["Controlar la tensión de la banda para evitar lesiones", "Mantener una postura estable"], "modo_de_hacerlo": "1. Asegura dos bandas de resistencia a un punto de anclaje sólido a la altura del pecho. 2. Párate de espaldas al punto de anclaje con los pies separados a la anchura de los hombros y sostén cada extremo de la banda con cada mano. 3. Comienza con los brazos completamente extendidos y paralelos al suelo. 4. Manteniendo los brazos rectos, lleva lentamente tus brazos juntos frente a tu pecho."}',
     2); -- Pecho 
 
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Prensa de Lucio Elevada',
+    'La prensa de lucio elevada es un ejercicio intermedio que se enfoca principalmente en fortalecer los músculos de los hombros y los tríceps. Sigue estos pasos para realizarlo correctamente: 1. Utiliza un banco u objeto resistente para elevar tus pies. 2. Baja la cabeza hacia el suelo doblando tus codos. 3. Empújate a través de tus manos y vuelve a la posición inicial de pica. 4. Repite el movimiento.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-elevated-pike-press-side.mp4#t=0.1',
+    '{"musculos": ["Deltoides", "Tríceps"], "precauciones": ["Mantener una alineación adecuada del cuerpo", "Evitar arquear excesivamente la espalda"], "modo_de_hacerlo": "1. Utiliza un banco u objeto resistente para elevar tus pies. 2. Baja la cabeza hacia el suelo doblando tus codos. 3. Empújate a través de tus manos y vuelve a la posición inicial de pica. 4. Repite el movimiento."}',
+    3); -- Hombros
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Press de Pica con Peso Corporal',
+    'El press de pica con peso corporal es un ejercicio intermedio que se enfoca principalmente en fortalecer los músculos deltoides, además de trabajar los pectorales y tríceps. Sigue estos pasos para realizarlo correctamente: 1. Comienza en posición de plancha. Empuja tus caderas hacia arriba en dirección al techo. 2. Baja tu cabeza hacia el suelo doblando tus codos. 3. Empuja con las manos y regresa a la posición inicial de pica. 4. Repite el movimiento.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-bodyweight-pike-press-side.mp4#t=0.1',
+    '{"musculos": ["Deltoides", "Pectorales", "Tríceps"], "precauciones": ["Mantener una alineación adecuada del cuerpo", "Controlar el movimiento para evitar lesiones"], "modo_de_hacerlo": "1. Comienza en posición de plancha. Empuja tus caderas hacia arriba en dirección al techo. 2. Baja tu cabeza hacia el suelo doblando tus codos. 3. Empuja con las manos y regresa a la posición inicial de pica. 4. Repite el movimiento."}',
+    3); -- Hombros
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Separación de Banda Elástica',
+    'La separación de banda elástica es un excelente ejercicio para fortalecer los músculos de los hombros y la parte superior de la espalda. Sigue estos pasos para realizarlo correctamente: 1. Agarra la banda con un agarre del ancho de tus hombros. Apunta tus brazos directamente frente a ti. 2. Retrae los omóplatos y la articulación del hombro hasta que la banda toque tu pecho.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-pull-apart-side.mp4#t=0.1',
+    '{"musculos": ["Deltoides", "Trapecio"], "precauciones": ["Evitar usar una banda con demasiada resistencia al principio", "Mantener una postura estable"], "modo_de_hacerlo": "1. Agarra la banda con un agarre del ancho de tus hombros. Apunta tus brazos directamente frente a ti. 2. Retrae los omóplatos y la articulación del hombro hasta que la banda toque tu pecho."}',
+    3); -- Hombros
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Press de Hombro con Banda y un Solo Brazo',
+    'El press de hombro con banda y un solo brazo es un ejercicio efectivo para fortalecer los deltoides y los músculos estabilizadores del hombro. Sigue estos pasos para realizarlo correctamente: 1. Pasa la banda por debajo de uno de tus pies. El otro extremo de la banda debería estar en tu mano, entre tu pulgar e índice. 2. Presiona la banda directamente hacia el techo hasta que tu codo esté completamente extendido.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-single-arm-overhead-press-front.mp4#t=0.1',
+    '{"musculos": ["Deltoides"], "precauciones": ["Mantener una postura estable", "Controlar la tensión de la banda para evitar lesiones"], "modo_de_hacerlo": "1. Pasa la banda por debajo de uno de tus pies. El otro extremo de la banda debería estar en tu mano, entre tu pulgar e índice. 2. Presiona la banda directamente hacia el techo hasta que tu codo esté completamente extendido."}',
+    3); -- Hombros
+
+    INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Tirón de Banda hacia la Cara',
+    'El tirón de banda hacia la cara es un ejercicio efectivo para fortalecer los músculos de la espalda y los hombros. Sigue estos pasos para realizarlo correctamente: 1. Ancla la banda a la altura de los ojos. Da unos cuantos pasos atrás hasta que la banda esté tensa. 2. Usa un agarre por encima con ambas manos. Tira de la banda hasta el puente de tu nariz, abriendo los codos hacia fuera.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-face-pull-side.mp4#t=0.1',
+    '{"musculos": ["Deltoides", "Trapecio", "Dorsal ancho"], "precauciones": ["Controlar la tensión de la banda para evitar lesiones", "Mantener una postura estable"], "modo_de_hacerlo": "1. Ancla la banda a la altura de los ojos. Da unos cuantos pasos atrás hasta que la banda esté tensa. 2. Usa un agarre por encima con ambas manos. Tira de la banda hasta el puente de tu nariz, abriendo los codos hacia fuera."}',
+    3); -- Hombros
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Elevación Lateral con Banda',
+    'La elevación lateral con banda es un excelente ejercicio para fortalecer los músculos deltoides laterales. Sigue estos pasos para realizarlo correctamente: 1. Agarra la banda a la anchura de los hombros. Levanta tus brazos estirados hacia un lado. 2. La banda debería rozar contra tu camiseta.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-lateral-raise-front.mp4#t=0.1',
+    '{"musculos": ["Deltoides laterales"], "precauciones": ["Controlar la tensión de la banda para evitar lesiones"], "modo_de_hacerlo": "1. Agarra la banda a la anchura de los hombros. Levanta tus brazos estirados hacia un lado. 2. La banda debería rozar contra tu camiseta."}',
+    3); -- Hombros
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Elevación Frontal con Banda',
+    'La elevación frontal con banda es un ejercicio efectivo para fortalecer los músculos deltoides anteriores. Sigue estos pasos para realizarlo correctamente: 1. Párate sobre la banda con uno o dos pies, dependiendo de cuánto peso quieras que tenga la banda. 2. Con los codos extendidos, levanta los puños directamente hacia el techo hasta que estén a la altura de los ojos.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-front-raise-side.mp4#t=0.1',
+    '{"musculos": ["Deltoides anteriores"], "precauciones": ["Controlar la tensión de la banda para evitar lesiones"], "modo_de_hacerlo": "1. Párate sobre la banda con uno o dos pies, dependiendo de cuánto peso quieras que tenga la banda. 2. Con los codos extendidos, levanta los puños directamente hacia el techo hasta que estén a la altura de los ojos."}',
+    3); -- Hombros
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Flexiones de Barbilla',
+    'Las flexiones de barbilla son un excelente ejercicio para fortalecer los músculos de los bíceps y la espalda. Sigue estos pasos para realizarlas correctamente: 1. Sujeta la barra a la anchura de los hombros con un agarre supinado (las palmas mirando hacia ti). 2. Con tu cuerpo colgando y los brazos completamente extendidos, levántate hasta que tu barbilla sobrepase la barra. 3. Regresa lentamente a la posición inicial. Repite.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-chinup-front.mp4#t=0.1',
+    '{"musculos": ["Bíceps", "Dorsal ancho"], "precauciones": ["Evitar balanceo excesivo", "Mantener una técnica adecuada"], "modo_de_hacerlo": "1. Sujeta la barra a la anchura de los hombros con un agarre supinado (las palmas mirando hacia ti). 2. Con tu cuerpo colgando y los brazos completamente extendidos, levántate hasta que tu barbilla sobrepase la barra. 3. Regresa lentamente a la posición inicial. Repite."}',
+    4); -- Bíceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Curl con Banda',
+    'El curl con banda es un ejercicio efectivo para fortalecer los músculos de los brazos, especialmente los bíceps. Sigue estos pasos para realizarlo correctamente: 1. Ponte de pie con los pies separados al ancho de los hombros, con la banda debajo de ambos pies. 2. Agarra las asas de la banda con ambas manos, manteniendo tus brazos rectos y extendidos frente a ti. 3. Mantén tu espalda recta, los abdominales activados y los hombros relajados mientras doblas tus manos hacia tus hombros, doblando por los codos.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-curl-front_1YwVVEx.mp4#t=0.1',
+    '{"musculos": ["Bíceps"], "precauciones": ["Controlar la tensión de la banda para evitar lesiones"], "modo_de_hacerlo": "1. Ponte de pie con los pies separados al ancho de los hombros, con la banda debajo de ambos pies. 2. Agarra las asas de la banda con ambas manos, manteniendo tus brazos rectos y extendidos frente a ti. 3. Mantén tu espalda recta, los abdominales activados y los hombros relajados mientras doblas tus manos hacia tus hombros, doblando por los codos."}',
+    4); -- Biceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Curl Inverso con Banda',
+    'El curl inverso con banda es un ejercicio excelente para fortalecer los músculos de los antebrazos y los bíceps. Sigue estos pasos para realizarlo correctamente: 1. Comienza parándote en el centro de la banda con ambos pies separados a la anchura de los hombros. 2. Sostén la banda con ambas manos, las palmas hacia abajo, los brazos extendidos rectos frente a ti. 3. Dobla lentamente tus manos hacia tus hombros, estirando la banda, luego baja los brazos de nuevo a la posición inicial, manteniendo la tensión en la banda durante todo el ejercicio.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-reverse-curl-side_Cez320W.mp4#t=0.1',
+    '{"musculos": ["Bíceps", "Antebrazos"], "precauciones": ["Controlar la tensión de la banda para evitar lesiones"], "modo_de_hacerlo": "1. Comienza parándote en el centro de la banda con ambos pies separados a la anchura de los hombros. 2. Sostén la banda con ambas manos, las palmas hacia abajo, los brazos extendidos rectos frente a ti. 3. Dobla lentamente tus manos hacia tus hombros, estirando la banda, luego baja los brazos de nuevo a la posición inicial, manteniendo la tensión en la banda durante todo el ejercicio."}',
+    4); -- Biceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Curl Bayesiano con Banda',
+    'El curl bayesiano con banda es un ejercicio básico pero efectivo para fortalecer los músculos de los bíceps. Sigue estos pasos para realizarlo correctamente: 1. Sujeta la banda a un punto de anclaje bajo. Apunta tus palmas directamente hacia adelante. 2. Dobla el codo hasta que sientas que tus bíceps se contraen. Luego, extiende completamente los codos.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-curl-side.mp4#t=0.1',
+    '{"musculos": ["Bíceps"], "precauciones": ["Controlar la tensión de la banda para evitar lesiones"], "modo_de_hacerlo": "1. Sujeta la banda a un punto de anclaje bajo. Apunta tus palmas directamente hacia adelante. 2. Dobla el codo hasta que sientas que tus bíceps se contraen. Luego, extiende completamente los codos."}',
+    4); -- Biceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Rizo de Martillo Bayesiano con Banda',
+    'El rizo de martillo bayesiano con banda es un ejercicio intermedio que se centra en fortalecer los músculos de los bíceps y los antebrazos. Sigue estos pasos para realizarlo correctamente: 1. Sujeta la banda a un punto de anclaje bajo. Usa un agarre neutro. 2. Flexiona tu codo hasta que sientas que se contraen tus bíceps. Luego, extiende completamente los codos.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-hammer-curl-front.mp4#t=0.1',
+    '{"musculos": ["Bíceps", "Antebrazos"], "precauciones": ["Controlar la tensión de la banda para evitar lesiones"], "modo_de_hacerlo": "1. Sujeta la banda a un punto de anclaje bajo. Usa un agarre neutro. 2. Flexiona tu codo hasta que sientas que se contraen tus bíceps. Luego, extiende completamente los codos."}',
+    4); -- Biceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Fondos en Caja',
+    'Los fondos en caja son un ejercicio intermedio que se centra principalmente en fortalecer los músculos de los tríceps, aunque también involucra los músculos del pecho y los hombros. Sigue estos pasos para realizarlo correctamente: 1. Mantén tu cuerpo con los brazos bloqueados por encima del equipo. 2. Baja tu cuerpo lentamente mientras te inclinas hacia adelante, saca tus codos hacia afuera. 3. Eleva tu cuerpo por encima de las barras hasta que tus brazos estén completamente extendidos.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-dips-front.mp4#t=0.1',
+    '{"musculos": ["Tríceps", "Pecho", "Hombros"], "precauciones": ["Mantener una buena alineación corporal para evitar lesiones"], "modo_de_hacerlo": "1. Mantén tu cuerpo con los brazos bloqueados por encima del equipo. 2. Baja tu cuerpo lentamente mientras te inclinas hacia adelante, saca tus codos hacia afuera. 3. Eleva tu cuerpo por encima de las barras hasta que tus brazos estén completamente extendidos."}',
+    5); -- Triceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Flexiones Diamante',
+    'Las flexiones diamante son un excelente ejercicio para fortalecer los tríceps y el pecho. Sigue estos pasos para realizarlas correctamente: 1. Coloca tus dedos índices y pulgares de manera que se toquen, formando una forma de diamante. 2. Utiliza la posición estándar de flexión de brazos. 3. Baja el pecho hacia tus manos, mantén los codos cerca de tu cuerpo. 4. Detente justo antes de que tu pecho toque el suelo, luego empuja hacia arriba para volver a la posición inicial.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-diamond-push-ups-side.mp4#t=0.1',
+    '{"musculos": ["Tríceps", "Pecho"], "precauciones": ["Mantener una alineación adecuada del cuerpo para evitar lesiones"], "modo_de_hacerlo": "1. Coloca tus dedos índices y pulgares de manera que se toquen, formando una forma de diamante. 2. Utiliza la posición estándar de flexión de brazos. 3. Baja el pecho hacia tus manos, mantén los codos cerca de tu cuerpo. 4. Detente justo antes de que tu pecho toque el suelo, luego empuja hacia arriba para volver a la posición inicial."}',
+    5); -- Triceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Fondos en Banco',
+    'Los fondos en banco son un ejercicio efectivo para trabajar los músculos del tríceps, el pecho y los hombros. Sigue estos pasos para realizarlo correctamente: 1. Agarra el borde del banco con tus manos, mantén tus pies juntos y las piernas rectas. 2. Baja tu cuerpo recto hacia abajo. 3. Presiona lentamente hacia arriba hasta volver al punto de inicio. 4. CONSEJO: Hazlo más difícil levantando tus pies del suelo y añadiendo peso.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-tricep-dips-side.mp4#t=0.1',
+    '{"musculos": ["Tríceps", "Pecho", "Hombros"], "precauciones": ["Mantener una buena alineación corporal para evitar lesiones"], "modo_de_hacerlo": "1. Agarra el borde del banco con tus manos, mantén tus pies juntos y las piernas rectas. 2. Baja tu cuerpo recto hacia abajo. 3. Presiona lentamente hacia arriba hasta volver al punto de inicio. 4. CONSEJO: Hazlo más difícil levantando tus pies del suelo y añadiendo peso."}',
+    5); -- Triceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Fondos en Barras Paralelas',
+    'Los fondos en barras paralelas son un ejercicio intermedio que se centra en fortalecer los músculos del tríceps, el pecho y los hombros. Sigue estos pasos para realizarlo correctamente: 1. Agarra las barras con los brazos estirados, los hombros sobre las manos. Mantén las piernas estiradas o dobladas. 2. Baja lentamente hasta que los codos estén a 90 grados. 3. Empuja hacia arriba hasta volver a la posición inicial, extendiendo completamente los brazos.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-parralel-bar-dips-side.mp4#t=0.1',
+    '{"musculos": ["Tríceps", "Pecho", "Hombros"], "precauciones": ["Mantener una buena alineación corporal para evitar lesiones"], "modo_de_hacerlo": "1. Agarra las barras con los brazos estirados, los hombros sobre las manos. Mantén las piernas estiradas o dobladas. 2. Baja lentamente hasta que los codos estén a 90 grados. 3. Empuja hacia arriba hasta volver a la posición inicial, extendiendo completamente los brazos."}',
+    5); -- Triceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Empuje hacia Abajo con Banda',
+    'El empuje hacia abajo con banda es un ejercicio para principiantes que se centra en fortalecer los músculos de los tríceps. Sigue estos pasos para realizarlo correctamente: 1. Coloca la banda justo por encima del nivel de los ojos. Da unos pasos hacia atrás hasta que la banda esté tensa. 2. Retrocede ligeramente tus caderas. Extiende y flexiona en los codos.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-pushdown-front.mp4#t=0.1',
+    '{"musculos": ["Tríceps"], "precauciones": ["Mantener una buena alineación corporal para evitar lesiones"], "modo_de_hacerlo": "1. Coloca la banda justo por encima del nivel de los ojos. Da unos pasos hacia atrás hasta que la banda esté tensa. 2. Retrocede ligeramente tus caderas. Extiende y flexiona en los codos."}',
+    5); -- Triceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Extensión de Tríceps por Encima de la Cabeza con Banda',
+    'La extensión de tríceps por encima de la cabeza con banda es un ejercicio avanzado que se enfoca en fortalecer los tríceps. Sigue estos pasos para realizarlo correctamente: 1. Póngase de pie con uno o ambos pies sobre la banda. Suba y pase por encima de su cabeza con la banda hasta la posición inicial. 2. Flexiona y extiende tus codos.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-overhead-tricep-extension-side.mp4#t=0.1',
+    '{"musculos": ["Tríceps"], "precauciones": ["Mantener una buena alineación corporal para evitar lesiones"], "modo_de_hacerlo": "1. Póngase de pie con uno o ambos pies sobre la banda. Suba y pase por encima de su cabeza con la banda hasta la posición inicial. 2. Flexiona y extiende tus codos."}',
+    5); -- Triceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Empuje hacia abajo con una sola mano con banda',
+    'El empuje hacia abajo con una sola mano con banda es un ejercicio para principiantes que se centra en fortalecer los músculos del tríceps. Sigue estos pasos para realizarlo correctamente: 1. Párate con los pies al ancho de tus hombros y sujeta la banda con tu mano derecha, con el brazo a tu lado. 2. Dobla y extiende tu codo.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-single-arm-pushdown-front.mp4#t=0.1',
+    '{"musculos": ["Tríceps"], "precauciones": ["Mantener una buena alineación corporal para evitar lesiones"], "modo_de_hacerlo": "1. Párate con los pies al ancho de tus hombros y sujeta la banda con tu mano derecha, con el brazo a tu lado. 2. Dobla y extiende tu codo."}',
+    5); -- Triceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Abdominales',
+    'Los abdominales son un ejercicio básico para fortalecer los músculos abdominales. Sigue estos pasos para realizarlo correctamente: 1. Recuéstate sobre tu espalda con las rodillas dobladas y los pies apoyados en el suelo, aproximadamente a un pie de distancia de tu zona lumbar. 2. Coloca las yemas de tus dedos en tus sienes con las palmas hacia afuera. 3. Contrae el abdomen hacia la base de tu columna para activar los músculos, luego levanta la cabeza y los hombros del suelo. Regresa a la posición inicial y repite.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-crunch-side.mp4#t=0.1',
+    '{"musculos": ["Abdominales"], "precauciones": ["Evitar tirar del cuello con las manos", "Mantener la espalda en contacto con el suelo"], "modo_de_hacerlo": "1. Recuéstate sobre tu espalda con las rodillas dobladas y los pies apoyados en el suelo, aproximadamente a un pie de distancia de tu zona lumbar. 2. Coloca las yemas de tus dedos en tus sienes con las palmas hacia afuera. 3. Contrae el abdomen hacia la base de tu columna para activar los músculos, luego levanta la cabeza y los hombros del suelo. Regresa a la posición inicial y repite."}',
+    6); -- Abdominales
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Elevaciones de Pierna Acostado',
+    'Las elevaciones de pierna acostado son un ejercicio básico para fortalecer los músculos abdominales inferiores. Sigue estos pasos para realizarlo correctamente: 1. Acuéstate boca arriba con las palmas de tus brazos hacia abajo a ambos lados. 2. Mantén tus piernas juntas y lo más rectas posible. 3. Levanta lentamente tus piernas hasta un ángulo de 90°, haz una pausa en esta posición, o tan alto como puedas llegar con tus piernas, y luego bájalas lentamente de nuevo. 4. La duración de estos movimientos debería ser lenta para que no utilices el impulso, permitiéndote obtener el máximo provecho del ejercicio.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-leg-raises-side.mp4#t=0.1',
+    '{"musculos": ["Abdominales inferiores"], "precauciones": ["Evitar arquear la espalda"], "modo_de_hacerlo": "1. Acuéstate boca arriba con las palmas de tus brazos hacia abajo a ambos lados. 2. Mantén tus piernas juntas y lo más rectas posible. 3. Levanta lentamente tus piernas hasta un ángulo de 90°, haz una pausa en esta posición, o tan alto como puedas llegar con tus piernas, y luego bájalas lentamente de nuevo. 4. La duración de estos movimientos debería ser lenta para que no utilices el impulso, permitiéndote obtener el máximo provecho del ejercicio."}',
+    6); -- Abdominales
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Elevaciones de Rodilla Colgando',
+    'Las elevaciones de rodilla colgando son un ejercicio básico para fortalecer los músculos abdominales inferiores. Sigue estos pasos para realizarlo correctamente: 1. Agarra la barra y cuélgate, mantén tu cuerpo quieto y tus piernas rectas. 2. Levanta lentamente tus rodillas hacia tu pecho. 3. Una vez que hayas levantado las rodillas lo más alto posible, baja las piernas y repite. La duración de estos movimientos debe ser lenta para que no utilices el impulso, permitiéndote obtener el máximo beneficio del ejercicio.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-hanging-knee-raises-front.mp4#t=0.1',
+    '{"musculos": ["Abdominales inferiores"], "precauciones": ["Evitar balanceo excesivo"], "modo_de_hacerlo": "1. Agarra la barra y cuélgate, mantén tu cuerpo quieto y tus piernas rectas. 2. Levanta lentamente tus rodillas hacia tu pecho. 3. Una vez que hayas levantado las rodillas lo más alto posible, baja las piernas y repite. La duración de estos movimientos debe ser lenta para que no utilices el impulso, permitiéndote obtener el máximo beneficio del ejercicio."}',
+    6); -- Abdominales
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Plancha de Antebrazo',
+    'La plancha de antebrazo es un ejercicio básico para fortalecer el core y mejorar la estabilidad. Sigue estos pasos para realizarlo correctamente: 1. Coloca los antebrazos en el suelo con tus codos doblados a un ángulo de 90° alineados debajo de tus hombros, con tus brazos en paralelo al ancho de tus hombros. 2. Tus pies deben estar juntos, con solo tus dedos tocando el suelo. 3. Levanta tu vientre del suelo y forma una línea recta desde tus talones hasta la coronilla de tu cabeza y mantén.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-forearm-plank-front.mp4#t=0.1',
+    '{"musculos": ["Core"], "precauciones": ["Evitar arquear la espalda baja"], "modo_de_hacerlo": "1. Coloca los antebrazos en el suelo con tus codos doblados a un ángulo de 90° alineados debajo de tus hombros, con tus brazos en paralelo al ancho de tus hombros. 2. Tus pies deben estar juntos, con solo tus dedos tocando el suelo. 3. Levanta tu vientre del suelo y forma una línea recta desde tus talones hasta la coronilla de tu cabeza y mantén."}',
+    6); -- Abdominales
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Crunch con Banda Elástica',
+    'El crunch con banda elástica es un ejercicio intermedio que fortalece los músculos abdominales. Sigue estos pasos para realizarlo correctamente: 1. Coloca la banda en el punto de anclaje más alto que tengas disponible. Toma ambos extremos de la banda y ponte en una posición de rodillas. 2. Empuja tus caderas hacia atrás, flexionando la columna. 3. Contrae tus abdominales y luego extiende las caderas y la columna hasta volver a la posición inicial.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-crunch-side.mp4#t=0.1',
+    '{"musculos": ["Abdominales"], "precauciones": ["Mantener la columna alineada durante todo el ejercicio"], "modo_de_hacerlo": "1. Coloca la banda en el punto de anclaje más alto que tengas disponible. Toma ambos extremos de la banda y ponte en una posición de rodillas. 2. Empuja tus caderas hacia atrás, flexionando la columna. 3. Contrae tus abdominales y luego extiende las caderas y la columna hasta volver a la posición inicial."}',
+    6); -- Abdominales
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Sentadilla con Peso Corporal',
+    'La sentadilla con peso corporal es un ejercicio básico para fortalecer las piernas y glúteos. Sigue estos pasos para realizarlo correctamente: 1. Ponte de pie con los pies separados al ancho de los hombros. 2. Dobla tus rodillas y caderas y retrocede a la posición de sentadilla mientras bajas tu cuerpo. 3. Continúa hasta alcanzar la profundidad completa. 4. Regresa a la posición inicial.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-bodyweight-squat-front.mp4#t=0.1',
+    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Mantener la espalda recta", "No dejar que las rodillas se desplacen hacia adentro"], "modo_de_hacerlo": "1. Ponte de pie con los pies separados al ancho de los hombros. 2. Dobla tus rodillas y caderas y retrocede a la posición de sentadilla mientras bajas tu cuerpo. 3. Continúa hasta alcanzar la profundidad completa. 4. Regresa a la posición inicial."}',
+    7); -- cuadriceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Zancadas hacia adelante',
+    'Las zancadas hacia adelante son un ejercicio básico para fortalecer las piernas y glúteos. Sigue estos pasos para realizarlo correctamente: 1. Avanza con una pierna. 2. Baja tu cuerpo hasta que tu rodilla trasera casi toque el suelo. 3. Asegúrate de permanecer erguido y que tu rodilla delantera se mantenga por encima del pie delantero. 4. Empuja el suelo con tu pie delantero hasta que vuelvas a la posición inicial. Cambia de pierna.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-forward-lunges-side.mp4#t=0.1',
+    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Mantener la espalda recta", "Evitar que la rodilla delantera sobrepase los dedos de los pies"], "modo_de_hacerlo": "1. Avanza con una pierna. 2. Baja tu cuerpo hasta que tu rodilla trasera casi toque el suelo. 3. Asegúrate de permanecer erguido y que tu rodilla delantera se mantenga por encima del pie delantero. 4. Empuja el suelo con tu pie delantero hasta que vuelvas a la posición inicial. Cambia de pierna."}',
+    7); -- cuadriceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Sentadilla Búlgara con Apoyo',
+    'La sentadilla búlgara con apoyo es un ejercicio básico para fortalecer las piernas y glúteos. Sigue estos pasos para realizarlo correctamente: 1. Párate de espaldas a un banco (o superficie elevada) y coloca uno de tus pies en el banco. 2. Haz una sentadilla hasta que tu pierna delantera esté aproximadamente paralela al suelo. 3. Regresa a la posición inicial. Después de completar la cantidad deseada de repeticiones, cambia de pierna y repite.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-bulgarian-split-squat-side.mp4#t=0.1',
+    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Mantener la espalda recta", "Controlar el movimiento para evitar lesiones"], "modo_de_hacerlo": "1. Párate de espaldas a un banco (o superficie elevada) y coloca uno de tus pies en el banco. 2. Haz una sentadilla hasta que tu pierna delantera esté aproximadamente paralela al suelo. 3. Regresa a la posición inicial. Después de completar la cantidad deseada de repeticiones, cambia de pierna y repite."}',
+    7); -- cuadriceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Elevación de Rodilla con Peso Corporal',
+    'La elevación de rodilla con peso corporal es un ejercicio intermedio para fortalecer las piernas y glúteos. Sigue estos pasos para realizarlo correctamente: 1. Comienza de pie frente a una caja o banco resistente que tenga aproximadamente la altura de la rodilla. 2. Coloca tu pie derecho sobre la caja y empuja con el talón para elevar tu cuerpo hacia arriba y sobre la caja, lleva tu otra pierna todo el camino hasta que esté paralela al suelo. 3. Retrocede con tu pie derecho, bajando tu pie izquierdo al suelo.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Recovery-step-up-knee-drive-side.mp4#t=0.1',
+    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Mantener la espalda recta", "Controlar el movimiento para evitar lesiones"], "modo_de_hacerlo": "1. Comienza de pie frente a una caja o banco resistente que tenga aproximadamente la altura de la rodilla. 2. Coloca tu pie derecho sobre la caja y empuja con el talón para elevar tu cuerpo hacia arriba y sobre la caja, lleva tu otra pierna todo el camino hasta que esté paralela al suelo. 3. Retrocede con tu pie derecho, bajando tu pie izquierdo al suelo."}',
+    7); -- cuadriceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Zancada Caminando',
+    'La zancada caminando es un ejercicio intermedio para fortalecer las piernas y glúteos. Sigue estos pasos para realizarlo correctamente: 1. Da un paso hacia adelante trasladando tu peso a la pierna delantera. 2. Dobla la rodilla de la pierna delantera para que la rodilla de la pierna trasera se acerque al suelo. 3. Levántate y haz una estocada con la pierna opuesta.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Recovery-lunge-walking-side.mp4#t=0.1',
+    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Mantener la espalda recta", "Controlar el movimiento para evitar lesiones"], "modo_de_hacerlo": "1. Da un paso hacia adelante trasladando tu peso a la pierna delantera. 2. Dobla la rodilla de la pierna delantera para que la rodilla de la pierna trasera se acerque al suelo. 3. Levántate y haz una estocada con la pierna opuesta."}',
+    7); -- cuadriceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Sentadilla con los Talones Levantados',
+    'La sentadilla con los talones levantados es un ejercicio básico para fortalecer las piernas y glúteos. Sigue estos pasos para realizarlo correctamente: 1. Coloca tus talones en una placa o en un escalón muy bajo. 2. Mantén el pecho erguido e inicia la sentadilla empujando las caderas hacia atrás y flexionando las rodillas. 3. Deberías notar que puedes hacer sentadillas más bajas de lo normal.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-bodyweight-heels-up-squat-front.mp4#t=0.1',
+    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Mantener la espalda recta", "Controlar el movimiento para evitar lesiones"], "modo_de_hacerlo": "1. Coloca tus talones en una placa o en un escalón muy bajo. 2. Mantén el pecho erguido e inicia la sentadilla empujando las caderas hacia atrás y flexionando las rodillas. 3. Deberías notar que puedes hacer sentadillas más bajas de lo normal."}',
+    7); -- cuadriceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Prensa de Piernas con Banda Elástica',
+    'La prensa de piernas con banda elástica es un ejercicio avanzado para fortalecer los músculos de las piernas. Sigue estos pasos para realizarlo correctamente: 1. Recuéstate plano en el suelo con tu cabeza cerca del punto de anclaje de la banda, que debería estar de 15 a 30 centímetros por encima de tu cabeza. 2. Coloca la banda alrededor de la zona media de tu pie y extiende las rodillas y la cadera.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-leg-press-side.mp4#t=0.1',
+    '{"musculos": ["Cuádriceps", "Isquiotibiales", "Glúteos"], "precauciones": ["Mantener la espalda en contacto con el suelo", "Controlar el movimiento para evitar lesiones"], "modo_de_hacerlo": "1. Recuéstate plano en el suelo con tu cabeza cerca del punto de anclaje de la banda, que debería estar de 15 a 30 centímetros por encima de tu cabeza. 2. Coloca la banda alrededor de la zona media de tu pie y extiende las rodillas y la cadera."}',
+    7); -- cuadriceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Extensión de Pierna con Banda Elástica',
+    'La extensión de pierna con banda elástica es un ejercicio básico para fortalecer los cuádriceps. Sigue estos pasos para realizarlo correctamente: 1. Ancora una banda a algo estable y coloca un banco. 2. Pasa la banda por debajo del banco y haz un bucle alrededor de tus pies. 3. Flexiona y extiende tus rodillas.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-leg-extension-side.mp4#t=0.1',
+    '{"musculos": ["Cuádriceps"], "precauciones": ["Mantener una postura estable y controlada", "Evitar balanceos excesivos"], "modo_de_hacerlo": "1. Ancora una banda a algo estable y coloca un banco. 2. Pasa la banda por debajo del banco y haz un bucle alrededor de tus pies. 3. Flexiona y extiende tus rodillas."}',
+    7); -- cuadriceps
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Peso Muerto Rumano a una Pierna',
+    'El peso muerto rumano a una pierna es un ejercicio básico para trabajar principalmente los músculos isquiotibiales y los glúteos. Sigue estos pasos para realizarlo correctamente: 1. Párate con los pies separados al ancho de los hombros y las rodillas ligeramente flexionadas, luego levanta una pierna. 2. Manteniendo la pierna levantada, inclínate desde las caderas y baja tu torso hasta que esté casi paralelo al suelo. 3. Tensa tus glúteos y luego regresa a la posición inicial.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-single-legged-romanian-deadlifts-side.mp4#t=0.1',
+    '{"musculos": ["Isquiotibiales", "Glúteos"], "precauciones": ["Mantener la espalda recta", "Evitar balanceos excesivos"], "modo_de_hacerlo": "1. Párate con los pies separados al ancho de los hombros y las rodillas ligeramente flexionadas, luego levanta una pierna. 2. Manteniendo la pierna levantada, inclínate desde las caderas y baja tu torso hasta que esté casi paralelo al suelo. 3. Tensa tus glúteos y luego regresa a la posición inicial."}',
+    8); -- isquiotibiales
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Flexión Nórdica de Isquiotibiales',
+    'La flexión nórdica de isquiotibiales es un ejercicio intermedio diseñado para fortalecer los músculos isquiotibiales. Sigue estos pasos para realizarlo correctamente: 1. Arrodíllate y pídele a alguien que te sujete los tobillos. 2. Coloca tus manos delante de ti. 3. Con una ligera flexión en las rodillas, lleva lentamente tu cuerpo hacia el suelo (más lento es mejor). 4. Empuja hacia arriba y vuelve a la posición inicial.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-nordic-hamstring-curl-side.mp4#t=0.1',
+    '{"musculos": ["Isquiotibiales"], "precauciones": ["Realizar el ejercicio lentamente para evitar lesiones", "Mantener la espalda recta"], "modo_de_hacerlo": "1. Arrodíllate y pídele a alguien que te sujete los tobillos. 2. Coloca tus manos delante de ti. 3. Con una ligera flexión en las rodillas, lleva lentamente tu cuerpo hacia el suelo (más lento es mejor). 4. Empuja hacia arriba y vuelve a la posición inicial."}',
+    8); -- isquitiobales
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Peso Muerto Rumano con Banda Elástica',
+    'El Peso Muerto Rumano con Banda Elástica es un ejercicio excelente para fortalecer los isquiotibiales y los glúteos. Sigue estos pasos para realizarlo correctamente: 1. Ponte de pie sobre tu banda con ambos pies. 2. Inclínate hacia adelante desde las caderas manteniendo la espalda recta. 3. Dobla hasta que sientas un estiramiento en los isquiotibiales. 4. Empuja tus caderas hacia adelante hasta que estés en una posición de pie.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-romanian-deadlift-side.mp4#t=0.1',
+    '{"musculos": ["Isquiotibiales", "Glúteos"], "precauciones": ["Mantener la espalda recta en todo momento", "Evitar el sobreestiramiento de los isquiotibiales"], "modo_de_hacerlo": "1. Ponte de pie sobre tu banda con ambos pies. 2. Inclínate hacia adelante desde las caderas manteniendo la espalda recta. 3. Dobla hasta que sientas un estiramiento en los isquiotibiales. 4. Empuja tus caderas hacia adelante hasta que estés en una posición de pie."}',
+    8); -- Isquiotibiales y Glúteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Tirón de Banda',
+    'El Tirón de Banda es un ejercicio efectivo para trabajar los músculos de la cadena posterior, especialmente los isquiotibiales y los glúteos. Sigue estos pasos para realizarlo correctamente: 1. Ancla la banda al punto más bajo posible y sujétala con ambas manos. 2. Da unos pasos hacia atrás hasta que la banda esté tensa. 3. Empuja tus glúteos hacia atrás hasta que sientas un estiramiento en tus isquiotibiales. Luego, extiende las caderas hacia atrás hasta la posición inicial.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-pull-through-side.mp4#t=0.1',
+    '{"musculos": ["Isquiotibiales", "Glúteos"], "precauciones": ["Mantener la espalda recta en todo momento", "Evitar el sobreestiramiento de los isquiotibiales"], "modo_de_hacerlo": "1. Ancla la banda al punto más bajo posible y sujétala con ambas manos. 2. Da unos pasos hacia atrás hasta que la banda esté tensa. 3. Empuja tus glúteos hacia atrás hasta que sientas un estiramiento en tus isquiotibiales. Luego, extiende las caderas hacia atrás hasta la posición inicial."}',
+    8); -- Isquiotibiales y Glúteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Curl de Pierna con Banda Elástica',
+    'El Curl de Pierna con Banda Elástica es un ejercicio efectivo para trabajar los isquiotibiales. Sigue estos pasos para realizarlo correctamente: 1. Pasa la banda alrededor de un punto de anclaje sólido, como un rack de levantamiento de pesas o un pomo de puerta. 2. Túmbate boca arriba con los talones dentro de la banda, asegurándote de que esté centrada bajo tus talones y tus pies estén separados a la anchura de las caderas. 3. Utilizando tus isquiotibiales, flexiona tus talones hacia tus glúteos mientras mantienes tus caderas en el suelo.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-leg-curl-side.mp4#t=0.1',
+    '{"musculos": ["Isquiotibiales"], "precauciones": ["Mantener las caderas en el suelo para aislar los isquiotibiales"], "modo_de_hacerlo": "1. Pasa la banda alrededor de un punto de anclaje sólido. 2. Túmbate boca arriba con los talones dentro de la banda, asegurándote de que esté centrada bajo tus talones y tus pies estén separados a la anchura de las caderas. 3. Utilizando tus isquiotibiales, flexiona tus talones hacia tus glúteos mientras mantienes tus caderas en el suelo."}',
+    8); -- Isquiotibiales
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Puente de Glúteos',
+    'El Puente de Glúteos es un ejercicio efectivo para fortalecer los glúteos y la parte baja de la espalda. Sigue estos pasos para realizarlo correctamente: 1. Acuéstate con las rodillas dobladas y los pies apoyados sobre el suelo. 2. Empuja tus caderas hacia arriba para que tus glúteos estén elevados y tu espalda recta. 3. Contrae tus glúteos y eleva tus caderas hacia el techo. 4. Una vez que estés en el punto más alto que puedas manejar, mantén la posición durante unos segundos y luego regresa lentamente a la posición inicial.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-glute-bridge-side.mp4#t=0.1',
+    '{"musculos": ["Glúteos", "Parte baja de la espalda"], "precauciones": ["Mantener la espalda recta durante todo el movimiento"], "modo_de_hacerlo": "1. Acuéstate con las rodillas dobladas y los pies apoyados sobre el suelo. 2. Empuja tus caderas hacia arriba para que tus glúteos estén elevados y tu espalda recta. 3. Contrae tus glúteos y eleva tus caderas hacia el techo. 4. Una vez que estés en el punto más alto que puedas manejar, mantén la posición durante unos segundos y luego regresa lentamente a la posición inicial."}',
+    9); -- Glúteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Patadas hacia atrás',
+    'Las patadas hacia atrás son un excelente ejercicio para fortalecer los glúteos. Sigue estos pasos para realizarlo correctamente: 1. Ponte en cuatro patas con las manos debajo de los hombros y las rodillas debajo de las caderas. 2. Extiende una pierna hacia atrás, apretando los glúteos al máximo. 3. Regresa lentamente a la posición inicial doblando la rodilla y bajando la pierna. 4. Cambia de pierna y repite el movimiento.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-Bodyweight-kickbacks-side.mp4#t=0.1',
+    '{"musculos": ["Glúteos"], "precauciones": ["Mantén la espalda recta y los abdominales contraídos para evitar lesiones"], "modo_de_hacerlo": "1. Ponte en cuatro patas con las manos debajo de los hombros y las rodillas debajo de las caderas. 2. Extiende una pierna hacia atrás, apretando los glúteos al máximo. 3. Regresa lentamente a la posición inicial doblando la rodilla y bajando la pierna. 4. Cambia de pierna y repite el movimiento."}',
+    9); -- Glúteos
+
+INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
+VALUES
+    ('Patada de Glúteo con Banda Elástica',
+    'La patada de glúteo con banda elástica es un excelente ejercicio para fortalecer los glúteos. Sigue estos pasos para realizarlo correctamente: 1. Adopta una posición de cuadrupedia. Enlaza la banda alrededor de ambas muñecas y uno de tus pies. 2. Extiende tu rodilla y cadera hacia atrás hasta que sientas una contracción en los glúteos. 3. Dobla la rodilla hasta volver a la posición inicial.',
+    'https://media.musclewiki.com/media/uploads/videos/branded/male-band-kickback-side.mp4#t=0.1',
+    '{"musculos": ["Glúteos"], "precauciones": ["Mantén la espalda recta y los abdominales contraídos para evitar lesiones"], "modo_de_hacerlo": "1. Adopta una posición de cuadrupedia. Enlaza la banda alrededor de ambas muñecas y uno de tus pies. 2. Extiende tu rodilla y cadera hacia atrás hasta que sientas una contracción en los glúteos. 3. Dobla la rodilla hasta volver a la posición inicial."}',
+    9); -- Glúteos
 
 
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Flexiones de hombro sin carga',
-    'Trabaja la parte delantera del hombro. Colócate boca abajo con las manos apoyadas en el suelo y las puntas de los pies. Dobla los codos y desciende el cuerpo, concentrando la tensión en los hombros.',
-    'https://ejemplo.com/video_flexiones_hombro_sin_carga',
-    'https://ejemplo.com/imagen_flexiones_hombro_sin_carga',
-    '{"musculos": ["Parte delantera del hombro"], "precauciones": ["Mantener una alineación adecuada del cuerpo"], "modo_de_hacerlo": "Boca abajo con manos en el suelo y pies en punta. Desciende el cuerpo doblando los codos y luego vuelve a la posición inicial."}',
-    3);--hombros
-
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Press de hombro con carga (una mochila)',
-    'Trabaja la parte exterior del hombro. De pie, eleva una mochila por encima de la cabeza manteniendo el movimiento en el plano lateral.',
-    'https://ejemplo.com/video_press_hombro_con_carga',
-    'https://ejemplo.com/imagen_press_hombro_con_carga',
-    '{"musculos": ["Parte exterior del hombro"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "De pie, eleva la mochila por encima de la cabeza en el plano lateral."}',
-    3);--hombros
-
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Elevaciones laterales de hombro con carga (una mochila o bolsas)',
-    'Trabaja la parte lateral del hombro. De pie, eleva las bolsas lateralmente con los codos ligeramente flexionados.',
-    'https://ejemplo.com/video_elevaciones_laterales_hombro_con_carga',
-    'https://ejemplo.com/imagen_elevaciones_laterales_hombro_con_carga',
-    '{"musculos": ["Parte lateral del hombro"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "De pie, eleva las bolsas lateralmente con los codos ligeramente flexionados."}',
-    3);--hombros
-
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Elevaciones frontales de hombro con carga (una mochila o bolsa)',
-    'Trabaja la parte frontal del hombro. De pie, eleva la carga por delante hasta la altura de los hombros.',
-    'https://ejemplo.com/video_elevaciones_frontales_hombro_con_carga',
-    'https://ejemplo.com/imagen_elevaciones_frontales_hombro_con_carga',
-    '{"musculos": ["Parte frontal del hombro"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "De pie, eleva la carga por delante hasta la altura de los hombros."}',
-    3);--hombros
-
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Push up supinos de hombro con nuestro propio peso',
-    'Trabaja la parte trasera del hombro. Túmbate boca arriba con las piernas dobladas y los talones apoyados en el suelo. Eleva el pecho hacia arriba, separando la parte trasera de los hombros del suelo.',
-    'https://ejemplo.com/video_push_up_supinos_hombro_propio_peso',
-    'https://ejemplo.com/imagen_push_up_supinos_hombro_propio_peso',
-    '{"musculos": ["Parte trasera del hombro"], "precauciones": ["Mantener la espalda apoyada en el suelo"], "modo_de_hacerlo": "Túmbate boca arriba con las piernas dobladas y los talones apoyados en el suelo. Eleva el pecho hacia arriba."}',
-    3);--hombros
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Curl de bíceps con barra',
-    'Trabaja ambos haces del bíceps de forma equilibrada. Se realiza desde una posición de pie, con un agarre en la barra a la anchura de los hombros, flexionando los codos para llevar la barra lo más cerca posible del pecho mientras se mantienen los codos pegados a las costillas.',
-    'https://ejemplo.com/video_curl_biceps_barra',
-    'https://ejemplo.com/imagen_curl_biceps_barra',
-    '{"musculos": ["Cabeza larga del bíceps", "Cabeza corta del bíceps"], "precauciones": ["Mantener los codos pegados al cuerpo"], "modo_de_hacerlo": "Desde una posición de pie, con un agarre en la barra a la anchura de los hombros, flexionar los codos para llevar la barra lo más cerca posible del pecho mientras se mantienen los codos pegados a las costillas."}',
-    4);--biceps
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Curl de bíceps con mancuernas con agarre prono',
-    'Enfatiza la cabeza larga del bíceps. Se realiza un curl de bíceps con mancuernas mientras se mantiene un agarre pronado, con las palmas de las manos mirando hacia fuera.',
-    'https://ejemplo.com/video_curl_biceps_mancuernas_prone',
-    'https://ejemplo.com/imagen_curl_biceps_mancuernas_prone',
-    '{"musculos": ["Cabeza larga del bíceps", "Cabeza corta del bíceps"], "precauciones": ["Mantener una postura correcta"], "modo_de_hacerlo": "Realizar un curl de bíceps con mancuernas mientras se mantiene un agarre pronado, con las palmas de las manos mirando hacia fuera."}',
-    4);--biceps
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Curl de bíceps tipo martillo',
-    'Enfatiza la cabeza externa del bíceps (braquial anterior). Se realiza un curl de bíceps con mancuernas mientras se mantiene un agarre neutro, con las palmas de las manos mirándose entre sí.',
-    'https://ejemplo.com/video_curl_biceps_martillo',
-    'https://ejemplo.com/imagen_curl_biceps_martillo',
-    '{"musculos": ["Cabeza larga del bíceps", "Braquial anterior"], "precauciones": ["Mantener una postura adecuada"], "modo_de_hacerlo": "Realizar un curl de bíceps con mancuernas mientras se mantiene un agarre neutro, con las palmas de las manos mirándose entre sí."}',
-    4);--biceps
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Curl concentrado de bíceps',
-    'Aísla y trabaja la cabeza larga del bíceps. Se realiza sentado en un banco con una mancuerna, manteniendo el codo del brazo que se trabaja en la parte interna del muslo y flexionando el codo para llevar la mancuerna hacia el pecho.',
-    'https://ejemplo.com/video_curl_concentrado_biceps',
-    'https://ejemplo.com/imagen_curl_concentrado_biceps',
-    '{"musculos": ["Cabeza larga del bíceps"], "precauciones": ["Mantener una respiración controlada"], "modo_de_hacerlo": "Sentarse en un banco con una mancuerna, manteniendo el codo del brazo que se trabaja en la parte interna del muslo y flexionar el codo para llevar la mancuerna hacia el pecho."}',
-    4);--biceps
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Curl de bíceps estilo araña',
-    'Trabaja ambos haces del bíceps desde un ángulo diferente. Se realiza colocándose boca abajo en un banco inclinado y realizando un curl de bíceps mientras se mantiene un agarre prono de la barra.',
-    'https://ejemplo.com/video_curl_biceps_estilo_arana',
-    'https://ejemplo.com/imagen_curl_biceps_estilo_arana',
-    '{"musculos": ["Cabeza larga del bíceps", "Cabeza corta del bíceps"], "precauciones": ["Mantener el abdomen contraído"], "modo_de_hacerlo": "Colocarse boca abajo en un banco inclinado y realizar un curl de bíceps mientras se mantiene un agarre prono de la barra."}',
-    4);--biceps
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'El 21',
-    'Fatiga muscular y resistencia del bíceps. Realizar tres series de siete repeticiones cada una, dividiendo el movimiento del curl de bíceps en tres partes diferentes, con un total de 21 repeticiones por serie.',
-    'https://ejemplo.com/video_el_21',
-    'https://ejemplo.com/imagen_el_21',
-    '{"musculos": ["Cabeza larga del bíceps", "Cabeza corta del bíceps"], "precauciones": ["Mantener una respiración controlada"], "modo_de_hacerlo": "Realizar tres series de siete repeticiones cada una, dividiendo el movimiento del curl de bíceps en tres partes diferentes, con un total de 21 repeticiones por serie."}',
-    4);--biceps
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Fondos en banco',
-    'Ejercicio para trabajar los tríceps. Realizado con el cuerpo apoyado en un banco, silla u orilla de la cama, con las manos por detrás de la espalda y estirando totalmente las piernas.',
-    'https://ejemplo.com/video_fondos_en_banco',
-    'https://ejemplo.com/imagen_fondos_en_banco',
-    '{"musculos": ["Tríceps"], "precauciones": ["Mantener la espalda cerca del banco o del objeto utilizado"], "modo_de_hacerlo": "Flexionar los brazos y bajar el cuerpo hasta formar un ángulo de 90 grados entre los antebrazos y los tríceps."}',
-    5); --triceps
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Copa a dos manos',
-    'Ejercicio para trabajar los tríceps. Realizado de pie con las piernas separadas a la altura de los hombros, sujetando una mancuerna o objeto de peso con ambas manos y elevándolo sobre la cabeza.',
-    'https://ejemplo.com/video_copa_dos_manos',
-    'https://ejemplo.com/imagen_copa_dos_manos',
-    '{"musculos": ["Cabeza larga del tríceps"], "precauciones": ["Mantener los codos cerrados y pegados a la cabeza"], "modo_de_hacerlo": "Flexionar los brazos lentamente llevando el peso por detrás de la nuca y luego estirar los brazos hacia arriba."}',
-    5); --triceps
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Patadas de tríceps con mancuernas',
-    'Ejercicio para trabajar los tríceps. Realizado de pie con las piernas separadas, inclinando el torso hacia adelante y flexionando los brazos hacia atrás con mancuernas.',
-    'https://ejemplo.com/video_patadas_triceps_mancuernas',
-    'https://ejemplo.com/imagen_patadas_triceps_mancuernas',
-    '{"musculos": ["Cabeza larga del tríceps"], "precauciones": ["Mantener los codos pegados al cuerpo"], "modo_de_hacerlo": "Flexionar los brazos hacia adelante y luego estirarlos hacia atrás subiendo el peso en dirección al techo."}',
-    5); --triceps
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Crunch',
-    'Trabaja principalmente en la zona superior del abdomen. Túmbate boca arriba con las rodillas flexionadas y los pies apoyados en el suelo. Contrae el abdomen y levanta la parte superior de la espalda del suelo hacia las rodillas, manteniendo la parte baja de la espalda apoyada en el suelo.',
-    'https://ejemplo.com/video_crunch',
-    'https://ejemplo.com/imagen_crunch',
-    '{"musculos": ["Zona superior del abdomen"], "precauciones": ["Mantener la parte baja de la espalda apoyada en el suelo"], "modo_de_hacerlo": "Túmbate boca arriba con las rodillas flexionadas y los pies apoyados en el suelo. Contrae el abdomen y levanta la parte superior de la espalda del suelo hacia las rodillas."}',
-    6);--abs
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Heel taps',
-    'Trabaja en los oblicuos. Túmbate boca arriba con los pies apoyados en el suelo y los brazos a los lados del cuerpo. Realiza un ligero encogimiento hacia delante y hacia los lados, tocando el talón izquierdo con la mano izquierda y viceversa.',
-    'https://ejemplo.com/video_heel_taps',
-    'https://ejemplo.com/imagen_heel_taps',
-    '{"musculos": ["Oblicuos"], "precauciones": ["Mantener la parte superior de la espalda ligeramente levantada del suelo"], "modo_de_hacerlo": "Realiza un ligero encogimiento hacia delante y hacia los lados, tocando el talón izquierdo con la mano izquierda y viceversa."}',
-    6);--abs
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Plancha isométrica',
-    'Trabaja en la estabilidad del core. Empieza en posición de flexión apoyando los antebrazos en el suelo. Mantén el cuerpo en línea recta desde los hombros hasta los tobillos, contrayendo los glúteos y el abdomen. Mantén la postura durante el tiempo indicado sin perder la alineación.',
-    'https://ejemplo.com/video_plancha_isometrica',
-    'https://ejemplo.com/imagen_plancha_isometrica',
-    '{"musculos": ["Estabilidad del core"], "precauciones": ["Mantener la alineación del cuerpo"], "modo_de_hacerlo": "Empieza en posición de flexión apoyando los antebrazos en el suelo. Mantén el cuerpo en línea recta desde los hombros hasta los tobillos."}',
-    6);--abs
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Mountain climbers',
-    'Trabaja en la estabilización del core. Ponte en posición de flexión con los brazos estirados. Alterna el movimiento de las piernas, llevando las rodillas hacia el pecho en un movimiento rápido. Mantén la espalda recta y contrae el abdomen durante todo el ejercicio.',
-    'https://ejemplo.com/video_mountain_climbers',
-    'https://ejemplo.com/imagen_mountain_climbers',
-    '{"musculos": ["Estabilización del core"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "Ponte en posición de flexión con los brazos estirados. Alterna el movimiento de las piernas, llevando las rodillas hacia el pecho en un movimiento rápido."}',
-    6);--abs
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Elevaciones de piernas',
-    'Trabaja en la parte baja del abdomen. Levanta las piernas juntas hasta que las plantas de los pies miren hacia el techo. Baja las piernas de forma controlada, evitando tocar el suelo.',
-    'https://ejemplo.com/video_elevaciones_piernas',
-    'https://ejemplo.com/imagen_elevaciones_piernas',
-    '{"musculos": ["Parte baja del abdomen"], "precauciones": ["Evitar tocar el suelo con las piernas"], "modo_de_hacerlo": "Levanta las piernas juntas hasta que las plantas de los pies miren hacia el techo."}',
-    6);--abs
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Bicicletas',
-    'Trabaja en los oblicuos y en el recto abdominal. Tumbado en el suelo, levanta una pierna y flexiona la rodilla hacia el pecho mientras giras la cintura para tocar el codo opuesto. Alterna el movimiento de las piernas y los brazos en un movimiento fluido.',
-    'https://ejemplo.com/video_bicicletas',
-    'https://ejemplo.com/imagen_bicicletas',
-    '{"musculos": ["Oblicuos", "Recto abdominal"], "precauciones": ["Realizar el movimiento de forma fluida"], "modo_de_hacerlo": "Levanta una pierna y flexiona la rodilla hacia el pecho mientras giras la cintura para tocar el codo opuesto."}',
-    6);--abs
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Pike crunch',
-    'Trabaja en el recto abdominal. Túmbate boca arriba con las piernas levantadas en un ángulo de 45 grados y los brazos extendidos hacia arriba. Levanta la parte alta de la espalda del suelo hacia las piernas, manteniendo la zona lumbar apoyada en el suelo.',
-    'https://ejemplo.com/video_pike_crunch',
-    'https://ejemplo.com/imagen_pike_crunch',
-    '{"musculos": ["Recto abdominal"], "precauciones": ["Mantener la zona lumbar apoyada en el suelo"], "modo_de_hacerlo": "Levanta la parte alta de la espalda del suelo hacia las piernas."}',
-    6);--abs
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Encogimientos invertidos',
-    'Trabaja en la parte baja del abdomen. Túmbate boca arriba con las piernas flexionadas y levanta la zona lumbar del suelo. Mantén la contracción en los abdominales inferiores durante todo el ejercicio.',
-    'https://ejemplo.com/video_encogimientos_invertidos',
-    'https://ejemplo.com/imagen_encogimientos_invertidos',
-    '{"musculos": ["Parte baja del abdomen"], "precauciones": ["Mantener la contracción en los abdominales inferiores"], "modo_de_hacerlo": "Levanta la zona lumbar del suelo."}',
-    6);--abs
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Hollow hold',
-    'Trabaja en la estabilización del core y en los abdominales superiores e inferiores. Tumbado boca arriba, levanta los brazos y las piernas en un ángulo de 45 grados con el suelo. Mantén la posición sin despegar la zona lumbar del suelo.',
-    'https://ejemplo.com/video_hollow_hold',
-    'https://ejemplo.com/imagen_hollow_hold',
-    '{"musculos": ["Estabilización del core", "Abdominales superiores e inferiores"], "precauciones": ["Mantener la posición sin despegar la zona lumbar del suelo"], "modo_de_hacerlo": "Levanta los brazos y las piernas en un ángulo de 45 grados con el suelo."}',
-    6);--abs
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Sentadillas',
-    'Ejercicio para trabajar cuádriceps, isquiotibiales, glúteos y pantorrillas. De pie, flexiona las rodillas para bajar el cuerpo, manteniendo la espalda recta, y luego regresa a la posición inicial.',
-    'https://ejemplo.com/video_sentadillas',
-    'https://ejemplo.com/imagen_sentadillas',
-    '{"musculos": ["Cuádriceps", "Isquiotibiales", "Glúteos", "Pantorrillas"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "Flexiona las rodillas para bajar el cuerpo, manteniendo la espalda recta, y luego regresa a la posición inicial."}',
-    7);--piernas y gluteos
-
--- Sentadillas laterales
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Sentadillas laterales',
-    'Ejercicio para trabajar las mismas áreas que las sentadillas, con un enfoque adicional en los abductores. De pie, da un paso lateral y flexiona la rodilla para bajar el cuerpo, luego regresa a la posición inicial y repite del otro lado.',
-    'https://ejemplo.com/video_sentadillas_laterales',
-    'https://ejemplo.com/imagen_sentadillas_laterales',
-    '{"musculos": ["Cuádriceps", "Isquiotibiales", "Glúteos", "Abductores"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "Da un paso lateral y flexiona la rodilla para bajar el cuerpo, luego regresa a la posición inicial y repite del otro lado."}',
-    7);--piernas y gluteos
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Sentadillas con salto',
-    'Ejercicio para trabajar cuádriceps, isquiotibiales, glúteos y pantorrillas, con un enfoque en la potencia explosiva. De pie, flexiona las rodillas para bajar el cuerpo y luego realiza un salto, aterrizando suavemente y volviendo a la posición inicial.',
-    'https://ejemplo.com/video_sentadillas_con_salto',
-    'https://ejemplo.com/imagen_sentadillas_con_salto',
-    '{"musculos": ["Cuádriceps", "Isquiotibiales", "Glúteos", "Pantorrillas"], "precauciones": ["Aterrizar suavemente"], "modo_de_hacerlo": "Flexiona las rodillas para bajar el cuerpo y luego realiza un salto, aterrizando suavemente y volviendo a la posición inicial."}',
-    7);--piernas y gluteos
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Burpees',
-    'Ejercicio de cuerpo completo que involucra cuádriceps, isquiotibiales, glúteos, pantorrillas y músculos del tronco. Desde posición de pie, baja al suelo en flexión, realiza una flexión de brazos, salta con los pies hacia adelante y realiza un salto vertical.',
-    'https://ejemplo.com/video_burpees',
-    'https://ejemplo.com/imagen_burpees',
-    '{"musculos": ["Cuádriceps", "Isquiotibiales", "Glúteos", "Pantorrillas", "Músculos del tronco"], "precauciones": ["Realizar el movimiento de forma controlada"], "modo_de_hacerlo": "Desde posición de pie, baja al suelo en flexión, realiza una flexión de brazos, salta con los pies hacia adelante y realiza un salto vertical."}',
-    7);--piernas y gluteos
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Zancadas con mancuernas',
-    'Ejercicio para trabajar cuádriceps y glúteos. De pie, da un paso adelante y flexiona ambas rodillas para bajar el cuerpo, manteniendo la espalda recta. Luego, regresa a la posición inicial y repite con la otra pierna.',
-    'https://ejemplo.com/video_zancadas_con_mancuernas',
-    'https://ejemplo.com/imagen_zancadas_con_mancuernas',
-    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "Da un paso adelante y flexiona ambas rodillas para bajar el cuerpo, manteniendo la espalda recta. Luego, regresa a la posición inicial y repite con la otra pierna."}',
-    7);--piernas y gluteos
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Zancadas con salto',
-    'Ejercicio para trabajar cuádriceps y glúteos con un componente adicional de trabajo cardiovascular y explosividad. De pie, da un paso adelante y flexiona ambas rodillas para bajar el cuerpo, luego realiza un salto y alterna las piernas en cada repetición.',
-    'https://ejemplo.com/video_zancadas_con_salto',
-    'https://ejemplo.com/imagen_zancadas_con_salto',
-    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Realizar el movimiento de forma controlada"], "modo_de_hacerlo": "Da un paso adelante y flexiona ambas rodillas para bajar el cuerpo, luego realiza un salto y alterna las piernas en cada repetición."}',
-    7);--piernas y gluteos
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Cohete (ejercicio con silla)',
-    'Ejercicio para trabajar cuádriceps y glúteos, con un enfoque en el equilibrio y la estabilidad. Desde posición de pie, baja el cuerpo como si fueras a sentarte en una silla y luego regresa a la posición inicial.',
-    'https://ejemplo.com/video_cohete',
-    'https://ejemplo.com/imagen_cohete',
-    '{"musculos": ["Cuádriceps", "Glúteos"], "precauciones": ["Mantener el equilibrio"], "modo_de_hacerlo": "Desde posición de pie, baja el cuerpo como si fueras a sentarte en una silla y luego regresa a la posición inicial."}',
-    7);--piernas y gluteos
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Jumping jacks',
-    'Ejercicio cardiovascular que involucra a los músculos de las piernas y los glúteos. Desde posición de pie, salta extendiendo las piernas hacia los lados mientras llevas los brazos por encima de la cabeza, luego regresa a la posición inicial.',
-    'https://ejemplo.com/video_jumping_jacks',
-    'https://ejemplo.com/imagen_jumping_jacks',
-    '{"musculos": ["Piernas", "Glúteos"], "precauciones": ["Realizar el movimiento de forma controlada"], "modo_de_hacerlo": "Desde posición de pie, salta extendiendo las piernas hacia los lados mientras llevas los brazos por encima de la cabeza, luego regresa a la posición inicial."}',
-    7);--piernas y gluteos
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Burrolls de Crossfit',
-    'Ejercicio de cuerpo completo, con énfasis en la potencia explosiva de las piernas. Desde posición de pie, baja al suelo en flexión, realiza una flexión de brazos, un salto hacia adelante y una extensión completa del cuerpo.',
-    'https://ejemplo.com/video_burrolls_crossfit',
-    'https://ejemplo.com/imagen_burrolls_crossfit',
-    '{"musculos": ["Piernas", "Glúteos", "Músculos del tronco"], "precauciones": ["Realizar el movimiento de forma controlada"], "modo_de_hacerlo": "Desde posición de pie, baja al suelo en flexión, realiza una flexión de brazos, un salto hacia adelante y una extensión completa del cuerpo."}',
-    7);--piernas y gluteos
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Medio puente',
-    'Ejercicio para trabajar glúteos y parte baja de la espalda. Acuéstate boca arriba con las rodillas flexionadas, levanta la cadera hacia arriba manteniendo los hombros en el suelo, luego regresa a la posición inicial.',
-    'https://ejemplo.com/video_medio_puente',
-    'https://ejemplo.com/imagen_medio_puente',
-    '{"musculos": ["Glúteos", "Parte baja de la espalda"], "precauciones": ["Mantener los hombros en el suelo"], "modo_de_hacerlo": "Acuéstate boca arriba con las rodillas flexionadas, levanta la cadera hacia arriba manteniendo los hombros en el suelo, luego regresa a la posición inicial."}',
-    7);--pierna y gluteos
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Puente con elevación de pierna',
-    'Ejercicio para trabajar glúteos, con un enfoque adicional en la estabilidad de una pierna. Acuéstate boca arriba con las rodillas flexionadas, levanta la cadera hacia arriba y luego levanta una pierna hacia el techo, manteniendo la cadera elevada.',
-    'https://ejemplo.com/video_puente_elevacion_pierna',
-    'https://ejemplo.com/imagen_puente_elevacion_pierna',
-    '{"musculos": ["Glúteos"], "precauciones": ["Mantener la cadera elevada"], "modo_de_hacerlo": "Acuéstate boca arriba con las rodillas flexionadas, levanta la cadera hacia arriba y luego levanta una pierna hacia el techo, manteniendo la cadera elevada."}',
-    7);--piernas y gluteo
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Escalador',
-    'Ejercicio cardiovascular que involucra a los músculos de las piernas y los glúteos. Desde posición de flexión, alterna el movimiento de las piernas llevándolas hacia el pecho en un movimiento rápido y controlado.',
-    'https://ejemplo.com/video_escalador',
-    'https://ejemplo.com/imagen_escalador',
-    '{"musculos": ["Piernas", "Glúteos"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "Desde posición de flexión, alterna el movimiento de las piernas llevándolas hacia el pecho en un movimiento rápido y controlado."}',
-    7);--piernas y gluteos
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Patada de burro',
-    'Ejercicio para trabajar la parte superior del glúteo. Desde posición de cuatro patas, eleva una pierna hacia atrás manteniendo el glúteo contraído y luego baja de forma controlada, repitiendo con la otra pierna.',
-    'https://ejemplo.com/video_patada_burro',
-    'https://ejemplo.com/imagen_patada_burro',
-    '{"musculos": ["Glúteos"], "precauciones": ["Mantener el glúteo contraído"], "modo_de_hacerlo": "Desde posición de cuatro patas, eleva una pierna hacia atrás manteniendo el glúteo contraído y luego baja de forma controlada, repitiendo con la otra pierna."}',
-    7);--piernas y gluteos
-
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen_url, datos_cientificos, zona_ejercicio)
-VALUES (
-    'Sentadilla sumo',
-    'Ejercicio similar a las sentadillas estándar, con mayor énfasis en los abductores y aductores de las piernas. De pie, con los pies más anchos que los hombros y los dedos de los pies hacia afuera, flexiona las rodillas para bajar el cuerpo, manteniendo la espalda recta.',
-    'https://ejemplo.com/video_sentadilla_sumo',
-    'https://ejemplo.com/imagen_sentadilla_sumo',
-    '{"musculos": ["Cuádriceps", "Isquiotibiales", "Glúteos", "Abductores", "Aductores"], "precauciones": ["Mantener la espalda recta"], "modo_de_hacerlo": "De pie, con los pies más anchos que los hombros y los dedos de los pies hacia afuera, flexiona las rodillas para bajar el cuerpo, manteniendo la espalda recta."}',
-    7);--piernas y gluteos
 
 --**RUTINAS*
 
