@@ -3,18 +3,19 @@ CREATE TABLE usuario (
     nombre VARCHAR(255) NOT NULL,
     edad INT,
     sexo CHAR(1),
-    email VARCHAR(255) NOT NULL,
+    email VARCHAR(255)  UNIQUE NOT NULL,
     contrasena VARCHAR(255) NOT NULL,
     datos_personales JSON
 );
 
+--AQUI ME QUEDE
 
 CREATE TABLE musculos (
     id_musculo INT 
     AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
     descripcion TEXT NOT NULL,
-    imagen VARCHAR(255)
+    imagen VARCHAR(400)
 );
 
 
@@ -37,13 +38,6 @@ CREATE TABLE ejercicios_en_casa (
     zona_ejercicio INT -- Identificador de la región de ejercicio
 );
 
-
-CREATE TABLE rutinas (
-    id_entrenamiento INT AUTO_INCREMENT PRIMARY KEY,
-    ejercicio INT,
-    especificaciones VARCHAR(255),
-    FOREIGN KEY (ejercicio) REFERENCES ejercicios(ejercicio_id)
-);
 
 --Musculos de la espalda
 INSERT INTO musculos (nombre, descripcion, imagen) VALUES 
@@ -109,6 +103,7 @@ INSERT INTO musculos (nombre, descripcion, imagen) VALUES
 ('Gemelo interno', 'Gemelo interno del músculo gastrocnemio es una de las dos cabezas que componen este músculo grande y poderoso de la pantorrilla', 'https://imgs.search.brave.com/o90XC8DxBgz7DYFBIEf691hli6QVx42JmBZ7vLiu_6s/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cXVpbnRhbmFtYXNz/YWdlcy5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDcv/Q29udHJhY3R1cmEt/bXVzY3VsYXItZGUt/cGFudG9ycmlsbGEu/anBn'),
 ('Gemelo externo', 'Gemelo externo del gastrocnemio se encuentra en la parte externa o lateral de la pantorrilla. ', 'https://imgs.search.brave.com/o90XC8DxBgz7DYFBIEf691hli6QVx42JmBZ7vLiu_6s/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cXVpbnRhbmFtYXNz/YWdlcy5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDcv/Q29udHJhY3R1cmEt/bXVzY3VsYXItZGUt/cGFudG9ycmlsbGEu/anBn');
 
+
 -- Dorsal mayor
    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
     'Dominadas', 
@@ -138,12 +133,13 @@ INSERT INTO musculos (nombre, descripcion, imagen) VALUES
     '{"precauciones": ["Ajusta el peso de la máquina de acuerdo a tu capacidad.", "Mantén una postura adecuada para evitar lesiones en la espalda baja.", "Controla el movimiento en todo momento y evita usar impulso para tirar de la barra."]}', 
     1);
 
-I   INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
+ INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
     'Remo Sentado en Máquina con Cable', 
     'Siéntate con la espalda recta en la máquina y agarra las manijas. Tira de las manijas hacia atrás utilizando tus brazos. Tus piernas y torso deben formar un ángulo de 90°. Empuja tu pecho hacia afuera. Tira de las manijas hacia tu cuerpo hasta que tus manos estén al lado de tu abdomen.', 
     'url_del_video_remo_sentado_en_maquina_con_cable',  
     '{"precauciones": ["Mantén una postura adecuada durante todo el ejercicio para evitar lesiones en la espalda.", "Controla la respiración y evita contener la respiración durante el movimiento.", "Utiliza un peso que te permita mantener la técnica correcta."]}', 
-    1;
+    1);
+
 
 
     INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES (
@@ -207,7 +203,7 @@ I   INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, i
 
 --pectoral mayor medio
    
-    INSERT INTO ejercicios (nombre, descripcion, video_url, imagen, datos_cientificos, id_musculo) VALUES
+    INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_musculo) VALUES
     ('Press de Banca Plano con Barra', 
     'Acuéstate boca arriba en un banco plano con los pies apoyados en el suelo. Sostén una barra con las manos a la anchura de los hombros, con las palmas hacia abajo. Baja la barra hasta que toque el pecho, manteniendo los codos cerca del cuerpo. Empuja la barra hacia arriba hasta que los brazos estén extendidos. Repite el movimiento.', 
     'https://media.musclewiki.com/media/uploads/videos/branded/male-barbell-bench-press-front.mp4#t=0.1',  
@@ -768,7 +764,7 @@ INSERT INTO ejercicios (nombre, descripcion, video_url, datos_cientificos, id_mu
     '{"precauciones": ["Asegúrate de colocar la barra de manera segura y equilibrada en tu espalda para evitar lesiones.", "Mantén las rodillas estables y no dejes que se balanceen durante el ejercicio para evitar lesiones en las articulaciones.", "Controla el movimiento en todo momento y evita usar un peso excesivo que pueda causar lesiones o comprometer la técnica."]}',
     33);
 
-
+--AQUI ME QUEDE
 --**EJERCICIOS EN CASA**
 
 INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
@@ -812,8 +808,7 @@ VALUES
     1); -- Espalda completa
 
 
-INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, imagen, datos_cientificos, zona_ejercicio)
-VALUES
+
    INSERT INTO ejercicios_en_casa (nombre, descripcion, video_url, datos_cientificos, zona_ejercicio)
 VALUES
     ('Lagartija',
@@ -1175,119 +1170,4 @@ VALUES
     9); -- Glúteos
 
 
-
---**RUTINAS*
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (1, '3 sets de 10 repeticiones'), -- Dominadas (Dorsal Mayor)
-    (3, '4 sets de 12 repeticiones'), -- Remo con Mancuerna (Dorsal Mayor)
-    (7, '3 sets de 15 repeticiones'), -- Encogimientos de Hombros con Mancuernas (Trapecio)
-    (12, '4 sets de 12 repeticiones'), -- Face Pulls (Romboides)
-    (14, '3 sets de 10 repeticiones'); -- Dominadas con Agarre Neutro (Romboides)
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (1, '3 sets de 10 repeticiones'), -- Dominadas (Dorsal Mayor)
-    (7, '3 sets de 15 repeticiones'), -- Encogimientos de Hombros con Mancuernas (Trapecio)
-    (12, '4 sets de 12 repeticiones'), -- Face Pulls (Romboides)
-    (2, '4 sets de 10 repeticiones'), -- Remo con Barra (Dorsal Mayor)
-    (11, '3 sets de 12 repeticiones'); -- Remo con Agarre Pronado (Romboides)
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (15, '4 sets de 10 repeticiones'), -- Press de Banca Inclinado (Pectoral Mayor Superior)
-    (19, '3 sets de 12 repeticiones'), -- Press de Banca Plano con Mancuernas (Pectoral Mayor Medio)
-    (21, '3 sets de 8 repeticiones'), -- Press de Banca Declinado (Pectoral Mayor Inferior)
-    (16, '3 sets de 12 repeticiones'), -- Aperturas en Polea Alta (Pectoral Mayor Superior)
-    (22, '4 sets de 10 repeticiones'); -- Fondos en Paralelas con las Piernas Elevadas (Pectoral Mayor Inferior)
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (16, '3 sets de 12 repeticiones'), -- Aperturas en Polea Alta (Pectoral Mayor Superior)
-    (18, '4 sets de 10 repeticiones'), -- Press de Banca Plano con Barra (Pectoral Mayor Medio)
-    (24, '3 sets de 12 repeticiones'), -- Cruces con Polea Baja (Pectoral Mayor Inferior)
-    (17, '3 sets de 12 repeticiones'), -- Elevaciones Frontales con Mancuernas (Pectoral Mayor Superior)
-    (20, '4 sets de 12 repeticiones'); -- Pec Deck (Pectoral Mayor Medio)
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (27, '3 sets de 12 repeticiones'), -- Elevaciones Frontales con Cuerda en Polea Baja
-    (25, '4 sets de 12 repeticiones'), -- Elevaciones Laterales con Mancuernas
-    (31, '3 sets de 10 repeticiones'), -- Remo Alto con Barra
-    (32, '3 sets de 12 repeticiones'), -- Remo Inclinado con Mancuernas
-    (30, '3 sets de 15 repeticiones'); -- Elevaciones Laterales con Polea
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (27, '3 sets de 12 repeticiones'), -- Elevaciones Frontales con Cuerda en Polea Baja
-    (30, '3 sets de 15 repeticiones'), -- Elevaciones Laterales con Polea
-    (31, '3 sets de 10 repeticiones'), -- Remo Alto con Barra
-    (32, '3 sets de 12 repeticiones'), -- Remo Inclinado con Mancuernas
-    (25, '4 sets de 12 repeticiones'); -- Elevaciones Laterales con Mancuernas
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (33, '3 sets de 12 repeticiones'), -- Curl Inclinado en Banco
-    (34, '3 sets de 12 repeticiones'), -- Curl a una Mano en Cable o Polea
-    (38, '4 sets de 10 repeticiones'), -- Curl con Mancuernas
-    (39, '3 sets de 10 repeticiones'); -- Curl Predicador con Barra
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (3, '3 sets de 12 repeticiones'), -- Curl a una Mano en Cable o Polea
-    (36, '3 sets de 12 repeticiones'), -- Curl Martillo
-    (38, '4 sets de 10 repeticiones'), -- Curl con Mancuernas
-    (39, '3 sets de 10 repeticiones'); -- Curl Predicador con Barra
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (46, '3 sets de 12 repeticiones'), -- Press Francés con Barra Z con Agarre en V
-    (45, '3 sets de 10 repeticiones'), -- Fondos en Paralelas con Agarre Estrecho
-    (49, '4 sets de 12 repeticiones'), -- Extensiones de Tríceps con Mancuerna Acostado
-    (41, '3 sets de 12 repeticiones'), -- Extensiones de Tríceps en Polea Alta
-    (44, '3 sets de 12 repeticiones'); -- Extensiones de Tríceps en Polea Alta con Agarre en V
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (50, '3 sets de 12 repeticiones'), -- Flexión de Muñeca con Barra
-    (55, '3 sets de 12 repeticiones'), -- Extensión de Muñeca con Polea
-    (57, '3 sets de 12 repeticiones'), -- Pronación de Muñeca con Mancuerna
-    (61, '3 sets de 12 repeticiones'), -- Supinación de Muñeca con Polea
-    (51, '3 sets de 12 repeticiones'); -- Flexión de Muñeca con Mancuerna
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (72, '4 sets de 12 repeticiones'), -- Sentadillas
-    (73, '3 sets de 15 repeticiones'), -- Extensiones de Rodilla
-    (77, '4 sets de 10 repeticiones'), -- Prensa de Piernas con los Pies Girados hacia Fuera
-    (78, '4 sets de 12 repeticiones'), -- Sentadillas con los Pies Juntos
-    (79, '3 sets de 15 repeticiones'), -- Extensiones de Rodilla con los Pies Girados hacia Dentro
-    (80, '3 sets de 10 repeticiones'); -- Prensa de Piernas con los Pies Girados hacia Dentro
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (62, '3 sets de 15 repeticiones'), -- Abdominales Clásicos
-    (63, '3 sets de 12 repeticiones'), -- Elevaciones de Piernas Colgando
-    (64, '3 sets de 30 segundos'), -- Plancha abdominal
-    (65, '3 sets de 15 repeticiones por lado'), -- Crunches Laterales
-    (68, '3 sets de 15 repeticiones por lado'); -- Giros Rusos con Pelota Suiza
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (86, '4 sets de 10 repeticiones'), -- Peso Muerto Rumano
-    (83, '3 sets de 12 repeticiones'), -- Curl Femoral Sentado
-    (87, '3 sets de 12 repeticiones'); -- Curl Femoral Tumbado con los Pies Girados hacia Dentro
-
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (88, '4 sets de 12 repeticiones'), -- Hip Thrust
-    (90, '3 sets de 15 repeticiones por lado'), -- Elevación Lateral de Pierna Tumbado (Clamshell)
-    (92, '3 sets de 15 repeticiones por lado'); -- Elevación Lateral de Pierna de Pie (Fire Hydrant)
-
-INSERT INTO rutinas (ejercicio, especificaciones)
-VALUES 
-    (93, '4 sets de 15 repeticiones'), -- Elevaciones de Talones de Pie
-    (94, '4 sets de 15 repeticiones'); -- Elevaciones de Talones Sentado
 
