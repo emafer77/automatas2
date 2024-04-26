@@ -5,8 +5,17 @@ import {
   getEjercicioEnCasaByID,
 } from "./database.js";
 
+import cors from "cors";
+
+/*const corsOption = {
+  origin: "http://localhost:8081", // Agrega "http://" antes de "localhost:8081"
+  methods: ["POST", "GET"],
+  credentials: true,
+};*/
+
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get("/musculos/:id_musculo", async (req, res) => {
   try {
