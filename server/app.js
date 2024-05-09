@@ -8,7 +8,7 @@ import {
 import cors from "cors";
 
 /*const corsOption = {
-  origin: "http://localhost:8081", // Agrega "http://" antes de "localhost:8081"
+  origin: "http://140.10.6.51:8081", // Agrega "http://" antes de "localhost:8081"
   methods: ["POST", "GET"],
   credentials: true,
 };*/
@@ -58,6 +58,4 @@ app.get("/ejercicios_en_casa/:id_ejercicio_casa", async (req, res) => {
   }
 });
 
-app.listen(8080, () => {
-  console.log("server running on port 8080");
-});
+app.listen(8080, "0.0.0.0");

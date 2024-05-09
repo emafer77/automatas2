@@ -1,19 +1,18 @@
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   const [musculos, setMusculos] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
+
   async function fetchData() {
     try {
-      const response = await fetch("http://localhost:8080/musculos/13");
+      const response = await fetch("http://192.168.1.67:8080/musculos/14");
       console.log("Response status:", response.status);
       const data = await response.json();
-      console.log("Data:", data);
-
       setMusculos(data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -21,12 +20,12 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
-        {"ssehhddddsdssdddd" + JSON.stringify(musculos)}
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <Text style={styles.title}>{musculos.nombre}</Text>
+        <Text>{musculos.descripcion}</Text>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -35,10 +34,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#416C7C",
     color: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: 50,
   },
-  text: {
+  scrollView: {
+    backgroundColor: "#416C7C",
+    marginHorizontal: 20,
+  },
+  title: {
     color: "#D4E4EA",
+    fontSize: 30,
   },
 });
