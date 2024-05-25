@@ -22,7 +22,7 @@ export default function Ejercicio({ navigation, route }) {
   async function fetchData() {
     try {
       const response = await fetch(
-        `http://192.168.1.67:8080/ejercicios/${itemID}`
+        `http://140.10.3.232:8080/ejercicios/${itemID}`
       );
       const data = await response.json();
       setEjercicios(data);
