@@ -45,14 +45,14 @@ export default function Musculo1({ navigation, route }) {
         <TouchableOpacity
           onPress={() => navigation.navigate("ejercicio", { itemID: itemID })}
         >
-          <Text style={styles.description}>Ver ejercicios </Text>
+          <Text style={styles.ver}>Ver ejercicios </Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() =>
             navigation.navigate("EjercicioEnCasa", { itemID: itemID })
           }
         >
-          <Text style={styles.description}>Ver ejercicios en casa </Text>
+          <Text style={styles.ver}>Ver ejercicios en casa </Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -84,5 +84,12 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 18,
     paddingBottom: 10,
+  },
+  ver: {
+    color: "#FFFFFF",
+    fontSize: 25,
+    paddingBottom: 10,
+    fontWeight: "bold",
+    textDecorationLine: "underline",
   },
 });
