@@ -1,20 +1,25 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-const HomeScreen = ({ navigation }) => {
+const Pantorrilla = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tu GymBro</Text>
-      <TouchableOpacity>
-        <Text style={styles.buttonText}>Crear rutina</Text>
+      <Text style={styles.title}>
+        SELECCIONA EL MUSCULO DE LA PANTORRILLA QUE DESEAS ENTRENAR
+      </Text>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("musculo", { itemID: 32 })}
+      >
+        <Text style={styles.buttonText}>Gemelo interno</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("secciones")}>
-        <Text style={styles.buttonText}>Musculos </Text>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("musculo", { itemID: 33 })}
+      >
+        <Text style={styles.buttonText}>Gemelo Externo</Text>
       </TouchableOpacity>
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -25,9 +30,9 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "#ffffff",
-    fontSize: 35,
+    fontSize: 20,
     textAlign: "center",
-    marginBottom: 20,
+    marginBottom: 35,
   },
   buttonText: {
     color: "#ffffff",
@@ -36,5 +41,4 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 });
-
-export default HomeScreen;
+export default Pantorrilla;

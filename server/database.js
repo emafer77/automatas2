@@ -36,13 +36,32 @@ export async function getEjercicioByID(id_ejercicio) {
     console.log("Buscando el ejercicio número: " + id_ejercicio);
 
     // Consulta SQL para obtener el ejercicio con el ID proporcionado
-    const query = `SELECT * FROM ejercicios WHERE ejercicio_id = ?`;
+    const query = `SELECT * FROM ejercicios WHERE id_musculo = ?`;
 
     // Ejecutar la consulta con el ID proporcionado como parámetro
     const [rows] = await pool.query(query, [id_ejercicio]);
 
     // Devolver el primer resultado (suponiendo que solo esperas un resultado)
     return rows[0];
+  } catch (error) {
+    // Manejo de errores
+    console.error("Error al obtener el ejercicio:", error);
+    throw error; // Lanzar el error para que pueda ser manejado externamente
+  }
+}
+
+export async function getEjerciciosByID(id_musculo) {
+  try {
+    console.log("Buscando los ejercicios: " + id_musculo);
+
+    // Consulta SQL para obtener el ejercicio con el ID proporcionado
+    const query = `SELECT * FROM ejercicios WHERE id_musculo = ?`;
+
+    // Ejecutar la consulta con el ID proporcionado como parámetro
+    const [rows] = await pool.query(query, [id_musculo]);
+
+    // Devolver el primer resultado (suponiendo que solo esperas un resultado)
+    return rows;
   } catch (error) {
     // Manejo de errores
     console.error("Error al obtener el ejercicio:", error);
@@ -65,6 +84,25 @@ export async function getEjercicioEnCasaByID(id_ejercicio_casa) {
   } catch (error) {
     // Manejo de errores
     console.error("Error al obtener el ejercicio en casa:", error);
+    throw error; // Lanzar el error para que pueda ser manejado externamente
+  }
+}
+
+export async function getEjerciciosEnCasaByID(id_musculo) {
+  try {
+    console.log("Buscando los ejercicios en casa: " + id_musculo);
+
+    // Consulta SQL para obtener el ejercicio con el ID proporcionado
+    const query = `SELECT * FROM ejercicios_en_casa WHERE zona_ejercicio = ?`;
+
+    // Ejecutar la consulta con el ID proporcionado como parámetro
+    const [rows] = await pool.query(query, [id_musculo]);
+
+    // Devolver el primer resultado (suponiendo que solo esperas un resultado)
+    return rows;
+  } catch (error) {
+    // Manejo de errores
+    console.error("Error al obtener el ejercicio:", error);
     throw error; // Lanzar el error para que pueda ser manejado externamente
   }
 }

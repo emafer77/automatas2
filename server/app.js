@@ -3,6 +3,8 @@ import {
   getMusculoByID,
   getEjercicioByID,
   getEjercicioEnCasaByID,
+  getEjerciciosByID,
+  getEjerciciosEnCasaByID,
 } from "./database.js";
 
 import cors from "cors";
@@ -30,7 +32,7 @@ app.get("/musculos/:id_musculo", async (req, res) => {
   }
 });
 
-app.get("/ejercicios/:id_ejercicio", async (req, res) => {
+app.get("/ejercicio/:id_ejercicio", async (req, res) => {
   try {
     // Obtener el ejercicio utilizando la función getEjercicioByID
     const ejercicio = await getEjercicioByID(req.params.id_ejercicio);
@@ -42,8 +44,32 @@ app.get("/ejercicios/:id_ejercicio", async (req, res) => {
     res.status(500).json({ error: "Hubo un error al procesar la solicitud" });
   }
 });
+app.get("/ejercicios/:id_musculo", async (req, res) => {
+  try {
+    // Obtener el ejercicio utilizando la función getEjercicioByID
+    const ejercicios = await getEjerciciosByID(req.params.id_musculo);
+    // Devolver el ejercicio como respuesta en formato JSON
+    res.json(ejercicios);
+  } catch (error) {
+    // Manejo de errores
+    console.error("Error al obtener el ejercicio:", error);
+    res.status(500).json({ error: "Hubo un error al procesar la solicitud" });
+  }
+});
+app.get("/ejercicios_en_casa/:id_musculo", async (req, res) => {
+  try {
+    // Obtener el ejercicio utilizando la función getEjercicioByID
+    const ejercicios = await getEjerciciosEnCasaByID(req.params.id_musculo);
+    // Devolver el ejercicio como respuesta en formato JSON
+    res.json(ejercicios);
+  } catch (error) {
+    // Manejo de errores
+    console.error("Error al obtener el ejercicio:", error);
+    res.status(500).json({ error: "Hubo un error al procesar la solicitud" });
+  }
+});
 
-app.get("/ejercicios_en_casa/:id_ejercicio_casa", async (req, res) => {
+app.get("/ejercicio_en_casa/:id_ejercicio_casa", async (req, res) => {
   try {
     // Obtener el ejercicio en casa utilizando la función getEjercicioEnCasaByID
     const ejercicioEnCasa = await getEjercicioEnCasaByID(
