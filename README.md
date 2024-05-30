@@ -116,6 +116,7 @@ se desplegara la siguiente pantalla en ella se muestran los musculos que se pued
 ![pantalla 4](/imagenes%20/3.png)
 
 a continuacion se le da click en dorsal ancho , de ahi se desplegara la siguiente pantalla con la informacion del musculos
+
 ![pantalla 3](/imagenes%20/6.png)
 
 si deslizamos la pantalla apareceran dos opciones en cualquiera de ellas desplegara una nueva pantalla con los ejercicios para trabajar ese musculo
